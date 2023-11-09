@@ -1,0 +1,13 @@
+﻿  SerializationApp.cpp
+  Trainyard.cpp
+  Создание кода...
+SerializationApp.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: static int __cdecl Fl::run(void)" (?run@Fl@@SAHXZ) в функции _main.
+SerializationApp.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: virtual __thiscall Fl_Widget::~Fl_Widget(void)" (??1Fl_Widget@@UAE@XZ) в функции "public: virtual __thiscall Fl_Box::~Fl_Box(void)" (??1Fl_Box@@UAE@XZ).
+SerializationApp.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __thiscall Fl_Box::Fl_Box(int,int,int,int,char const *)" (??0Fl_Box@@QAE@HHHHPBD@Z) в функции _main.
+SerializationApp.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __thiscall Fl_Window::Fl_Window(int,int,char const *)" (??0Fl_Window@@QAE@HHPBD@Z) в функции _main.
+SerializationApp.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: virtual __thiscall Fl_Window::~Fl_Window(void)" (??1Fl_Window@@UAE@XZ) в функции _main.
+SerializationApp.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: virtual void __thiscall Fl_Window::show(void)" (?show@Fl_Window@@UAEXXZ) в функции _main.
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\Шапович\ВизуалСредПрогр\Solutions\3\SerializationApp\fltkLIB\debug\fltkd.lib : warning LNK4272: тип компьютера библиотеки "x64" конфликтует с типом целевого компьютера "x86"
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\Шапович\ВизуалСредПрогр\Solutions\3\SerializationApp\fltkLIB\debug\fltk_jpegd.lib : warning LNK4272: тип компьютера библиотеки "x64" конфликтует с типом целевого компьютера "x86"
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\Шапович\ВизуалСредПрогр\Solutions\3\SerializationApp\fltkLIB\debug\fltk_imagesd.lib : warning LNK4272: тип компьютера библиотеки "x64" конфликтует с типом целевого компьютера "x86"
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\Шапович\ВизуалСредПрогр\Solutions\3\SerializationApp\Debug\SerializationApp.exe : fatal error LNK1120: неразрешенных внешних элементов: 6

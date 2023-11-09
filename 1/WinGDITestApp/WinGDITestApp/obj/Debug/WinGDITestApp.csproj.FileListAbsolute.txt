@@ -1,0 +1,19 @@
+D:\Visual\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.csprojAssemblyReference.cache
+D:\Visual\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.Form1.resources
+D:\Visual\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.Properties.Resources.resources
+D:\Visual\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.csproj.GenerateResource.cache
+D:\Visual\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.csproj.CoreCompileInputs.cache
+D:\Visual\WinGDITestApp\WinGDITestApp\bin\Debug\WinGDITestApp.exe.config
+D:\Visual\WinGDITestApp\WinGDITestApp\bin\Debug\WinGDITestApp.exe
+D:\Visual\WinGDITestApp\WinGDITestApp\bin\Debug\WinGDITestApp.pdb
+D:\Visual\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.exe
+D:\Visual\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.pdb
+D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\1\WinGDITestApp\WinGDITestApp\bin\Debug\WinGDITestApp.exe.config
+D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\1\WinGDITestApp\WinGDITestApp\bin\Debug\WinGDITestApp.exe
+D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\1\WinGDITestApp\WinGDITestApp\bin\Debug\WinGDITestApp.pdb
+D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\1\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.csprojAssemblyReference.cache
+D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\1\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.MainForm.resources
+D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\1\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.Properties.Resources.resources
+D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\1\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.csproj.GenerateResource.cache
+D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\1\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.exe
+D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\1\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.pdb

@@ -1,0 +1,20 @@
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\ВизуалСредПрогр\Solutions\1\DrawLineApp\DrawLineApp\bin\Debug\DrawLineApp.exe.config
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\ВизуалСредПрогр\Solutions\1\DrawLineApp\DrawLineApp\bin\Debug\DrawLineApp.exe
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\ВизуалСредПрогр\Solutions\1\DrawLineApp\DrawLineApp\bin\Debug\DrawLineApp.pdb
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\ВизуалСредПрогр\Solutions\1\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.csprojAssemblyReference.cache
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\ВизуалСредПрогр\Solutions\1\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.MainForm.resources
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\ВизуалСредПрогр\Solutions\1\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.Properties.Resources.resources
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\ВизуалСредПрогр\Solutions\1\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.csproj.GenerateResource.cache
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\ВизуалСредПрогр\Solutions\1\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.csproj.CoreCompileInputs.cache
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\ВизуалСредПрогр\Solutions\1\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.exe
+D:\Games\ILYA'S GAMES\Для Баргу\Для Баргу Зачем\ЛАБЫ\4 курс\ВизуалСредПрогр\Solutions\1\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.pdb
+D:\DrawLineApp\DrawLineApp\bin\Debug\DrawLineApp.exe.config
+D:\DrawLineApp\DrawLineApp\bin\Debug\DrawLineApp.exe
+D:\DrawLineApp\DrawLineApp\bin\Debug\DrawLineApp.pdb
+D:\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.csprojAssemblyReference.cache
+D:\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.MainForm.resources
+D:\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.Properties.Resources.resources
+D:\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.csproj.GenerateResource.cache
+D:\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.csproj.CoreCompileInputs.cache
+D:\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.exe
+D:\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.pdb
