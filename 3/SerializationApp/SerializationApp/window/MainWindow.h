@@ -3,9 +3,9 @@
 
 
 
-#ifdef __MAINWINDOW_H__
-#define __MAINWINDOW_H__
-#endif // __MAINWINDOW_H__
+//#ifdef __MAINWINDOW_H__
+//#define __MAINWINDOW_H__
+//#endif // __MAINWINDOW_H__
 
 
 
