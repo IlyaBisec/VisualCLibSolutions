@@ -1,3 +1,0 @@
-﻿  SerializationApp.cpp
-  Trainyard.cpp
-LINK : fatal error LNK1104: не удается открыть файл "fltk.lib"
