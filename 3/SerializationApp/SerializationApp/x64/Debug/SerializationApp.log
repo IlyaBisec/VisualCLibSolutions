@@ -1,2 +1,4 @@
 ﻿  SerializationApp.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Tools\MSVC\14.37.32822\include\experimental\filesystem(30,1): fatal  error C1189: #error:  The <experimental/filesystem> header providing std::experimental::filesystem is deprecated by Microsoft and will be REMOVED. It is superseded by the C++17 <filesystem> header providing std::filesystem. You can define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING to suppress this error.
+  Trainyard.cpp
+  Создание кода...
+  SerializationApp.vcxproj -> F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\3\SerializationApp\x64\Debug\SerializationApp.exe
