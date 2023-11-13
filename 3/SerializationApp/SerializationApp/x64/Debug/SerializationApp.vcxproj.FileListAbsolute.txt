@@ -1,0 +1,3 @@
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\3\SerializationApp\SerializationApp\x64\Debug\SerializationApp.vcxproj.AssemblyReference.cache
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\3\SerializationApp\SerializationApp\x64\Debug\SerializationApp.MainForm.resources
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\3\SerializationApp\SerializationApp\x64\Debug\SerializationApp.vcxproj.GenerateResource.cache

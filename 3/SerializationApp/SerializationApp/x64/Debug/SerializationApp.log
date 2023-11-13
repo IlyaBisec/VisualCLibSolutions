@@ -1,4 +1,3 @@
-﻿  SerializationApp.cpp
-  Trainyard.cpp
-  Создание кода...
+﻿  MainForm.cpp
+  MainForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   SerializationApp.vcxproj -> F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\3\SerializationApp\x64\Debug\SerializationApp.exe
