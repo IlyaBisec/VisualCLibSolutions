@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "UsTm+l4yp9qglycvBmfhugq7VNvNPePjATb4KevR4OLt8p4dwwvXnFsJDZLDRxiFNeA8rJ+DWYYzP9+CCwi9uw==",
+  "success": true,
+  "projectFilePath": "F:\\Games\\ILYAsFolder\\BarSU\\LABS\\4_course\\EugineShapovich\\VisualKa\\VisualCLibSolutions\\4\\COMApplication\\COM_CLR_Application\\COM_CLR_Application.vcxproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ILYA\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.29\\microsoft.windows.sdk.net.ref.10.0.22621.29.nupkg.sha512"
+  ],
+  "logs": []
+}
