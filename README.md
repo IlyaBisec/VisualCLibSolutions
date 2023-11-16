@@ -1,2 +1,2 @@
-# VisualCLibSolutions
+# Visual C Lib Solutions
 Visual solutions with help cpp and graph libs
