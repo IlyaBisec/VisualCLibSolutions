@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+#include <msclr\marshal_cppstd.h>
 
 namespace SerializationApp {
 
@@ -12,6 +14,10 @@ namespace SerializationApp {
 	/// <summary>
 	/// Сводка для MainForm
 	/// </summary>
+
+	// Global variables
+	std::string g_destination, g_trainNumber, g_depatureTime;
+
 	public ref class MainForm : public System::Windows::Forms::Form
 	{
 	public:
@@ -53,9 +59,13 @@ namespace SerializationApp {
 
 	private: System::Windows::Forms::Label ^lb_DepatureTime;
 	private: System::Windows::Forms::TextBox ^tb_Memo;
-	private: System::Windows::Forms::Button ^btn_Run;
+	private: System::Windows::Forms::Button ^btn_Serialization;
+
+
 	private: System::Windows::Forms::Button ^btn_Exit;
-	private: System::Windows::Forms::Button ^btn_Options;
+	private: System::Windows::Forms::Button ^btn_Deserialization;
+
+
 
 
 
@@ -80,9 +90,9 @@ namespace SerializationApp {
 			this->tb_DepatureTime = (gcnew System::Windows::Forms::TextBox());
 			this->lb_DepatureTime = (gcnew System::Windows::Forms::Label());
 			this->tb_Memo = (gcnew System::Windows::Forms::TextBox());
-			this->btn_Run = (gcnew System::Windows::Forms::Button());
+			this->btn_Serialization = (gcnew System::Windows::Forms::Button());
 			this->btn_Exit = (gcnew System::Windows::Forms::Button());
-			this->btn_Options = (gcnew System::Windows::Forms::Button());
+			this->btn_Deserialization = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// lb_Destination
@@ -112,14 +122,14 @@ namespace SerializationApp {
 			this->cmb_SerializationFormat->Location = System::Drawing::Point(12, 85);
 			this->cmb_SerializationFormat->Name = L"cmb_SerializationFormat";
 			this->cmb_SerializationFormat->Size = System::Drawing::Size(225, 21);
-			this->cmb_SerializationFormat->TabIndex = 2;
+			this->cmb_SerializationFormat->TabIndex = 4;
 			// 
 			// tb_TrainNumber
 			// 
 			this->tb_TrainNumber->Location = System::Drawing::Point(123, 33);
 			this->tb_TrainNumber->Name = L"tb_TrainNumber";
 			this->tb_TrainNumber->Size = System::Drawing::Size(114, 20);
-			this->tb_TrainNumber->TabIndex = 4;
+			this->tb_TrainNumber->TabIndex = 2;
 			// 
 			// lb_TrainNumber
 			// 
@@ -137,7 +147,7 @@ namespace SerializationApp {
 			this->tb_DepatureTime->Location = System::Drawing::Point(123, 59);
 			this->tb_DepatureTime->Name = L"tb_DepatureTime";
 			this->tb_DepatureTime->Size = System::Drawing::Size(114, 20);
-			this->tb_DepatureTime->TabIndex = 6;
+			this->tb_DepatureTime->TabIndex = 3;
 			// 
 			// lb_DepatureTime
 			// 
@@ -152,48 +162,52 @@ namespace SerializationApp {
 			// 
 			// tb_Memo
 			// 
-			this->tb_Memo->Location = System::Drawing::Point(15, 213);
+			this->tb_Memo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204), true));
+			this->tb_Memo->Location = System::Drawing::Point(12, 202);
 			this->tb_Memo->Multiline = true;
 			this->tb_Memo->Name = L"tb_Memo";
-			this->tb_Memo->Size = System::Drawing::Size(222, 161);
-			this->tb_Memo->TabIndex = 7;
+			this->tb_Memo->Size = System::Drawing::Size(222, 202);
+			this->tb_Memo->TabIndex = 5;
 			// 
-			// btn_Run
+			// btn_Serialization
 			// 
-			this->btn_Run->Location = System::Drawing::Point(12, 112);
-			this->btn_Run->Name = L"btn_Run";
-			this->btn_Run->Size = System::Drawing::Size(225, 24);
-			this->btn_Run->TabIndex = 8;
-			this->btn_Run->Text = L"Run";
-			this->btn_Run->UseVisualStyleBackColor = true;
-			this->btn_Run->Click += gcnew System::EventHandler(this, &MainForm::btn_Run_Click);
+			this->btn_Serialization->Location = System::Drawing::Point(12, 112);
+			this->btn_Serialization->Name = L"btn_Serialization";
+			this->btn_Serialization->Size = System::Drawing::Size(225, 24);
+			this->btn_Serialization->TabIndex = 8;
+			this->btn_Serialization->Text = L"Serialization";
+			this->btn_Serialization->UseVisualStyleBackColor = true;
+			this->btn_Serialization->Click += gcnew System::EventHandler(this, &MainForm::btn_Serialization_Click);
 			// 
 			// btn_Exit
 			// 
-			this->btn_Exit->Location = System::Drawing::Point(14, 173);
+			this->btn_Exit->Location = System::Drawing::Point(12, 172);
 			this->btn_Exit->Name = L"btn_Exit";
 			this->btn_Exit->Size = System::Drawing::Size(225, 24);
 			this->btn_Exit->TabIndex = 10;
 			this->btn_Exit->Text = L"Exit";
 			this->btn_Exit->UseVisualStyleBackColor = true;
+			this->btn_Exit->Click += gcnew System::EventHandler(this, &MainForm::btn_Exit_Click);
 			// 
-			// btn_Options
+			// btn_Deserialization
 			// 
-			this->btn_Options->Location = System::Drawing::Point(12, 143);
-			this->btn_Options->Name = L"btn_Options";
-			this->btn_Options->Size = System::Drawing::Size(225, 24);
-			this->btn_Options->TabIndex = 11;
-			this->btn_Options->Text = L"Options";
-			this->btn_Options->UseVisualStyleBackColor = true;
+			this->btn_Deserialization->Location = System::Drawing::Point(12, 142);
+			this->btn_Deserialization->Name = L"btn_Deserialization";
+			this->btn_Deserialization->Size = System::Drawing::Size(225, 24);
+			this->btn_Deserialization->TabIndex = 11;
+			this->btn_Deserialization->Text = L"Deserialization";
+			this->btn_Deserialization->UseVisualStyleBackColor = true;
+			this->btn_Deserialization->Click += gcnew System::EventHandler(this, &MainForm::btn_Deserialization_Click);
 			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(252, 386);
-			this->Controls->Add(this->btn_Options);
+			this->ClientSize = System::Drawing::Size(252, 416);
+			this->Controls->Add(this->btn_Deserialization);
 			this->Controls->Add(this->btn_Exit);
-			this->Controls->Add(this->btn_Run);
+			this->Controls->Add(this->btn_Serialization);
 			this->Controls->Add(this->tb_Memo);
 			this->Controls->Add(this->tb_DepatureTime);
 			this->Controls->Add(this->lb_DepatureTime);
@@ -209,6 +223,19 @@ namespace SerializationApp {
 
 		}
 #pragma endregion
-	private: System::Void btn_Run_Click(System::Object ^sender, System::EventArgs ^e);
+	private: System::Void btn_Exit_Click(System::Object ^sender, System::EventArgs ^e);
+	private: System::Void btn_Serialization_Click(System::Object ^sender, System::EventArgs ^e);
+	private: System::Void btn_Deserialization_Click(System::Object ^sender, System::EventArgs ^e);
+
+	private: void convertStdToNetString();
+	private: void convertNetToStdString();
+
+	private: void loadToMemo(System::String ^name);
+	private: void clearTextBoxes();
+	
+
+
 };
+
+
 }

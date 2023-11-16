@@ -78,7 +78,9 @@ void Train::binarySerialize(const Train &obj, const std::string& fileName)
     std::ofstream file(fileName + ".binary", std::ios::binary);
     if (file)
     {
-        file.write((char*)&obj, sizeof(Train));
+        file.write((char*)&obj.m_destination + '\n', sizeof((char *)&obj.m_destination));
+        file.write((char *)&obj.m_trainNumber + '\n', sizeof((char *)&obj.m_trainNumber));
+        file.write((char *)&obj.m_departureTime + '\n', sizeof((char *)&obj.m_departureTime));
         file.close();
     }
 }
@@ -89,7 +91,10 @@ void Train::binaryDeserialize(const std::string& fileName)
     std::ifstream file(fileName + ".binary", std::ios::binary);
     if (file)
     {
-        file.read((char*)&train, sizeof(Train));
+        //file.read((char*)&train, sizeof(Train));
+        file.read((char *)&train.m_destination + '\n', sizeof((char *)&train.m_destination));
+        file.read((char *)&train.m_trainNumber + '\n', sizeof((char *)&train.m_trainNumber));
+        file.read((char *)&train.m_departureTime + '\n', sizeof((char *)&train.m_departureTime));
         file.close();
     }
 }
@@ -117,7 +122,6 @@ void Station::binaryDeserialize(const std::string &fileName)
 
 
  // Serialization in XML format
-
 void Train::xmlSerialize(const Train &obj, const std::string &fileName)
 {
     rapidxml::xml_document<> doc;
@@ -139,6 +143,7 @@ void Train::xmlSerialize(const Train &obj, const std::string &fileName)
     file.close();
 }
 
+// There is no point in doing de/serialization for the station
 Train Train::xmlDeserialize(const std::string &fileName)
 {
     Train train;
