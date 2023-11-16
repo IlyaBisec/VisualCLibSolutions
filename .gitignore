@@ -1,6 +1,9 @@
 *.meta
 .vs/
 Serialization_app/juice.txt
+juice.txt
+task.txt
+а.txt
 Serialization_app/task.txt
 Serialization_app/а.txt
 6/
