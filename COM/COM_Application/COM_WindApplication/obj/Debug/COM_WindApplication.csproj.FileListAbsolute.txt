@@ -1,0 +1,10 @@
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.csproj.AssemblyReference.cache
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.MainForm.resources
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.Properties.Resources.resources
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.csproj.GenerateResource.cache
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.csproj.CoreCompileInputs.cache
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\bin\Debug\COM Application.exe.config
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\bin\Debug\COM Application.exe
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\bin\Debug\COM Application.pdb
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM Application.exe
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM Application.pdb
