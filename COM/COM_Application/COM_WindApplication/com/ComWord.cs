@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,19 +14,29 @@ namespace COM_WindApplication.com
     // creating a text message, saving a document and exiting Word
     internal class ComWord
     {
+        // Word variables
+        Word.Application m_wordapp;
+
         public ComWord(String recipientName, String projectName, String departmentName,
             String companyName, String senderName,
-            String defaultPathDocTemplate = @"doc\DefaultTemplate.docx",
-            String defaultNewFilePath = @"newdoc\") 
+            String defaultPathDocTemplate,
+            String defaultNewFilePath) 
         {
-            m_recipientName = recipientName;
-            m_projectName = projectName;
-            m_departmentName = departmentName;
-            m_companyName = companyName;
-            m_senderName = senderName;
+            if(File.Exists(defaultPathDocTemplate))
+            {
+                m_recipientName = recipientName;
+                m_projectName = projectName;
+                m_departmentName = departmentName;
+                m_companyName = companyName;
+                m_senderName = senderName;
 
-            m_defaultPathDocTemplate = defaultPathDocTemplate;
-            m_defaultFilePath = defaultNewFilePath;
+                m_defaultPathDocTemplate = defaultPathDocTemplate;
+                m_defaultFilePath = defaultNewFilePath;
+            }
+            else
+            {
+                throw new ArgumentException("Update or change template file path in the options", "File not found");
+            }
         }
         public void openWord()
         {
@@ -54,26 +66,63 @@ namespace COM_WindApplication.com
         // to recipient
         public void createTemplate() 
         {
-            //openWord();
-
-            var doc = m_wordapp.Documents.Open(m_defaultPathDocTemplate);
-            var selection = m_wordapp.Selection;
+            Word.Application wordapp = null;
 
             // Replacing fields
-            selection.Find.Execute("<recipientName>", ReplaceWith: m_recipientName);
-            selection.Find.Execute("<projectName>", ReplaceWith: m_projectName);
-            selection.Find.Execute("<departmentName>", ReplaceWith: m_departmentName);
-            selection.Find.Execute("<companyName>", ReplaceWith: m_companyName);
-            selection.Find.Execute("<senderName>", ReplaceWith: m_senderName);
+            var replace_items = new Dictionary<string, string>()
+            {
+                {"<recipientName>", m_recipientName},
+                {"<projectName>", m_projectName},
+                {"<departmentName>", m_departmentName},
+                {"<companyName>", m_companyName},
+                {"<senderName>", m_senderName},
+            };
 
-            // Saving a letter under your own name
-            doc.SaveAs(m_defaultFilePath + m_recipientName);
+            try
+            {
+                wordapp = new Word.Application();
+                wordapp.Documents.Open(m_defaultPathDocTemplate);
+                
+                Object missing = Type.Missing;
 
-            doc.Close();
-            m_wordapp.Quit();
+                foreach(var item in replace_items)
+                {
+                    Word.Find find = wordapp.Selection.Find;
+                    find.Text = item.Key;
+                    find.Replacement.Text = item.Value;
 
-            MessageBox.Show("The email was successfully created!", "Default file path: " + m_defaultFilePath + m_recipientName);
-            
+                    Object wrap = Word.WdFindWrap.wdFindContinue;
+                    Object replace = Word.WdReplace.wdReplaceAll;
+
+                    find.Execute(FindText: Type.Missing,
+                        MatchCase: false,
+                        MatchWholeWord: false,
+                        MatchWildcards: false,
+                        MatchSoundsLike: missing,
+                        MatchAllWordForms: false,
+                        Forward: true,
+                        Wrap: wrap,
+                        Format: false,
+                        ReplaceWith: missing, Replace: replace);
+                }
+
+                // Saving a letter under your own name
+                wordapp.ActiveDocument.SaveAs(m_defaultFilePath + "\\" + m_recipientName);
+                wordapp.ActiveDocument.Close();
+
+               // wordapp.Quit();
+
+                MessageBox.Show("Default file path: " + m_defaultFilePath + m_recipientName, "The email was successfully created!");
+
+            }
+            catch (Exception ex) { MessageBox.Show(ex.ToString(), "Create word template error"); }
+            finally 
+            {
+                if (wordapp != null)
+                {
+                    wordapp.Quit();
+                }
+            } 
         }
 
         // I not racist, I just dont like C#
@@ -85,11 +134,9 @@ namespace COM_WindApplication.com
         private String m_senderName = "";
 
         private String m_defaultFilePath = "";
-
         private String m_defaultPathDocTemplate = "";
-        
 
-        // Word variables
-        Word.Application m_wordapp;
+
+
     }
 }
