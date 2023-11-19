@@ -117,6 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lb_Word.Text" xml:space="preserve">
+    <value>Модуль Word - содержит функционал для составления писем на основе сущестующего шаблона.
+Вы ведь не хотите постоянно использовать Word для создание одноподобных писем? С этим отлично справится Word Module! 
+Быстро составить письмо, назначить в качестве шаблона, указать в настройках путь к шаблон документу и
+забудьте про весь этот кошмар однотипности!
+Эффективно заполняйте поля и наслаждайтесь автоматизацией!</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>COM Application - это приложение включающая в себя модули Excel и Word. По работе с Excel и Word документами соответсвенно.
+
+Во вкладке Welcome - вы можете узнать краткую информацию о приложении. 
+Вкладки Word и Excel - модули которые упоминались ранее.
+Вкладка Options - содержит ряд настроек приложения, например путь шаблона для Word документа по умолчанию.
+Вкладка About - информация и контакты разработчика.
+</value>
+  </data>
+  <data name="lb_About.Text" xml:space="preserve">
+    <value>COM Application - разработан не с целью захватить весь мир или Пентагон.  А с целью автоматизироавть работу с документами 
+Excel и Word.
+
+Версия приложения - T1.0.00
+Дата создания - 2023/11/20
+Разработчик - Ilya Bisec IST41
+
+Контакты:
+ilya.borisov.bisec@gmail.com
+</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

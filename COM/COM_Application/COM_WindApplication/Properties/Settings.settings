@@ -2,14 +2,17 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="COM_WindApplication.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="newTemplateDocPath" Type="System.String" Scope="Application">
+    <Setting Name="newTemplateDocPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\bin\Debug\doc\DefaultTemplate.docx</Value>
     </Setting>
-    <Setting Name="newDefaultFilePath" Type="System.String" Scope="Application">
+    <Setting Name="newDefaultFilePath" Type="System.String" Scope="User">
       <Value Profile="(Default)">F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\bin\Debug\newdoc</Value>
     </Setting>
-    <Setting Name="demoTemplate" Type="System.String" Scope="Application">
+    <Setting Name="demoTemplate" Type="System.String" Scope="User">
       <Value Profile="(Default)">F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\bin\Debug\doc\DemonstrateTemplate.docx</Value>
+    </Setting>
+    <Setting Name="advanceSettings" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

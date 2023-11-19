@@ -34,6 +34,7 @@
             this.tbp_Word = new System.Windows.Forms.TabPage();
             this.pnl_Preview = new System.Windows.Forms.Panel();
             this.pnl_Controls = new System.Windows.Forms.Panel();
+            this.btn_CheckResult = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_CreateDoc = new System.Windows.Forms.Button();
             this.tb_SenderName = new System.Windows.Forms.TextBox();
@@ -49,12 +50,31 @@
             this.tbp_Excel = new System.Windows.Forms.TabPage();
             this.tbp_Options = new System.Windows.Forms.TabPage();
             this.tbp_About = new System.Windows.Forms.TabPage();
+            this.lb_Welcome = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lb_Word = new System.Windows.Forms.Label();
+            this.lb_Excel = new System.Windows.Forms.Label();
+            this.lb_About = new System.Windows.Forms.Label();
+            this.lb_COMApp = new System.Windows.Forms.Label();
+            this.btn_TemplateDocPath = new System.Windows.Forms.Button();
+            this.chekb_AdvancedSettings = new System.Windows.Forms.CheckBox();
+            this.lb_TemplateDocPath = new System.Windows.Forms.Label();
+            this.tb_TemplateDocPath = new System.Windows.Forms.TextBox();
+            this.tb_NewDefFilePath = new System.Windows.Forms.TextBox();
+            this.lb_NewDefFilePath = new System.Windows.Forms.Label();
+            this.tb_DemoTemplate = new System.Windows.Forms.TextBox();
+            this.lb_DemoTemplate = new System.Windows.Forms.Label();
+            this.btn_NewDefFilePath = new System.Windows.Forms.Button();
+            this.btn_DemoTemplate = new System.Windows.Forms.Button();
+            this.btn_SaveSettings = new System.Windows.Forms.Button();
             this.previewHandlerHost = new PreviewHandlers.PreviewHandlerHost();
-            this.btn_CheckResult = new System.Windows.Forms.Button();
             this.tab_COM.SuspendLayout();
+            this.tbp_Main.SuspendLayout();
             this.tbp_Word.SuspendLayout();
             this.pnl_Preview.SuspendLayout();
             this.pnl_Controls.SuspendLayout();
+            this.tbp_Options.SuspendLayout();
+            this.tbp_About.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_COM
@@ -73,9 +93,13 @@
             // 
             // tbp_Main
             // 
+            this.tbp_Main.Controls.Add(this.lb_Excel);
+            this.tbp_Main.Controls.Add(this.lb_Word);
+            this.tbp_Main.Controls.Add(this.label2);
+            this.tbp_Main.Controls.Add(this.lb_Welcome);
             this.tbp_Main.Location = new System.Drawing.Point(4, 22);
             this.tbp_Main.Name = "tbp_Main";
-            this.tbp_Main.Size = new System.Drawing.Size(894, 345);
+            this.tbp_Main.Size = new System.Drawing.Size(894, 370);
             this.tbp_Main.TabIndex = 4;
             this.tbp_Main.Text = "Welcome";
             this.tbp_Main.UseVisualStyleBackColor = true;
@@ -123,13 +147,23 @@
             this.pnl_Controls.Size = new System.Drawing.Size(174, 364);
             this.pnl_Controls.TabIndex = 0;
             // 
+            // btn_CheckResult
+            // 
+            this.btn_CheckResult.Location = new System.Drawing.Point(9, 279);
+            this.btn_CheckResult.Name = "btn_CheckResult";
+            this.btn_CheckResult.Size = new System.Drawing.Size(148, 30);
+            this.btn_CheckResult.TabIndex = 12;
+            this.btn_CheckResult.Text = "Проверить результат";
+            this.btn_CheckResult.UseVisualStyleBackColor = true;
+            this.btn_CheckResult.Click += new System.EventHandler(this.btn_CheckResult_Click);
+            // 
             // btn_Exit
             // 
             this.btn_Exit.Location = new System.Drawing.Point(9, 322);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(148, 30);
             this.btn_Exit.TabIndex = 11;
-            this.btn_Exit.Text = "Exit";
+            this.btn_Exit.Text = "Выйти";
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
@@ -139,7 +173,7 @@
             this.btn_CreateDoc.Name = "btn_CreateDoc";
             this.btn_CreateDoc.Size = new System.Drawing.Size(148, 30);
             this.btn_CreateDoc.TabIndex = 10;
-            this.btn_CreateDoc.Text = "Create document";
+            this.btn_CreateDoc.Text = "Создать документ";
             this.btn_CreateDoc.UseVisualStyleBackColor = true;
             this.btn_CreateDoc.Click += new System.EventHandler(this.btn_CreateDoc_Click);
             // 
@@ -156,9 +190,9 @@
             this.lb_SenderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lb_SenderName.Location = new System.Drawing.Point(6, 193);
             this.lb_SenderName.Name = "lb_SenderName";
-            this.lb_SenderName.Size = new System.Drawing.Size(85, 15);
+            this.lb_SenderName.Size = new System.Drawing.Size(119, 15);
             this.lb_SenderName.TabIndex = 8;
-            this.lb_SenderName.Text = "Sender name:";
+            this.lb_SenderName.Text = "ФИО отправителя:";
             // 
             // tb_CompanyName
             // 
@@ -173,9 +207,9 @@
             this.lb_CompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lb_CompanyName.Location = new System.Drawing.Point(6, 145);
             this.lb_CompanyName.Name = "lb_CompanyName";
-            this.lb_CompanyName.Size = new System.Drawing.Size(97, 15);
+            this.lb_CompanyName.Size = new System.Drawing.Size(127, 15);
             this.lb_CompanyName.TabIndex = 6;
-            this.lb_CompanyName.Text = "Company name:";
+            this.lb_CompanyName.Text = "Название компании:";
             // 
             // tb_DepartmentName
             // 
@@ -190,9 +224,9 @@
             this.lb_DepartmentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lb_DepartmentName.Location = new System.Drawing.Point(6, 99);
             this.lb_DepartmentName.Name = "lb_DepartmentName";
-            this.lb_DepartmentName.Size = new System.Drawing.Size(110, 15);
+            this.lb_DepartmentName.Size = new System.Drawing.Size(112, 15);
             this.lb_DepartmentName.TabIndex = 4;
-            this.lb_DepartmentName.Text = "Department name:";
+            this.lb_DepartmentName.Text = "Название отдела:";
             // 
             // tb_ProjectName
             // 
@@ -207,9 +241,9 @@
             this.lb_ProjectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lb_ProjectName.Location = new System.Drawing.Point(6, 50);
             this.lb_ProjectName.Name = "lb_ProjectName";
-            this.lb_ProjectName.Size = new System.Drawing.Size(83, 15);
+            this.lb_ProjectName.Size = new System.Drawing.Size(118, 15);
             this.lb_ProjectName.TabIndex = 2;
-            this.lb_ProjectName.Text = "Project name:";
+            this.lb_ProjectName.Text = "Название проекта:";
             // 
             // tb_RecipientName
             // 
@@ -224,37 +258,220 @@
             this.lb_RecipientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lb_RecipientName.Location = new System.Drawing.Point(6, 4);
             this.lb_RecipientName.Name = "lb_RecipientName";
-            this.lb_RecipientName.Size = new System.Drawing.Size(97, 15);
+            this.lb_RecipientName.Size = new System.Drawing.Size(109, 15);
             this.lb_RecipientName.TabIndex = 0;
-            this.lb_RecipientName.Text = "Recipient name:";
+            this.lb_RecipientName.Text = "ФИО получателя:";
             // 
             // tbp_Excel
             // 
             this.tbp_Excel.Location = new System.Drawing.Point(4, 22);
             this.tbp_Excel.Name = "tbp_Excel";
             this.tbp_Excel.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_Excel.Size = new System.Drawing.Size(894, 345);
+            this.tbp_Excel.Size = new System.Drawing.Size(894, 370);
             this.tbp_Excel.TabIndex = 1;
             this.tbp_Excel.Text = "Excel";
             this.tbp_Excel.UseVisualStyleBackColor = true;
             // 
             // tbp_Options
             // 
+            this.tbp_Options.Controls.Add(this.btn_SaveSettings);
+            this.tbp_Options.Controls.Add(this.btn_DemoTemplate);
+            this.tbp_Options.Controls.Add(this.btn_NewDefFilePath);
+            this.tbp_Options.Controls.Add(this.tb_DemoTemplate);
+            this.tbp_Options.Controls.Add(this.lb_DemoTemplate);
+            this.tbp_Options.Controls.Add(this.tb_NewDefFilePath);
+            this.tbp_Options.Controls.Add(this.lb_NewDefFilePath);
+            this.tbp_Options.Controls.Add(this.tb_TemplateDocPath);
+            this.tbp_Options.Controls.Add(this.lb_TemplateDocPath);
+            this.tbp_Options.Controls.Add(this.chekb_AdvancedSettings);
+            this.tbp_Options.Controls.Add(this.btn_TemplateDocPath);
             this.tbp_Options.Location = new System.Drawing.Point(4, 22);
             this.tbp_Options.Name = "tbp_Options";
-            this.tbp_Options.Size = new System.Drawing.Size(894, 345);
+            this.tbp_Options.Size = new System.Drawing.Size(894, 370);
             this.tbp_Options.TabIndex = 3;
-            this.tbp_Options.Text = "Options";
+            this.tbp_Options.Text = "Настройки";
             this.tbp_Options.UseVisualStyleBackColor = true;
             // 
             // tbp_About
             // 
+            this.tbp_About.Controls.Add(this.lb_About);
+            this.tbp_About.Controls.Add(this.lb_COMApp);
             this.tbp_About.Location = new System.Drawing.Point(4, 22);
             this.tbp_About.Name = "tbp_About";
-            this.tbp_About.Size = new System.Drawing.Size(894, 345);
+            this.tbp_About.Size = new System.Drawing.Size(894, 370);
             this.tbp_About.TabIndex = 2;
-            this.tbp_About.Text = "About";
+            this.tbp_About.Text = "Контакты";
             this.tbp_About.UseVisualStyleBackColor = true;
+            // 
+            // lb_Welcome
+            // 
+            this.lb_Welcome.AutoSize = true;
+            this.lb_Welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_Welcome.Location = new System.Drawing.Point(332, 15);
+            this.lb_Welcome.Name = "lb_Welcome";
+            this.lb_Welcome.Size = new System.Drawing.Size(289, 24);
+            this.lb_Welcome.TabIndex = 0;
+            this.lb_Welcome.Text = "Welcome и Добро пожаловать!";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(8, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(878, 102);
+            this.label2.TabIndex = 1;
+            this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // lb_Word
+            // 
+            this.lb_Word.AutoSize = true;
+            this.lb_Word.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lb_Word.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_Word.Location = new System.Drawing.Point(8, 165);
+            this.lb_Word.Name = "lb_Word";
+            this.lb_Word.Size = new System.Drawing.Size(855, 85);
+            this.lb_Word.TabIndex = 2;
+            this.lb_Word.Text = resources.GetString("lb_Word.Text");
+            // 
+            // lb_Excel
+            // 
+            this.lb_Excel.AutoSize = true;
+            this.lb_Excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_Excel.Location = new System.Drawing.Point(8, 273);
+            this.lb_Excel.Name = "lb_Excel";
+            this.lb_Excel.Size = new System.Drawing.Size(740, 34);
+            this.lb_Excel.TabIndex = 3;
+            this.lb_Excel.Text = "Модуль Excel - составит для вас данные о погоде, не только зимой и летом, но и вы" +
+    "считает среднее значеие.\r\nДа еще и в табличном виде! Нужно в Excel? И это по сил" +
+    "ам! Как тебе такое Илон Маск?";
+            // 
+            // lb_About
+            // 
+            this.lb_About.AutoSize = true;
+            this.lb_About.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_About.Location = new System.Drawing.Point(8, 46);
+            this.lb_About.Name = "lb_About";
+            this.lb_About.Size = new System.Drawing.Size(863, 153);
+            this.lb_About.TabIndex = 3;
+            this.lb_About.Text = resources.GetString("lb_About.Text");
+            // 
+            // lb_COMApp
+            // 
+            this.lb_COMApp.AutoSize = true;
+            this.lb_COMApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_COMApp.Location = new System.Drawing.Point(381, 11);
+            this.lb_COMApp.Name = "lb_COMApp";
+            this.lb_COMApp.Size = new System.Drawing.Size(152, 24);
+            this.lb_COMApp.TabIndex = 2;
+            this.lb_COMApp.Text = "COM Application";
+            // 
+            // btn_TemplateDocPath
+            // 
+            this.btn_TemplateDocPath.Location = new System.Drawing.Point(499, 32);
+            this.btn_TemplateDocPath.Name = "btn_TemplateDocPath";
+            this.btn_TemplateDocPath.Size = new System.Drawing.Size(39, 20);
+            this.btn_TemplateDocPath.TabIndex = 0;
+            this.btn_TemplateDocPath.Text = "...";
+            this.btn_TemplateDocPath.UseVisualStyleBackColor = true;
+            this.btn_TemplateDocPath.Click += new System.EventHandler(this.btn_TemplateDocPath_Click);
+            // 
+            // chekb_AdvancedSettings
+            // 
+            this.chekb_AdvancedSettings.AutoSize = true;
+            this.chekb_AdvancedSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chekb_AdvancedSettings.Location = new System.Drawing.Point(633, 31);
+            this.chekb_AdvancedSettings.Name = "chekb_AdvancedSettings";
+            this.chekb_AdvancedSettings.Size = new System.Drawing.Size(189, 21);
+            this.chekb_AdvancedSettings.TabIndex = 1;
+            this.chekb_AdvancedSettings.Text = "Продвинутые настройки";
+            this.chekb_AdvancedSettings.UseVisualStyleBackColor = true;
+            this.chekb_AdvancedSettings.CheckedChanged += new System.EventHandler(this.chekb_AdvancedSettings_CheckedChanged);
+            // 
+            // lb_TemplateDocPath
+            // 
+            this.lb_TemplateDocPath.AutoSize = true;
+            this.lb_TemplateDocPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_TemplateDocPath.Location = new System.Drawing.Point(8, 10);
+            this.lb_TemplateDocPath.Name = "lb_TemplateDocPath";
+            this.lb_TemplateDocPath.Size = new System.Drawing.Size(344, 17);
+            this.lb_TemplateDocPath.TabIndex = 2;
+            this.lb_TemplateDocPath.Text = "Путь для шаблона Word документа по умолчанию:";
+            // 
+            // tb_TemplateDocPath
+            // 
+            this.tb_TemplateDocPath.Location = new System.Drawing.Point(11, 32);
+            this.tb_TemplateDocPath.Name = "tb_TemplateDocPath";
+            this.tb_TemplateDocPath.Size = new System.Drawing.Size(482, 20);
+            this.tb_TemplateDocPath.TabIndex = 3;
+            // 
+            // tb_NewDefFilePath
+            // 
+            this.tb_NewDefFilePath.Location = new System.Drawing.Point(11, 81);
+            this.tb_NewDefFilePath.Name = "tb_NewDefFilePath";
+            this.tb_NewDefFilePath.Size = new System.Drawing.Size(482, 20);
+            this.tb_NewDefFilePath.TabIndex = 5;
+            // 
+            // lb_NewDefFilePath
+            // 
+            this.lb_NewDefFilePath.AutoSize = true;
+            this.lb_NewDefFilePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_NewDefFilePath.Location = new System.Drawing.Point(8, 55);
+            this.lb_NewDefFilePath.Name = "lb_NewDefFilePath";
+            this.lb_NewDefFilePath.Size = new System.Drawing.Size(233, 17);
+            this.lb_NewDefFilePath.TabIndex = 4;
+            this.lb_NewDefFilePath.Text = "Путь для новых Word документов:";
+            // 
+            // tb_DemoTemplate
+            // 
+            this.tb_DemoTemplate.Location = new System.Drawing.Point(11, 132);
+            this.tb_DemoTemplate.Name = "tb_DemoTemplate";
+            this.tb_DemoTemplate.Size = new System.Drawing.Size(482, 20);
+            this.tb_DemoTemplate.TabIndex = 7;
+            this.tb_DemoTemplate.Visible = false;
+            // 
+            // lb_DemoTemplate
+            // 
+            this.lb_DemoTemplate.AutoSize = true;
+            this.lb_DemoTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_DemoTemplate.Location = new System.Drawing.Point(8, 106);
+            this.lb_DemoTemplate.Name = "lb_DemoTemplate";
+            this.lb_DemoTemplate.Size = new System.Drawing.Size(355, 17);
+            this.lb_DemoTemplate.TabIndex = 6;
+            this.lb_DemoTemplate.Text = "Путь для демонстрационного шаблона приложения:";
+            this.lb_DemoTemplate.Visible = false;
+            // 
+            // btn_NewDefFilePath
+            // 
+            this.btn_NewDefFilePath.Location = new System.Drawing.Point(499, 81);
+            this.btn_NewDefFilePath.Name = "btn_NewDefFilePath";
+            this.btn_NewDefFilePath.Size = new System.Drawing.Size(39, 20);
+            this.btn_NewDefFilePath.TabIndex = 8;
+            this.btn_NewDefFilePath.Text = "...";
+            this.btn_NewDefFilePath.UseVisualStyleBackColor = true;
+            this.btn_NewDefFilePath.Click += new System.EventHandler(this.btn_NewDefFilePath_Click);
+            // 
+            // btn_DemoTemplate
+            // 
+            this.btn_DemoTemplate.Location = new System.Drawing.Point(499, 132);
+            this.btn_DemoTemplate.Name = "btn_DemoTemplate";
+            this.btn_DemoTemplate.Size = new System.Drawing.Size(39, 20);
+            this.btn_DemoTemplate.TabIndex = 9;
+            this.btn_DemoTemplate.Text = "...";
+            this.btn_DemoTemplate.UseVisualStyleBackColor = true;
+            this.btn_DemoTemplate.Visible = false;
+            this.btn_DemoTemplate.Click += new System.EventHandler(this.btn_DemoTemplate_Click);
+            // 
+            // btn_SaveSettings
+            // 
+            this.btn_SaveSettings.Location = new System.Drawing.Point(754, 329);
+            this.btn_SaveSettings.Name = "btn_SaveSettings";
+            this.btn_SaveSettings.Size = new System.Drawing.Size(137, 33);
+            this.btn_SaveSettings.TabIndex = 10;
+            this.btn_SaveSettings.Tag = "";
+            this.btn_SaveSettings.Text = "Сохранить изменения";
+            this.btn_SaveSettings.UseVisualStyleBackColor = true;
+            this.btn_SaveSettings.Click += new System.EventHandler(this.btn_SaveSettings_Click);
             // 
             // previewHandlerHost
             // 
@@ -263,16 +480,6 @@
             this.previewHandlerHost.Name = "previewHandlerHost";
             this.previewHandlerHost.Size = new System.Drawing.Size(714, 364);
             this.previewHandlerHost.TabIndex = 0;
-            // 
-            // btn_CheckResult
-            // 
-            this.btn_CheckResult.Location = new System.Drawing.Point(9, 279);
-            this.btn_CheckResult.Name = "btn_CheckResult";
-            this.btn_CheckResult.Size = new System.Drawing.Size(148, 30);
-            this.btn_CheckResult.TabIndex = 12;
-            this.btn_CheckResult.Text = "Check result";
-            this.btn_CheckResult.UseVisualStyleBackColor = true;
-            this.btn_CheckResult.Click += new System.EventHandler(this.btn_CheckResult_Click);
             // 
             // MainForm
             // 
@@ -285,10 +492,16 @@
             this.Text = "COM Application";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tab_COM.ResumeLayout(false);
+            this.tbp_Main.ResumeLayout(false);
+            this.tbp_Main.PerformLayout();
             this.tbp_Word.ResumeLayout(false);
             this.pnl_Preview.ResumeLayout(false);
             this.pnl_Controls.ResumeLayout(false);
             this.pnl_Controls.PerformLayout();
+            this.tbp_Options.ResumeLayout(false);
+            this.tbp_Options.PerformLayout();
+            this.tbp_About.ResumeLayout(false);
+            this.tbp_About.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -317,6 +530,23 @@
         private PreviewHandlers.PreviewHandlerHost previewHandlerHost;
         private System.Windows.Forms.TabPage tbp_Main;
         private System.Windows.Forms.Button btn_CheckResult;
+        private System.Windows.Forms.Label lb_Excel;
+        private System.Windows.Forms.Label lb_Word;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lb_Welcome;
+        private System.Windows.Forms.Label lb_About;
+        private System.Windows.Forms.Label lb_COMApp;
+        private System.Windows.Forms.Label lb_TemplateDocPath;
+        private System.Windows.Forms.CheckBox chekb_AdvancedSettings;
+        private System.Windows.Forms.Button btn_TemplateDocPath;
+        private System.Windows.Forms.TextBox tb_DemoTemplate;
+        private System.Windows.Forms.Label lb_DemoTemplate;
+        private System.Windows.Forms.TextBox tb_NewDefFilePath;
+        private System.Windows.Forms.Label lb_NewDefFilePath;
+        private System.Windows.Forms.TextBox tb_TemplateDocPath;
+        private System.Windows.Forms.Button btn_SaveSettings;
+        private System.Windows.Forms.Button btn_DemoTemplate;
+        private System.Windows.Forms.Button btn_NewDefFilePath;
     }
 }
 
