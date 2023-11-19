@@ -1,4 +1,4 @@
-*.meta
+﻿*.meta
 .vs/
 Serialization_app/juice.txt
 juice.txt
@@ -9,4 +9,3 @@ Serialization_app/а.txt
 6/
 2/
 wpf-application-host/
-bin/
