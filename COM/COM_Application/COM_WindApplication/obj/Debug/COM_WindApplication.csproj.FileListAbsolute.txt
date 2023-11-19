@@ -8,3 +8,12 @@ F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolu
 F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\bin\Debug\COM Application.pdb
 F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM Application.exe
 F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM Application.pdb
+C:\Users\www\Desktop\COM_Application\COM_WindApplication\bin\Debug\COM Application.exe.config
+C:\Users\www\Desktop\COM_Application\COM_WindApplication\bin\Debug\COM Application.exe
+C:\Users\www\Desktop\COM_Application\COM_WindApplication\bin\Debug\COM Application.pdb
+C:\Users\www\Desktop\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.csprojAssemblyReference.cache
+C:\Users\www\Desktop\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.MainForm.resources
+C:\Users\www\Desktop\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.Properties.Resources.resources
+C:\Users\www\Desktop\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.csproj.GenerateResource.cache
+C:\Users\www\Desktop\COM_Application\COM_WindApplication\obj\Debug\COM Application.exe
+C:\Users\www\Desktop\COM_Application\COM_WindApplication\obj\Debug\COM Application.pdb
