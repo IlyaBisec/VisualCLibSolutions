@@ -12,7 +12,7 @@ namespace COM_WindApplication.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -72,6 +72,32 @@ namespace COM_WindApplication.Properties {
             }
             set {
                 this["advanceSettings"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool manualInput {
+            get {
+                return ((bool)(this["manualInput"]));
+            }
+            set {
+                this["manualInput"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("F:\\Games\\ILYAsFolder\\BarSU\\LABS\\4_course\\EugineShapovich\\VisualKa\\VisualCLibSolut" +
+            "ions\\COM\\COM_Application\\COM_WindApplication\\bin\\Debug\\doc\\DemonstrateTemplate.x" +
+            "lsx")]
+        public string demoExcelTemplate {
+            get {
+                return ((string)(this["demoExcelTemplate"]));
+            }
+            set {
+                this["demoExcelTemplate"] = value;
             }
         }
     }

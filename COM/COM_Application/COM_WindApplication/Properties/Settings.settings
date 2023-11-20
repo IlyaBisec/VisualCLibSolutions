@@ -14,5 +14,11 @@
     <Setting Name="advanceSettings" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="manualInput" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="demoExcelTemplate" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\bin\Debug\doc\DemonstrateTemplate.xlsx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

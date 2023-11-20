@@ -31,8 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tab_COM = new System.Windows.Forms.TabControl();
             this.tbp_Main = new System.Windows.Forms.TabPage();
+            this.lb_Excel = new System.Windows.Forms.Label();
+            this.lb_Word = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lb_Welcome = new System.Windows.Forms.Label();
             this.tbp_Word = new System.Windows.Forms.TabPage();
-            this.pnl_Preview = new System.Windows.Forms.Panel();
             this.pnl_Controls = new System.Windows.Forms.Panel();
             this.btn_CheckResult = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
@@ -48,33 +51,53 @@
             this.tb_RecipientName = new System.Windows.Forms.TextBox();
             this.lb_RecipientName = new System.Windows.Forms.Label();
             this.tbp_Excel = new System.Windows.Forms.TabPage();
+            this.pnl_ExcelControls = new System.Windows.Forms.Panel();
+            this.btn_RandomFill = new System.Windows.Forms.Button();
+            this.cmb_MonthName = new System.Windows.Forms.ComboBox();
+            this.cmb_NameRegion = new System.Windows.Forms.ComboBox();
+            this.btn_RandomTemperature = new System.Windows.Forms.Button();
+            this.btn_CheckExcelResult = new System.Windows.Forms.Button();
+            this.btn_ExitExelApp = new System.Windows.Forms.Button();
+            this.btn_CreateExcelDoc = new System.Windows.Forms.Button();
+            this.tb_MonthTemperature = new System.Windows.Forms.TextBox();
+            this.lb_MonthTemperature = new System.Windows.Forms.Label();
+            this.tb_MonthName = new System.Windows.Forms.TextBox();
+            this.lb_MonthName = new System.Windows.Forms.Label();
+            this.tb_NameRegion = new System.Windows.Forms.TextBox();
+            this.lb_NameRegion = new System.Windows.Forms.Label();
             this.tbp_Options = new System.Windows.Forms.TabPage();
-            this.tbp_About = new System.Windows.Forms.TabPage();
-            this.lb_Welcome = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lb_Word = new System.Windows.Forms.Label();
-            this.lb_Excel = new System.Windows.Forms.Label();
-            this.lb_About = new System.Windows.Forms.Label();
-            this.lb_COMApp = new System.Windows.Forms.Label();
-            this.btn_TemplateDocPath = new System.Windows.Forms.Button();
-            this.chekb_AdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.lb_TemplateDocPath = new System.Windows.Forms.Label();
-            this.tb_TemplateDocPath = new System.Windows.Forms.TextBox();
-            this.tb_NewDefFilePath = new System.Windows.Forms.TextBox();
-            this.lb_NewDefFilePath = new System.Windows.Forms.Label();
+            this.btn_DemoExcelTemplate = new System.Windows.Forms.Button();
+            this.tb_DemoExcelTemplate = new System.Windows.Forms.TextBox();
+            this.lb_DemoExcelTemplate = new System.Windows.Forms.Label();
+            this.chekb_TurnOffComboboxDictionary = new System.Windows.Forms.CheckBox();
+            this.btn_SaveSettings = new System.Windows.Forms.Button();
+            this.btn_DemoTemplate = new System.Windows.Forms.Button();
+            this.btn_NewDefFilePath = new System.Windows.Forms.Button();
             this.tb_DemoTemplate = new System.Windows.Forms.TextBox();
             this.lb_DemoTemplate = new System.Windows.Forms.Label();
-            this.btn_NewDefFilePath = new System.Windows.Forms.Button();
-            this.btn_DemoTemplate = new System.Windows.Forms.Button();
-            this.btn_SaveSettings = new System.Windows.Forms.Button();
+            this.tb_NewDefFilePath = new System.Windows.Forms.TextBox();
+            this.lb_NewDefFilePath = new System.Windows.Forms.Label();
+            this.tb_TemplateDocPath = new System.Windows.Forms.TextBox();
+            this.lb_TemplateDocPath = new System.Windows.Forms.Label();
+            this.chekb_AdvancedSettings = new System.Windows.Forms.CheckBox();
+            this.btn_TemplateDocPath = new System.Windows.Forms.Button();
+            this.tbp_About = new System.Windows.Forms.TabPage();
+            this.lb_About = new System.Windows.Forms.Label();
+            this.lb_COMApp = new System.Windows.Forms.Label();
+            this.pnl_PreviewExcel = new System.Windows.Forms.Panel();
+            this.pnl_Preview = new System.Windows.Forms.Panel();
             this.previewHandlerHost = new PreviewHandlers.PreviewHandlerHost();
+            this.previreHandleHostExcel = new PreviewHandlers.PreviewHandlerHost();
             this.tab_COM.SuspendLayout();
             this.tbp_Main.SuspendLayout();
             this.tbp_Word.SuspendLayout();
-            this.pnl_Preview.SuspendLayout();
             this.pnl_Controls.SuspendLayout();
+            this.tbp_Excel.SuspendLayout();
+            this.pnl_ExcelControls.SuspendLayout();
             this.tbp_Options.SuspendLayout();
             this.tbp_About.SuspendLayout();
+            this.pnl_PreviewExcel.SuspendLayout();
+            this.pnl_Preview.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_COM
@@ -104,6 +127,49 @@
             this.tbp_Main.Text = "Welcome";
             this.tbp_Main.UseVisualStyleBackColor = true;
             // 
+            // lb_Excel
+            // 
+            this.lb_Excel.AutoSize = true;
+            this.lb_Excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_Excel.Location = new System.Drawing.Point(8, 273);
+            this.lb_Excel.Name = "lb_Excel";
+            this.lb_Excel.Size = new System.Drawing.Size(740, 34);
+            this.lb_Excel.TabIndex = 3;
+            this.lb_Excel.Text = "Модуль Excel - составит для вас данные о погоде, не только зимой и летом, но и вы" +
+    "считает среднее значеие.\r\nДа еще и в табличном виде! Нужно в Excel? И это по сил" +
+    "ам! Как тебе такое Илон Маск?";
+            // 
+            // lb_Word
+            // 
+            this.lb_Word.AutoSize = true;
+            this.lb_Word.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lb_Word.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_Word.Location = new System.Drawing.Point(8, 165);
+            this.lb_Word.Name = "lb_Word";
+            this.lb_Word.Size = new System.Drawing.Size(855, 85);
+            this.lb_Word.TabIndex = 2;
+            this.lb_Word.Text = resources.GetString("lb_Word.Text");
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(8, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(878, 102);
+            this.label2.TabIndex = 1;
+            this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // lb_Welcome
+            // 
+            this.lb_Welcome.AutoSize = true;
+            this.lb_Welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_Welcome.Location = new System.Drawing.Point(332, 15);
+            this.lb_Welcome.Name = "lb_Welcome";
+            this.lb_Welcome.Size = new System.Drawing.Size(289, 24);
+            this.lb_Welcome.TabIndex = 0;
+            this.lb_Welcome.Text = "Welcome и Добро пожаловать!";
+            // 
             // tbp_Word
             // 
             this.tbp_Word.Controls.Add(this.pnl_Preview);
@@ -115,16 +181,6 @@
             this.tbp_Word.TabIndex = 0;
             this.tbp_Word.Text = "Word";
             this.tbp_Word.UseVisualStyleBackColor = true;
-            // 
-            // pnl_Preview
-            // 
-            this.pnl_Preview.Controls.Add(this.previewHandlerHost);
-            this.pnl_Preview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Preview.Location = new System.Drawing.Point(177, 3);
-            this.pnl_Preview.Name = "pnl_Preview";
-            this.pnl_Preview.Size = new System.Drawing.Size(714, 364);
-            this.pnl_Preview.TabIndex = 1;
-            this.pnl_Preview.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Preview_Paint);
             // 
             // pnl_Controls
             // 
@@ -264,6 +320,8 @@
             // 
             // tbp_Excel
             // 
+            this.tbp_Excel.Controls.Add(this.pnl_PreviewExcel);
+            this.tbp_Excel.Controls.Add(this.pnl_ExcelControls);
             this.tbp_Excel.Location = new System.Drawing.Point(4, 22);
             this.tbp_Excel.Name = "tbp_Excel";
             this.tbp_Excel.Padding = new System.Windows.Forms.Padding(3);
@@ -272,8 +330,148 @@
             this.tbp_Excel.Text = "Excel";
             this.tbp_Excel.UseVisualStyleBackColor = true;
             // 
+            // pnl_ExcelControls
+            // 
+            this.pnl_ExcelControls.Controls.Add(this.btn_RandomFill);
+            this.pnl_ExcelControls.Controls.Add(this.cmb_MonthName);
+            this.pnl_ExcelControls.Controls.Add(this.cmb_NameRegion);
+            this.pnl_ExcelControls.Controls.Add(this.btn_RandomTemperature);
+            this.pnl_ExcelControls.Controls.Add(this.btn_CheckExcelResult);
+            this.pnl_ExcelControls.Controls.Add(this.btn_ExitExelApp);
+            this.pnl_ExcelControls.Controls.Add(this.btn_CreateExcelDoc);
+            this.pnl_ExcelControls.Controls.Add(this.tb_MonthTemperature);
+            this.pnl_ExcelControls.Controls.Add(this.lb_MonthTemperature);
+            this.pnl_ExcelControls.Controls.Add(this.tb_MonthName);
+            this.pnl_ExcelControls.Controls.Add(this.lb_MonthName);
+            this.pnl_ExcelControls.Controls.Add(this.tb_NameRegion);
+            this.pnl_ExcelControls.Controls.Add(this.lb_NameRegion);
+            this.pnl_ExcelControls.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnl_ExcelControls.Location = new System.Drawing.Point(3, 3);
+            this.pnl_ExcelControls.Name = "pnl_ExcelControls";
+            this.pnl_ExcelControls.Size = new System.Drawing.Size(174, 364);
+            this.pnl_ExcelControls.TabIndex = 0;
+            // 
+            // btn_RandomFill
+            // 
+            this.btn_RandomFill.Location = new System.Drawing.Point(5, 183);
+            this.btn_RandomFill.Name = "btn_RandomFill";
+            this.btn_RandomFill.Size = new System.Drawing.Size(148, 30);
+            this.btn_RandomFill.TabIndex = 25;
+            this.btn_RandomFill.Text = "Случайное заполнение";
+            this.btn_RandomFill.UseVisualStyleBackColor = true;
+            // 
+            // cmb_MonthName
+            // 
+            this.cmb_MonthName.FormattingEnabled = true;
+            this.cmb_MonthName.Location = new System.Drawing.Point(5, 66);
+            this.cmb_MonthName.Name = "cmb_MonthName";
+            this.cmb_MonthName.Size = new System.Drawing.Size(148, 21);
+            this.cmb_MonthName.TabIndex = 24;
+            this.cmb_MonthName.Visible = false;
+            // 
+            // cmb_NameRegion
+            // 
+            this.cmb_NameRegion.FormattingEnabled = true;
+            this.cmb_NameRegion.Location = new System.Drawing.Point(5, 21);
+            this.cmb_NameRegion.Name = "cmb_NameRegion";
+            this.cmb_NameRegion.Size = new System.Drawing.Size(150, 21);
+            this.cmb_NameRegion.TabIndex = 23;
+            this.cmb_NameRegion.Visible = false;
+            // 
+            // btn_RandomTemperature
+            // 
+            this.btn_RandomTemperature.Location = new System.Drawing.Point(5, 142);
+            this.btn_RandomTemperature.Name = "btn_RandomTemperature";
+            this.btn_RandomTemperature.Size = new System.Drawing.Size(148, 30);
+            this.btn_RandomTemperature.TabIndex = 22;
+            this.btn_RandomTemperature.Text = "Случайная температура";
+            this.btn_RandomTemperature.UseVisualStyleBackColor = true;
+            // 
+            // btn_CheckExcelResult
+            // 
+            this.btn_CheckExcelResult.Location = new System.Drawing.Point(5, 275);
+            this.btn_CheckExcelResult.Name = "btn_CheckExcelResult";
+            this.btn_CheckExcelResult.Size = new System.Drawing.Size(148, 30);
+            this.btn_CheckExcelResult.TabIndex = 21;
+            this.btn_CheckExcelResult.Text = "Проверить результат";
+            this.btn_CheckExcelResult.UseVisualStyleBackColor = true;
+            // 
+            // btn_ExitExelApp
+            // 
+            this.btn_ExitExelApp.Location = new System.Drawing.Point(5, 321);
+            this.btn_ExitExelApp.Name = "btn_ExitExelApp";
+            this.btn_ExitExelApp.Size = new System.Drawing.Size(148, 30);
+            this.btn_ExitExelApp.TabIndex = 20;
+            this.btn_ExitExelApp.Text = "Выйти";
+            this.btn_ExitExelApp.UseVisualStyleBackColor = true;
+            this.btn_ExitExelApp.Click += new System.EventHandler(this.btn_ExitExelApp_Click);
+            // 
+            // btn_CreateExcelDoc
+            // 
+            this.btn_CreateExcelDoc.Location = new System.Drawing.Point(5, 228);
+            this.btn_CreateExcelDoc.Name = "btn_CreateExcelDoc";
+            this.btn_CreateExcelDoc.Size = new System.Drawing.Size(148, 30);
+            this.btn_CreateExcelDoc.TabIndex = 19;
+            this.btn_CreateExcelDoc.Text = "Создать документ";
+            this.btn_CreateExcelDoc.UseVisualStyleBackColor = true;
+            // 
+            // tb_MonthTemperature
+            // 
+            this.tb_MonthTemperature.Location = new System.Drawing.Point(5, 116);
+            this.tb_MonthTemperature.Name = "tb_MonthTemperature";
+            this.tb_MonthTemperature.Size = new System.Drawing.Size(148, 20);
+            this.tb_MonthTemperature.TabIndex = 18;
+            // 
+            // lb_MonthTemperature
+            // 
+            this.lb_MonthTemperature.AutoSize = true;
+            this.lb_MonthTemperature.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_MonthTemperature.Location = new System.Drawing.Point(2, 98);
+            this.lb_MonthTemperature.Name = "lb_MonthTemperature";
+            this.lb_MonthTemperature.Size = new System.Drawing.Size(133, 15);
+            this.lb_MonthTemperature.TabIndex = 17;
+            this.lb_MonthTemperature.Text = "Температура месяца:";
+            // 
+            // tb_MonthName
+            // 
+            this.tb_MonthName.Location = new System.Drawing.Point(5, 67);
+            this.tb_MonthName.Name = "tb_MonthName";
+            this.tb_MonthName.Size = new System.Drawing.Size(148, 20);
+            this.tb_MonthName.TabIndex = 16;
+            // 
+            // lb_MonthName
+            // 
+            this.lb_MonthName.AutoSize = true;
+            this.lb_MonthName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_MonthName.Location = new System.Drawing.Point(2, 49);
+            this.lb_MonthName.Name = "lb_MonthName";
+            this.lb_MonthName.Size = new System.Drawing.Size(113, 15);
+            this.lb_MonthName.TabIndex = 15;
+            this.lb_MonthName.Text = "Название месяца:";
+            // 
+            // tb_NameRegion
+            // 
+            this.tb_NameRegion.Location = new System.Drawing.Point(5, 21);
+            this.tb_NameRegion.Name = "tb_NameRegion";
+            this.tb_NameRegion.Size = new System.Drawing.Size(148, 20);
+            this.tb_NameRegion.TabIndex = 14;
+            // 
+            // lb_NameRegion
+            // 
+            this.lb_NameRegion.AutoSize = true;
+            this.lb_NameRegion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_NameRegion.Location = new System.Drawing.Point(2, 3);
+            this.lb_NameRegion.Name = "lb_NameRegion";
+            this.lb_NameRegion.Size = new System.Drawing.Size(117, 15);
+            this.lb_NameRegion.TabIndex = 13;
+            this.lb_NameRegion.Text = "Название региона:";
+            // 
             // tbp_Options
             // 
+            this.tbp_Options.Controls.Add(this.btn_DemoExcelTemplate);
+            this.tbp_Options.Controls.Add(this.tb_DemoExcelTemplate);
+            this.tbp_Options.Controls.Add(this.lb_DemoExcelTemplate);
+            this.tbp_Options.Controls.Add(this.chekb_TurnOffComboboxDictionary);
             this.tbp_Options.Controls.Add(this.btn_SaveSettings);
             this.tbp_Options.Controls.Add(this.btn_DemoTemplate);
             this.tbp_Options.Controls.Add(this.btn_NewDefFilePath);
@@ -292,6 +490,155 @@
             this.tbp_Options.Text = "Настройки";
             this.tbp_Options.UseVisualStyleBackColor = true;
             // 
+            // btn_DemoExcelTemplate
+            // 
+            this.btn_DemoExcelTemplate.Location = new System.Drawing.Point(499, 187);
+            this.btn_DemoExcelTemplate.Name = "btn_DemoExcelTemplate";
+            this.btn_DemoExcelTemplate.Size = new System.Drawing.Size(39, 20);
+            this.btn_DemoExcelTemplate.TabIndex = 14;
+            this.btn_DemoExcelTemplate.Text = "...";
+            this.btn_DemoExcelTemplate.UseVisualStyleBackColor = true;
+            this.btn_DemoExcelTemplate.Visible = false;
+            this.btn_DemoExcelTemplate.Click += new System.EventHandler(this.btn_DemoExcelTemplate_Click);
+            // 
+            // tb_DemoExcelTemplate
+            // 
+            this.tb_DemoExcelTemplate.Location = new System.Drawing.Point(11, 187);
+            this.tb_DemoExcelTemplate.Name = "tb_DemoExcelTemplate";
+            this.tb_DemoExcelTemplate.Size = new System.Drawing.Size(482, 20);
+            this.tb_DemoExcelTemplate.TabIndex = 13;
+            this.tb_DemoExcelTemplate.Visible = false;
+            // 
+            // lb_DemoExcelTemplate
+            // 
+            this.lb_DemoExcelTemplate.AutoSize = true;
+            this.lb_DemoExcelTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_DemoExcelTemplate.Location = new System.Drawing.Point(8, 161);
+            this.lb_DemoExcelTemplate.Name = "lb_DemoExcelTemplate";
+            this.lb_DemoExcelTemplate.Size = new System.Drawing.Size(392, 17);
+            this.lb_DemoExcelTemplate.TabIndex = 12;
+            this.lb_DemoExcelTemplate.Text = "Путь для демонстрационного Excel шаблона приложения:";
+            this.lb_DemoExcelTemplate.Visible = false;
+            // 
+            // chekb_TurnOffComboboxDictionary
+            // 
+            this.chekb_TurnOffComboboxDictionary.AutoSize = true;
+            this.chekb_TurnOffComboboxDictionary.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chekb_TurnOffComboboxDictionary.Location = new System.Drawing.Point(633, 80);
+            this.chekb_TurnOffComboboxDictionary.Name = "chekb_TurnOffComboboxDictionary";
+            this.chekb_TurnOffComboboxDictionary.Size = new System.Drawing.Size(166, 21);
+            this.chekb_TurnOffComboboxDictionary.TabIndex = 11;
+            this.chekb_TurnOffComboboxDictionary.Text = "Ручной ввод г. и мес.";
+            this.chekb_TurnOffComboboxDictionary.UseVisualStyleBackColor = true;
+            this.chekb_TurnOffComboboxDictionary.CheckedChanged += new System.EventHandler(this.chekb_TurnOffComboboxDictionary_CheckedChanged);
+            // 
+            // btn_SaveSettings
+            // 
+            this.btn_SaveSettings.Location = new System.Drawing.Point(754, 329);
+            this.btn_SaveSettings.Name = "btn_SaveSettings";
+            this.btn_SaveSettings.Size = new System.Drawing.Size(137, 33);
+            this.btn_SaveSettings.TabIndex = 10;
+            this.btn_SaveSettings.Tag = "";
+            this.btn_SaveSettings.Text = "Сохранить изменения";
+            this.btn_SaveSettings.UseVisualStyleBackColor = true;
+            this.btn_SaveSettings.Click += new System.EventHandler(this.btn_SaveSettings_Click);
+            // 
+            // btn_DemoTemplate
+            // 
+            this.btn_DemoTemplate.Location = new System.Drawing.Point(499, 132);
+            this.btn_DemoTemplate.Name = "btn_DemoTemplate";
+            this.btn_DemoTemplate.Size = new System.Drawing.Size(39, 20);
+            this.btn_DemoTemplate.TabIndex = 9;
+            this.btn_DemoTemplate.Text = "...";
+            this.btn_DemoTemplate.UseVisualStyleBackColor = true;
+            this.btn_DemoTemplate.Visible = false;
+            this.btn_DemoTemplate.Click += new System.EventHandler(this.btn_DemoTemplate_Click);
+            // 
+            // btn_NewDefFilePath
+            // 
+            this.btn_NewDefFilePath.Location = new System.Drawing.Point(499, 81);
+            this.btn_NewDefFilePath.Name = "btn_NewDefFilePath";
+            this.btn_NewDefFilePath.Size = new System.Drawing.Size(39, 20);
+            this.btn_NewDefFilePath.TabIndex = 8;
+            this.btn_NewDefFilePath.Text = "...";
+            this.btn_NewDefFilePath.UseVisualStyleBackColor = true;
+            this.btn_NewDefFilePath.Click += new System.EventHandler(this.btn_NewDefFilePath_Click);
+            // 
+            // tb_DemoTemplate
+            // 
+            this.tb_DemoTemplate.Location = new System.Drawing.Point(11, 132);
+            this.tb_DemoTemplate.Name = "tb_DemoTemplate";
+            this.tb_DemoTemplate.Size = new System.Drawing.Size(482, 20);
+            this.tb_DemoTemplate.TabIndex = 7;
+            this.tb_DemoTemplate.Visible = false;
+            // 
+            // lb_DemoTemplate
+            // 
+            this.lb_DemoTemplate.AutoSize = true;
+            this.lb_DemoTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_DemoTemplate.Location = new System.Drawing.Point(8, 106);
+            this.lb_DemoTemplate.Name = "lb_DemoTemplate";
+            this.lb_DemoTemplate.Size = new System.Drawing.Size(393, 17);
+            this.lb_DemoTemplate.TabIndex = 6;
+            this.lb_DemoTemplate.Text = "Путь для демонстрационного Word шаблона приложения:";
+            this.lb_DemoTemplate.Visible = false;
+            // 
+            // tb_NewDefFilePath
+            // 
+            this.tb_NewDefFilePath.Location = new System.Drawing.Point(11, 81);
+            this.tb_NewDefFilePath.Name = "tb_NewDefFilePath";
+            this.tb_NewDefFilePath.Size = new System.Drawing.Size(482, 20);
+            this.tb_NewDefFilePath.TabIndex = 5;
+            // 
+            // lb_NewDefFilePath
+            // 
+            this.lb_NewDefFilePath.AutoSize = true;
+            this.lb_NewDefFilePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_NewDefFilePath.Location = new System.Drawing.Point(8, 55);
+            this.lb_NewDefFilePath.Name = "lb_NewDefFilePath";
+            this.lb_NewDefFilePath.Size = new System.Drawing.Size(195, 17);
+            this.lb_NewDefFilePath.TabIndex = 4;
+            this.lb_NewDefFilePath.Text = "Путь для новых документов:";
+            // 
+            // tb_TemplateDocPath
+            // 
+            this.tb_TemplateDocPath.Location = new System.Drawing.Point(11, 32);
+            this.tb_TemplateDocPath.Name = "tb_TemplateDocPath";
+            this.tb_TemplateDocPath.Size = new System.Drawing.Size(482, 20);
+            this.tb_TemplateDocPath.TabIndex = 3;
+            // 
+            // lb_TemplateDocPath
+            // 
+            this.lb_TemplateDocPath.AutoSize = true;
+            this.lb_TemplateDocPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_TemplateDocPath.Location = new System.Drawing.Point(8, 10);
+            this.lb_TemplateDocPath.Name = "lb_TemplateDocPath";
+            this.lb_TemplateDocPath.Size = new System.Drawing.Size(344, 17);
+            this.lb_TemplateDocPath.TabIndex = 2;
+            this.lb_TemplateDocPath.Text = "Путь для шаблона Word документа по умолчанию:";
+            // 
+            // chekb_AdvancedSettings
+            // 
+            this.chekb_AdvancedSettings.AutoSize = true;
+            this.chekb_AdvancedSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chekb_AdvancedSettings.Location = new System.Drawing.Point(633, 31);
+            this.chekb_AdvancedSettings.Name = "chekb_AdvancedSettings";
+            this.chekb_AdvancedSettings.Size = new System.Drawing.Size(189, 21);
+            this.chekb_AdvancedSettings.TabIndex = 1;
+            this.chekb_AdvancedSettings.Text = "Продвинутые настройки";
+            this.chekb_AdvancedSettings.UseVisualStyleBackColor = true;
+            this.chekb_AdvancedSettings.CheckedChanged += new System.EventHandler(this.chekb_AdvancedSettings_CheckedChanged);
+            // 
+            // btn_TemplateDocPath
+            // 
+            this.btn_TemplateDocPath.Location = new System.Drawing.Point(499, 32);
+            this.btn_TemplateDocPath.Name = "btn_TemplateDocPath";
+            this.btn_TemplateDocPath.Size = new System.Drawing.Size(39, 20);
+            this.btn_TemplateDocPath.TabIndex = 0;
+            this.btn_TemplateDocPath.Text = "...";
+            this.btn_TemplateDocPath.UseVisualStyleBackColor = true;
+            this.btn_TemplateDocPath.Click += new System.EventHandler(this.btn_TemplateDocPath_Click);
+            // 
             // tbp_About
             // 
             this.tbp_About.Controls.Add(this.lb_About);
@@ -302,49 +649,6 @@
             this.tbp_About.TabIndex = 2;
             this.tbp_About.Text = "Контакты";
             this.tbp_About.UseVisualStyleBackColor = true;
-            // 
-            // lb_Welcome
-            // 
-            this.lb_Welcome.AutoSize = true;
-            this.lb_Welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_Welcome.Location = new System.Drawing.Point(332, 15);
-            this.lb_Welcome.Name = "lb_Welcome";
-            this.lb_Welcome.Size = new System.Drawing.Size(289, 24);
-            this.lb_Welcome.TabIndex = 0;
-            this.lb_Welcome.Text = "Welcome и Добро пожаловать!";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(8, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(878, 102);
-            this.label2.TabIndex = 1;
-            this.label2.Text = resources.GetString("label2.Text");
-            // 
-            // lb_Word
-            // 
-            this.lb_Word.AutoSize = true;
-            this.lb_Word.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lb_Word.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_Word.Location = new System.Drawing.Point(8, 165);
-            this.lb_Word.Name = "lb_Word";
-            this.lb_Word.Size = new System.Drawing.Size(855, 85);
-            this.lb_Word.TabIndex = 2;
-            this.lb_Word.Text = resources.GetString("lb_Word.Text");
-            // 
-            // lb_Excel
-            // 
-            this.lb_Excel.AutoSize = true;
-            this.lb_Excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_Excel.Location = new System.Drawing.Point(8, 273);
-            this.lb_Excel.Name = "lb_Excel";
-            this.lb_Excel.Size = new System.Drawing.Size(740, 34);
-            this.lb_Excel.TabIndex = 3;
-            this.lb_Excel.Text = "Модуль Excel - составит для вас данные о погоде, не только зимой и летом, но и вы" +
-    "считает среднее значеие.\r\nДа еще и в табличном виде! Нужно в Excel? И это по сил" +
-    "ам! Как тебе такое Илон Маск?";
             // 
             // lb_About
             // 
@@ -366,112 +670,25 @@
             this.lb_COMApp.TabIndex = 2;
             this.lb_COMApp.Text = "COM Application";
             // 
-            // btn_TemplateDocPath
+            // pnl_PreviewExcel
             // 
-            this.btn_TemplateDocPath.Location = new System.Drawing.Point(499, 32);
-            this.btn_TemplateDocPath.Name = "btn_TemplateDocPath";
-            this.btn_TemplateDocPath.Size = new System.Drawing.Size(39, 20);
-            this.btn_TemplateDocPath.TabIndex = 0;
-            this.btn_TemplateDocPath.Text = "...";
-            this.btn_TemplateDocPath.UseVisualStyleBackColor = true;
-            this.btn_TemplateDocPath.Click += new System.EventHandler(this.btn_TemplateDocPath_Click);
+            this.pnl_PreviewExcel.Controls.Add(this.previreHandleHostExcel);
+            this.pnl_PreviewExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_PreviewExcel.Location = new System.Drawing.Point(177, 3);
+            this.pnl_PreviewExcel.Name = "pnl_PreviewExcel";
+            this.pnl_PreviewExcel.Size = new System.Drawing.Size(714, 364);
+            this.pnl_PreviewExcel.TabIndex = 2;
+            this.pnl_PreviewExcel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_PreviewExcel_Paint);
             // 
-            // chekb_AdvancedSettings
+            // pnl_Preview
             // 
-            this.chekb_AdvancedSettings.AutoSize = true;
-            this.chekb_AdvancedSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chekb_AdvancedSettings.Location = new System.Drawing.Point(633, 31);
-            this.chekb_AdvancedSettings.Name = "chekb_AdvancedSettings";
-            this.chekb_AdvancedSettings.Size = new System.Drawing.Size(189, 21);
-            this.chekb_AdvancedSettings.TabIndex = 1;
-            this.chekb_AdvancedSettings.Text = "Продвинутые настройки";
-            this.chekb_AdvancedSettings.UseVisualStyleBackColor = true;
-            this.chekb_AdvancedSettings.CheckedChanged += new System.EventHandler(this.chekb_AdvancedSettings_CheckedChanged);
-            // 
-            // lb_TemplateDocPath
-            // 
-            this.lb_TemplateDocPath.AutoSize = true;
-            this.lb_TemplateDocPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_TemplateDocPath.Location = new System.Drawing.Point(8, 10);
-            this.lb_TemplateDocPath.Name = "lb_TemplateDocPath";
-            this.lb_TemplateDocPath.Size = new System.Drawing.Size(344, 17);
-            this.lb_TemplateDocPath.TabIndex = 2;
-            this.lb_TemplateDocPath.Text = "Путь для шаблона Word документа по умолчанию:";
-            // 
-            // tb_TemplateDocPath
-            // 
-            this.tb_TemplateDocPath.Location = new System.Drawing.Point(11, 32);
-            this.tb_TemplateDocPath.Name = "tb_TemplateDocPath";
-            this.tb_TemplateDocPath.Size = new System.Drawing.Size(482, 20);
-            this.tb_TemplateDocPath.TabIndex = 3;
-            // 
-            // tb_NewDefFilePath
-            // 
-            this.tb_NewDefFilePath.Location = new System.Drawing.Point(11, 81);
-            this.tb_NewDefFilePath.Name = "tb_NewDefFilePath";
-            this.tb_NewDefFilePath.Size = new System.Drawing.Size(482, 20);
-            this.tb_NewDefFilePath.TabIndex = 5;
-            // 
-            // lb_NewDefFilePath
-            // 
-            this.lb_NewDefFilePath.AutoSize = true;
-            this.lb_NewDefFilePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_NewDefFilePath.Location = new System.Drawing.Point(8, 55);
-            this.lb_NewDefFilePath.Name = "lb_NewDefFilePath";
-            this.lb_NewDefFilePath.Size = new System.Drawing.Size(233, 17);
-            this.lb_NewDefFilePath.TabIndex = 4;
-            this.lb_NewDefFilePath.Text = "Путь для новых Word документов:";
-            // 
-            // tb_DemoTemplate
-            // 
-            this.tb_DemoTemplate.Location = new System.Drawing.Point(11, 132);
-            this.tb_DemoTemplate.Name = "tb_DemoTemplate";
-            this.tb_DemoTemplate.Size = new System.Drawing.Size(482, 20);
-            this.tb_DemoTemplate.TabIndex = 7;
-            this.tb_DemoTemplate.Visible = false;
-            // 
-            // lb_DemoTemplate
-            // 
-            this.lb_DemoTemplate.AutoSize = true;
-            this.lb_DemoTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_DemoTemplate.Location = new System.Drawing.Point(8, 106);
-            this.lb_DemoTemplate.Name = "lb_DemoTemplate";
-            this.lb_DemoTemplate.Size = new System.Drawing.Size(355, 17);
-            this.lb_DemoTemplate.TabIndex = 6;
-            this.lb_DemoTemplate.Text = "Путь для демонстрационного шаблона приложения:";
-            this.lb_DemoTemplate.Visible = false;
-            // 
-            // btn_NewDefFilePath
-            // 
-            this.btn_NewDefFilePath.Location = new System.Drawing.Point(499, 81);
-            this.btn_NewDefFilePath.Name = "btn_NewDefFilePath";
-            this.btn_NewDefFilePath.Size = new System.Drawing.Size(39, 20);
-            this.btn_NewDefFilePath.TabIndex = 8;
-            this.btn_NewDefFilePath.Text = "...";
-            this.btn_NewDefFilePath.UseVisualStyleBackColor = true;
-            this.btn_NewDefFilePath.Click += new System.EventHandler(this.btn_NewDefFilePath_Click);
-            // 
-            // btn_DemoTemplate
-            // 
-            this.btn_DemoTemplate.Location = new System.Drawing.Point(499, 132);
-            this.btn_DemoTemplate.Name = "btn_DemoTemplate";
-            this.btn_DemoTemplate.Size = new System.Drawing.Size(39, 20);
-            this.btn_DemoTemplate.TabIndex = 9;
-            this.btn_DemoTemplate.Text = "...";
-            this.btn_DemoTemplate.UseVisualStyleBackColor = true;
-            this.btn_DemoTemplate.Visible = false;
-            this.btn_DemoTemplate.Click += new System.EventHandler(this.btn_DemoTemplate_Click);
-            // 
-            // btn_SaveSettings
-            // 
-            this.btn_SaveSettings.Location = new System.Drawing.Point(754, 329);
-            this.btn_SaveSettings.Name = "btn_SaveSettings";
-            this.btn_SaveSettings.Size = new System.Drawing.Size(137, 33);
-            this.btn_SaveSettings.TabIndex = 10;
-            this.btn_SaveSettings.Tag = "";
-            this.btn_SaveSettings.Text = "Сохранить изменения";
-            this.btn_SaveSettings.UseVisualStyleBackColor = true;
-            this.btn_SaveSettings.Click += new System.EventHandler(this.btn_SaveSettings_Click);
+            this.pnl_Preview.Controls.Add(this.previewHandlerHost);
+            this.pnl_Preview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Preview.Location = new System.Drawing.Point(177, 3);
+            this.pnl_Preview.Name = "pnl_Preview";
+            this.pnl_Preview.Size = new System.Drawing.Size(714, 364);
+            this.pnl_Preview.TabIndex = 1;
+            this.pnl_Preview.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Preview_Paint);
             // 
             // previewHandlerHost
             // 
@@ -480,6 +697,14 @@
             this.previewHandlerHost.Name = "previewHandlerHost";
             this.previewHandlerHost.Size = new System.Drawing.Size(714, 364);
             this.previewHandlerHost.TabIndex = 0;
+            // 
+            // previreHandleHostExcel
+            // 
+            this.previreHandleHostExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.previreHandleHostExcel.Location = new System.Drawing.Point(0, 0);
+            this.previreHandleHostExcel.Name = "previreHandleHostExcel";
+            this.previreHandleHostExcel.Size = new System.Drawing.Size(714, 364);
+            this.previreHandleHostExcel.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -495,13 +720,17 @@
             this.tbp_Main.ResumeLayout(false);
             this.tbp_Main.PerformLayout();
             this.tbp_Word.ResumeLayout(false);
-            this.pnl_Preview.ResumeLayout(false);
             this.pnl_Controls.ResumeLayout(false);
             this.pnl_Controls.PerformLayout();
+            this.tbp_Excel.ResumeLayout(false);
+            this.pnl_ExcelControls.ResumeLayout(false);
+            this.pnl_ExcelControls.PerformLayout();
             this.tbp_Options.ResumeLayout(false);
             this.tbp_Options.PerformLayout();
             this.tbp_About.ResumeLayout(false);
             this.tbp_About.PerformLayout();
+            this.pnl_PreviewExcel.ResumeLayout(false);
+            this.pnl_Preview.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -526,7 +755,6 @@
         private System.Windows.Forms.Button btn_CreateDoc;
         private System.Windows.Forms.TabPage tbp_About;
         private System.Windows.Forms.TabPage tbp_Options;
-        private System.Windows.Forms.Panel pnl_Preview;
         private PreviewHandlers.PreviewHandlerHost previewHandlerHost;
         private System.Windows.Forms.TabPage tbp_Main;
         private System.Windows.Forms.Button btn_CheckResult;
@@ -547,6 +775,27 @@
         private System.Windows.Forms.Button btn_SaveSettings;
         private System.Windows.Forms.Button btn_DemoTemplate;
         private System.Windows.Forms.Button btn_NewDefFilePath;
+        private System.Windows.Forms.CheckBox chekb_TurnOffComboboxDictionary;
+        private System.Windows.Forms.Panel pnl_ExcelControls;
+        private System.Windows.Forms.Button btn_RandomTemperature;
+        private System.Windows.Forms.Button btn_CheckExcelResult;
+        private System.Windows.Forms.Button btn_ExitExelApp;
+        private System.Windows.Forms.Button btn_CreateExcelDoc;
+        private System.Windows.Forms.TextBox tb_MonthTemperature;
+        private System.Windows.Forms.Label lb_MonthTemperature;
+        private System.Windows.Forms.TextBox tb_MonthName;
+        private System.Windows.Forms.Label lb_MonthName;
+        private System.Windows.Forms.TextBox tb_NameRegion;
+        private System.Windows.Forms.Label lb_NameRegion;
+        private System.Windows.Forms.ComboBox cmb_MonthName;
+        private System.Windows.Forms.ComboBox cmb_NameRegion;
+        private System.Windows.Forms.Button btn_RandomFill;
+        private System.Windows.Forms.Button btn_DemoExcelTemplate;
+        private System.Windows.Forms.TextBox tb_DemoExcelTemplate;
+        private System.Windows.Forms.Label lb_DemoExcelTemplate;
+        private PreviewHandlers.PreviewHandlerHost previreHandleHostExcel;
+        private System.Windows.Forms.Panel pnl_PreviewExcel;
+        private System.Windows.Forms.Panel pnl_Preview;
     }
 }
 
