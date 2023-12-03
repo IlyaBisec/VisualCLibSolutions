@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lb_Welcome = new System.Windows.Forms.Label();
             this.tbp_Word = new System.Windows.Forms.TabPage();
+            this.pnl_Preview = new System.Windows.Forms.Panel();
             this.pnl_Controls = new System.Windows.Forms.Panel();
             this.btn_CheckResult = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
@@ -51,11 +52,12 @@
             this.tb_RecipientName = new System.Windows.Forms.TextBox();
             this.lb_RecipientName = new System.Windows.Forms.Label();
             this.tbp_Excel = new System.Windows.Forms.TabPage();
+            this.pnl_PreviewExcel = new System.Windows.Forms.Panel();
             this.pnl_ExcelControls = new System.Windows.Forms.Panel();
             this.btn_RandomFill = new System.Windows.Forms.Button();
             this.cmb_MonthName = new System.Windows.Forms.ComboBox();
             this.cmb_NameRegion = new System.Windows.Forms.ComboBox();
-            this.btn_RandomTemperature = new System.Windows.Forms.Button();
+            this.btn_AddNote = new System.Windows.Forms.Button();
             this.btn_CheckExcelResult = new System.Windows.Forms.Button();
             this.btn_ExitExelApp = new System.Windows.Forms.Button();
             this.btn_CreateExcelDoc = new System.Windows.Forms.Button();
@@ -84,20 +86,24 @@
             this.tbp_About = new System.Windows.Forms.TabPage();
             this.lb_About = new System.Windows.Forms.Label();
             this.lb_COMApp = new System.Windows.Forms.Label();
-            this.pnl_PreviewExcel = new System.Windows.Forms.Panel();
-            this.pnl_Preview = new System.Windows.Forms.Panel();
+            this.btn_PathToTxtCities = new System.Windows.Forms.Button();
+            this.tb_PathToTxtCities = new System.Windows.Forms.TextBox();
+            this.lb_PathToTxtCities = new System.Windows.Forms.Label();
+            this.cmb_NameCountry = new System.Windows.Forms.ComboBox();
+            this.lb_NameCountry = new System.Windows.Forms.Label();
+            this.tb_NameCountry = new System.Windows.Forms.TextBox();
             this.previewHandlerHost = new PreviewHandlers.PreviewHandlerHost();
             this.previreHandleHostExcel = new PreviewHandlers.PreviewHandlerHost();
             this.tab_COM.SuspendLayout();
             this.tbp_Main.SuspendLayout();
             this.tbp_Word.SuspendLayout();
+            this.pnl_Preview.SuspendLayout();
             this.pnl_Controls.SuspendLayout();
             this.tbp_Excel.SuspendLayout();
+            this.pnl_PreviewExcel.SuspendLayout();
             this.pnl_ExcelControls.SuspendLayout();
             this.tbp_Options.SuspendLayout();
             this.tbp_About.SuspendLayout();
-            this.pnl_PreviewExcel.SuspendLayout();
-            this.pnl_Preview.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_COM
@@ -111,7 +117,7 @@
             this.tab_COM.Location = new System.Drawing.Point(0, 0);
             this.tab_COM.Name = "tab_COM";
             this.tab_COM.SelectedIndex = 0;
-            this.tab_COM.Size = new System.Drawing.Size(902, 396);
+            this.tab_COM.Size = new System.Drawing.Size(902, 474);
             this.tab_COM.TabIndex = 0;
             // 
             // tbp_Main
@@ -122,7 +128,7 @@
             this.tbp_Main.Controls.Add(this.lb_Welcome);
             this.tbp_Main.Location = new System.Drawing.Point(4, 22);
             this.tbp_Main.Name = "tbp_Main";
-            this.tbp_Main.Size = new System.Drawing.Size(894, 370);
+            this.tbp_Main.Size = new System.Drawing.Size(894, 448);
             this.tbp_Main.TabIndex = 4;
             this.tbp_Main.Text = "Welcome";
             this.tbp_Main.UseVisualStyleBackColor = true;
@@ -177,10 +183,20 @@
             this.tbp_Word.Location = new System.Drawing.Point(4, 22);
             this.tbp_Word.Name = "tbp_Word";
             this.tbp_Word.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_Word.Size = new System.Drawing.Size(894, 370);
+            this.tbp_Word.Size = new System.Drawing.Size(894, 448);
             this.tbp_Word.TabIndex = 0;
             this.tbp_Word.Text = "Word";
             this.tbp_Word.UseVisualStyleBackColor = true;
+            // 
+            // pnl_Preview
+            // 
+            this.pnl_Preview.Controls.Add(this.previewHandlerHost);
+            this.pnl_Preview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Preview.Location = new System.Drawing.Point(177, 3);
+            this.pnl_Preview.Name = "pnl_Preview";
+            this.pnl_Preview.Size = new System.Drawing.Size(714, 442);
+            this.pnl_Preview.TabIndex = 1;
+            this.pnl_Preview.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Preview_Paint);
             // 
             // pnl_Controls
             // 
@@ -200,7 +216,7 @@
             this.pnl_Controls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_Controls.Location = new System.Drawing.Point(3, 3);
             this.pnl_Controls.Name = "pnl_Controls";
-            this.pnl_Controls.Size = new System.Drawing.Size(174, 364);
+            this.pnl_Controls.Size = new System.Drawing.Size(174, 442);
             this.pnl_Controls.TabIndex = 0;
             // 
             // btn_CheckResult
@@ -325,17 +341,28 @@
             this.tbp_Excel.Location = new System.Drawing.Point(4, 22);
             this.tbp_Excel.Name = "tbp_Excel";
             this.tbp_Excel.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_Excel.Size = new System.Drawing.Size(894, 370);
+            this.tbp_Excel.Size = new System.Drawing.Size(894, 448);
             this.tbp_Excel.TabIndex = 1;
             this.tbp_Excel.Text = "Excel";
             this.tbp_Excel.UseVisualStyleBackColor = true;
             // 
+            // pnl_PreviewExcel
+            // 
+            this.pnl_PreviewExcel.Controls.Add(this.previreHandleHostExcel);
+            this.pnl_PreviewExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_PreviewExcel.Location = new System.Drawing.Point(171, 3);
+            this.pnl_PreviewExcel.Name = "pnl_PreviewExcel";
+            this.pnl_PreviewExcel.Size = new System.Drawing.Size(720, 442);
+            this.pnl_PreviewExcel.TabIndex = 2;
+            this.pnl_PreviewExcel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_PreviewExcel_Paint);
+            // 
             // pnl_ExcelControls
             // 
+            this.pnl_ExcelControls.Controls.Add(this.lb_NameCountry);
             this.pnl_ExcelControls.Controls.Add(this.btn_RandomFill);
             this.pnl_ExcelControls.Controls.Add(this.cmb_MonthName);
             this.pnl_ExcelControls.Controls.Add(this.cmb_NameRegion);
-            this.pnl_ExcelControls.Controls.Add(this.btn_RandomTemperature);
+            this.pnl_ExcelControls.Controls.Add(this.btn_AddNote);
             this.pnl_ExcelControls.Controls.Add(this.btn_CheckExcelResult);
             this.pnl_ExcelControls.Controls.Add(this.btn_ExitExelApp);
             this.pnl_ExcelControls.Controls.Add(this.btn_CreateExcelDoc);
@@ -345,15 +372,17 @@
             this.pnl_ExcelControls.Controls.Add(this.lb_MonthName);
             this.pnl_ExcelControls.Controls.Add(this.tb_NameRegion);
             this.pnl_ExcelControls.Controls.Add(this.lb_NameRegion);
+            this.pnl_ExcelControls.Controls.Add(this.cmb_NameCountry);
+            this.pnl_ExcelControls.Controls.Add(this.tb_NameCountry);
             this.pnl_ExcelControls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_ExcelControls.Location = new System.Drawing.Point(3, 3);
             this.pnl_ExcelControls.Name = "pnl_ExcelControls";
-            this.pnl_ExcelControls.Size = new System.Drawing.Size(174, 364);
+            this.pnl_ExcelControls.Size = new System.Drawing.Size(168, 442);
             this.pnl_ExcelControls.TabIndex = 0;
             // 
             // btn_RandomFill
             // 
-            this.btn_RandomFill.Location = new System.Drawing.Point(5, 183);
+            this.btn_RandomFill.Location = new System.Drawing.Point(5, 235);
             this.btn_RandomFill.Name = "btn_RandomFill";
             this.btn_RandomFill.Size = new System.Drawing.Size(148, 30);
             this.btn_RandomFill.TabIndex = 25;
@@ -363,7 +392,20 @@
             // cmb_MonthName
             // 
             this.cmb_MonthName.FormattingEnabled = true;
-            this.cmb_MonthName.Location = new System.Drawing.Point(5, 66);
+            this.cmb_MonthName.Items.AddRange(new object[] {
+            "Январь",
+            "Февраль",
+            "Март",
+            "Апрель",
+            "Май",
+            "Июнь",
+            "Июль",
+            "Август",
+            "Сентябрь",
+            "Октябрь",
+            "Ноябрь",
+            "Декабрь"});
+            this.cmb_MonthName.Location = new System.Drawing.Point(5, 118);
             this.cmb_MonthName.Name = "cmb_MonthName";
             this.cmb_MonthName.Size = new System.Drawing.Size(148, 21);
             this.cmb_MonthName.TabIndex = 24;
@@ -372,24 +414,24 @@
             // cmb_NameRegion
             // 
             this.cmb_NameRegion.FormattingEnabled = true;
-            this.cmb_NameRegion.Location = new System.Drawing.Point(5, 21);
+            this.cmb_NameRegion.Location = new System.Drawing.Point(5, 72);
             this.cmb_NameRegion.Name = "cmb_NameRegion";
             this.cmb_NameRegion.Size = new System.Drawing.Size(150, 21);
             this.cmb_NameRegion.TabIndex = 23;
             this.cmb_NameRegion.Visible = false;
             // 
-            // btn_RandomTemperature
+            // btn_AddNote
             // 
-            this.btn_RandomTemperature.Location = new System.Drawing.Point(5, 142);
-            this.btn_RandomTemperature.Name = "btn_RandomTemperature";
-            this.btn_RandomTemperature.Size = new System.Drawing.Size(148, 30);
-            this.btn_RandomTemperature.TabIndex = 22;
-            this.btn_RandomTemperature.Text = "Случайная температура";
-            this.btn_RandomTemperature.UseVisualStyleBackColor = true;
+            this.btn_AddNote.Location = new System.Drawing.Point(5, 194);
+            this.btn_AddNote.Name = "btn_AddNote";
+            this.btn_AddNote.Size = new System.Drawing.Size(148, 30);
+            this.btn_AddNote.TabIndex = 22;
+            this.btn_AddNote.Text = "Добавить запись";
+            this.btn_AddNote.UseVisualStyleBackColor = true;
             // 
             // btn_CheckExcelResult
             // 
-            this.btn_CheckExcelResult.Location = new System.Drawing.Point(5, 275);
+            this.btn_CheckExcelResult.Location = new System.Drawing.Point(5, 327);
             this.btn_CheckExcelResult.Name = "btn_CheckExcelResult";
             this.btn_CheckExcelResult.Size = new System.Drawing.Size(148, 30);
             this.btn_CheckExcelResult.TabIndex = 21;
@@ -398,7 +440,7 @@
             // 
             // btn_ExitExelApp
             // 
-            this.btn_ExitExelApp.Location = new System.Drawing.Point(5, 321);
+            this.btn_ExitExelApp.Location = new System.Drawing.Point(5, 373);
             this.btn_ExitExelApp.Name = "btn_ExitExelApp";
             this.btn_ExitExelApp.Size = new System.Drawing.Size(148, 30);
             this.btn_ExitExelApp.TabIndex = 20;
@@ -408,7 +450,7 @@
             // 
             // btn_CreateExcelDoc
             // 
-            this.btn_CreateExcelDoc.Location = new System.Drawing.Point(5, 228);
+            this.btn_CreateExcelDoc.Location = new System.Drawing.Point(5, 280);
             this.btn_CreateExcelDoc.Name = "btn_CreateExcelDoc";
             this.btn_CreateExcelDoc.Size = new System.Drawing.Size(148, 30);
             this.btn_CreateExcelDoc.TabIndex = 19;
@@ -417,7 +459,7 @@
             // 
             // tb_MonthTemperature
             // 
-            this.tb_MonthTemperature.Location = new System.Drawing.Point(5, 116);
+            this.tb_MonthTemperature.Location = new System.Drawing.Point(5, 168);
             this.tb_MonthTemperature.Name = "tb_MonthTemperature";
             this.tb_MonthTemperature.Size = new System.Drawing.Size(148, 20);
             this.tb_MonthTemperature.TabIndex = 18;
@@ -426,7 +468,7 @@
             // 
             this.lb_MonthTemperature.AutoSize = true;
             this.lb_MonthTemperature.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_MonthTemperature.Location = new System.Drawing.Point(2, 98);
+            this.lb_MonthTemperature.Location = new System.Drawing.Point(2, 150);
             this.lb_MonthTemperature.Name = "lb_MonthTemperature";
             this.lb_MonthTemperature.Size = new System.Drawing.Size(133, 15);
             this.lb_MonthTemperature.TabIndex = 17;
@@ -434,7 +476,7 @@
             // 
             // tb_MonthName
             // 
-            this.tb_MonthName.Location = new System.Drawing.Point(5, 67);
+            this.tb_MonthName.Location = new System.Drawing.Point(5, 119);
             this.tb_MonthName.Name = "tb_MonthName";
             this.tb_MonthName.Size = new System.Drawing.Size(148, 20);
             this.tb_MonthName.TabIndex = 16;
@@ -443,7 +485,7 @@
             // 
             this.lb_MonthName.AutoSize = true;
             this.lb_MonthName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_MonthName.Location = new System.Drawing.Point(2, 49);
+            this.lb_MonthName.Location = new System.Drawing.Point(2, 101);
             this.lb_MonthName.Name = "lb_MonthName";
             this.lb_MonthName.Size = new System.Drawing.Size(113, 15);
             this.lb_MonthName.TabIndex = 15;
@@ -451,7 +493,7 @@
             // 
             // tb_NameRegion
             // 
-            this.tb_NameRegion.Location = new System.Drawing.Point(5, 21);
+            this.tb_NameRegion.Location = new System.Drawing.Point(5, 73);
             this.tb_NameRegion.Name = "tb_NameRegion";
             this.tb_NameRegion.Size = new System.Drawing.Size(148, 20);
             this.tb_NameRegion.TabIndex = 14;
@@ -460,7 +502,7 @@
             // 
             this.lb_NameRegion.AutoSize = true;
             this.lb_NameRegion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_NameRegion.Location = new System.Drawing.Point(2, 3);
+            this.lb_NameRegion.Location = new System.Drawing.Point(2, 55);
             this.lb_NameRegion.Name = "lb_NameRegion";
             this.lb_NameRegion.Size = new System.Drawing.Size(117, 15);
             this.lb_NameRegion.TabIndex = 13;
@@ -468,6 +510,9 @@
             // 
             // tbp_Options
             // 
+            this.tbp_Options.Controls.Add(this.btn_PathToTxtCities);
+            this.tbp_Options.Controls.Add(this.tb_PathToTxtCities);
+            this.tbp_Options.Controls.Add(this.lb_PathToTxtCities);
             this.tbp_Options.Controls.Add(this.btn_DemoExcelTemplate);
             this.tbp_Options.Controls.Add(this.tb_DemoExcelTemplate);
             this.tbp_Options.Controls.Add(this.lb_DemoExcelTemplate);
@@ -485,7 +530,7 @@
             this.tbp_Options.Controls.Add(this.btn_TemplateDocPath);
             this.tbp_Options.Location = new System.Drawing.Point(4, 22);
             this.tbp_Options.Name = "tbp_Options";
-            this.tbp_Options.Size = new System.Drawing.Size(894, 370);
+            this.tbp_Options.Size = new System.Drawing.Size(894, 448);
             this.tbp_Options.TabIndex = 3;
             this.tbp_Options.Text = "Настройки";
             this.tbp_Options.UseVisualStyleBackColor = true;
@@ -645,7 +690,7 @@
             this.tbp_About.Controls.Add(this.lb_COMApp);
             this.tbp_About.Location = new System.Drawing.Point(4, 22);
             this.tbp_About.Name = "tbp_About";
-            this.tbp_About.Size = new System.Drawing.Size(894, 370);
+            this.tbp_About.Size = new System.Drawing.Size(894, 448);
             this.tbp_About.TabIndex = 2;
             this.tbp_About.Text = "Контакты";
             this.tbp_About.UseVisualStyleBackColor = true;
@@ -670,32 +715,69 @@
             this.lb_COMApp.TabIndex = 2;
             this.lb_COMApp.Text = "COM Application";
             // 
-            // pnl_PreviewExcel
+            // btn_PathToTxtCities
             // 
-            this.pnl_PreviewExcel.Controls.Add(this.previreHandleHostExcel);
-            this.pnl_PreviewExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_PreviewExcel.Location = new System.Drawing.Point(177, 3);
-            this.pnl_PreviewExcel.Name = "pnl_PreviewExcel";
-            this.pnl_PreviewExcel.Size = new System.Drawing.Size(714, 364);
-            this.pnl_PreviewExcel.TabIndex = 2;
-            this.pnl_PreviewExcel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_PreviewExcel_Paint);
+            this.btn_PathToTxtCities.Location = new System.Drawing.Point(499, 249);
+            this.btn_PathToTxtCities.Name = "btn_PathToTxtCities";
+            this.btn_PathToTxtCities.Size = new System.Drawing.Size(39, 20);
+            this.btn_PathToTxtCities.TabIndex = 17;
+            this.btn_PathToTxtCities.Text = "...";
+            this.btn_PathToTxtCities.UseVisualStyleBackColor = true;
+            this.btn_PathToTxtCities.Visible = false;
+            this.btn_PathToTxtCities.Click += new System.EventHandler(this.btn_PathToTxtCities_Click);
             // 
-            // pnl_Preview
+            // tb_PathToTxtCities
             // 
-            this.pnl_Preview.Controls.Add(this.previewHandlerHost);
-            this.pnl_Preview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Preview.Location = new System.Drawing.Point(177, 3);
-            this.pnl_Preview.Name = "pnl_Preview";
-            this.pnl_Preview.Size = new System.Drawing.Size(714, 364);
-            this.pnl_Preview.TabIndex = 1;
-            this.pnl_Preview.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Preview_Paint);
+            this.tb_PathToTxtCities.Location = new System.Drawing.Point(11, 249);
+            this.tb_PathToTxtCities.Name = "tb_PathToTxtCities";
+            this.tb_PathToTxtCities.Size = new System.Drawing.Size(482, 20);
+            this.tb_PathToTxtCities.TabIndex = 16;
+            this.tb_PathToTxtCities.Visible = false;
+            // 
+            // lb_PathToTxtCities
+            // 
+            this.lb_PathToTxtCities.AutoSize = true;
+            this.lb_PathToTxtCities.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_PathToTxtCities.Location = new System.Drawing.Point(8, 223);
+            this.lb_PathToTxtCities.Name = "lb_PathToTxtCities";
+            this.lb_PathToTxtCities.Size = new System.Drawing.Size(256, 17);
+            this.lb_PathToTxtCities.TabIndex = 15;
+            this.lb_PathToTxtCities.Text = "Путь к текстовому файлу с городами:";
+            this.lb_PathToTxtCities.Visible = false;
+            // 
+            // cmb_NameCountry
+            // 
+            this.cmb_NameCountry.FormattingEnabled = true;
+            this.cmb_NameCountry.Location = new System.Drawing.Point(5, 31);
+            this.cmb_NameCountry.Name = "cmb_NameCountry";
+            this.cmb_NameCountry.Size = new System.Drawing.Size(150, 21);
+            this.cmb_NameCountry.TabIndex = 27;
+            this.cmb_NameCountry.Visible = false;
+            this.cmb_NameCountry.SelectedIndexChanged += new System.EventHandler(this.cmb_NameCountry_SelectedIndexChanged);
+            // 
+            // lb_NameCountry
+            // 
+            this.lb_NameCountry.AutoSize = true;
+            this.lb_NameCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_NameCountry.Location = new System.Drawing.Point(5, 9);
+            this.lb_NameCountry.Name = "lb_NameCountry";
+            this.lb_NameCountry.Size = new System.Drawing.Size(113, 15);
+            this.lb_NameCountry.TabIndex = 26;
+            this.lb_NameCountry.Text = "Название страны:";
+            // 
+            // tb_NameCountry
+            // 
+            this.tb_NameCountry.Location = new System.Drawing.Point(5, 32);
+            this.tb_NameCountry.Name = "tb_NameCountry";
+            this.tb_NameCountry.Size = new System.Drawing.Size(150, 20);
+            this.tb_NameCountry.TabIndex = 28;
             // 
             // previewHandlerHost
             // 
             this.previewHandlerHost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.previewHandlerHost.Location = new System.Drawing.Point(0, 0);
             this.previewHandlerHost.Name = "previewHandlerHost";
-            this.previewHandlerHost.Size = new System.Drawing.Size(714, 364);
+            this.previewHandlerHost.Size = new System.Drawing.Size(714, 442);
             this.previewHandlerHost.TabIndex = 0;
             // 
             // previreHandleHostExcel
@@ -703,14 +785,14 @@
             this.previreHandleHostExcel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.previreHandleHostExcel.Location = new System.Drawing.Point(0, 0);
             this.previreHandleHostExcel.Name = "previreHandleHostExcel";
-            this.previreHandleHostExcel.Size = new System.Drawing.Size(714, 364);
+            this.previreHandleHostExcel.Size = new System.Drawing.Size(720, 442);
             this.previreHandleHostExcel.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 396);
+            this.ClientSize = new System.Drawing.Size(902, 474);
             this.Controls.Add(this.tab_COM);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -720,17 +802,17 @@
             this.tbp_Main.ResumeLayout(false);
             this.tbp_Main.PerformLayout();
             this.tbp_Word.ResumeLayout(false);
+            this.pnl_Preview.ResumeLayout(false);
             this.pnl_Controls.ResumeLayout(false);
             this.pnl_Controls.PerformLayout();
             this.tbp_Excel.ResumeLayout(false);
+            this.pnl_PreviewExcel.ResumeLayout(false);
             this.pnl_ExcelControls.ResumeLayout(false);
             this.pnl_ExcelControls.PerformLayout();
             this.tbp_Options.ResumeLayout(false);
             this.tbp_Options.PerformLayout();
             this.tbp_About.ResumeLayout(false);
             this.tbp_About.PerformLayout();
-            this.pnl_PreviewExcel.ResumeLayout(false);
-            this.pnl_Preview.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -777,7 +859,7 @@
         private System.Windows.Forms.Button btn_NewDefFilePath;
         private System.Windows.Forms.CheckBox chekb_TurnOffComboboxDictionary;
         private System.Windows.Forms.Panel pnl_ExcelControls;
-        private System.Windows.Forms.Button btn_RandomTemperature;
+        private System.Windows.Forms.Button btn_AddNote;
         private System.Windows.Forms.Button btn_CheckExcelResult;
         private System.Windows.Forms.Button btn_ExitExelApp;
         private System.Windows.Forms.Button btn_CreateExcelDoc;
@@ -796,6 +878,12 @@
         private PreviewHandlers.PreviewHandlerHost previreHandleHostExcel;
         private System.Windows.Forms.Panel pnl_PreviewExcel;
         private System.Windows.Forms.Panel pnl_Preview;
+        private System.Windows.Forms.Button btn_PathToTxtCities;
+        private System.Windows.Forms.TextBox tb_PathToTxtCities;
+        private System.Windows.Forms.Label lb_PathToTxtCities;
+        private System.Windows.Forms.TextBox tb_NameCountry;
+        private System.Windows.Forms.ComboBox cmb_NameCountry;
+        private System.Windows.Forms.Label lb_NameCountry;
     }
 }
 

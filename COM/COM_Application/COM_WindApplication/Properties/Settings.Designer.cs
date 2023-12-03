@@ -100,5 +100,18 @@ namespace COM_WindApplication.Properties {
                 this["demoExcelTemplate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("F:\\Games\\ILYAsFolder\\BarSU\\LABS\\4_course\\EugineShapovich\\VisualKa\\VisualCLibSolut" +
+            "ions\\COM\\COM_Application\\COM_WindApplication\\bin\\Debug\\txt\\AllCities.txt")]
+        public string defaultCityFilePath {
+            get {
+                return ((string)(this["defaultCityFilePath"]));
+            }
+            set {
+                this["defaultCityFilePath"] = value;
+            }
+        }
     }
 }
