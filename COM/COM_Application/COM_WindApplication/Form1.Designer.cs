@@ -427,9 +427,9 @@
             this.lb_MonthTemperature3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lb_MonthTemperature3.Location = new System.Drawing.Point(312, 112);
             this.lb_MonthTemperature3.Name = "lb_MonthTemperature3";
-            this.lb_MonthTemperature3.Size = new System.Drawing.Size(133, 15);
+            this.lb_MonthTemperature3.Size = new System.Drawing.Size(143, 15);
             this.lb_MonthTemperature3.TabIndex = 37;
-            this.lb_MonthTemperature3.Text = "Температура месяца:";
+            this.lb_MonthTemperature3.Text = "Температура 3 месяца:";
             // 
             // tb_MonthTemperature2
             // 
@@ -444,9 +444,9 @@
             this.lb_MonthTemperature2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lb_MonthTemperature2.Location = new System.Drawing.Point(158, 112);
             this.lb_MonthTemperature2.Name = "lb_MonthTemperature2";
-            this.lb_MonthTemperature2.Size = new System.Drawing.Size(133, 15);
+            this.lb_MonthTemperature2.Size = new System.Drawing.Size(143, 15);
             this.lb_MonthTemperature2.TabIndex = 35;
-            this.lb_MonthTemperature2.Text = "Температура месяца:";
+            this.lb_MonthTemperature2.Text = "Температура 2 месяца:";
             // 
             // lb_MonthName3
             // 
@@ -496,16 +496,17 @@
             // 
             // btn_RandomFill
             // 
-            this.btn_RandomFill.Location = new System.Drawing.Point(5, 156);
+            this.btn_RandomFill.Location = new System.Drawing.Point(5, 256);
             this.btn_RandomFill.Name = "btn_RandomFill";
             this.btn_RandomFill.Size = new System.Drawing.Size(458, 30);
             this.btn_RandomFill.TabIndex = 25;
             this.btn_RandomFill.Text = "Случайное заполнение";
             this.btn_RandomFill.UseVisualStyleBackColor = true;
+            this.btn_RandomFill.Visible = false;
             // 
             // btn_CheckExcelResult
             // 
-            this.btn_CheckExcelResult.Location = new System.Drawing.Point(159, 201);
+            this.btn_CheckExcelResult.Location = new System.Drawing.Point(160, 156);
             this.btn_CheckExcelResult.Name = "btn_CheckExcelResult";
             this.btn_CheckExcelResult.Size = new System.Drawing.Size(148, 30);
             this.btn_CheckExcelResult.TabIndex = 21;
@@ -514,7 +515,7 @@
             // 
             // btn_ExitExelApp
             // 
-            this.btn_ExitExelApp.Location = new System.Drawing.Point(315, 201);
+            this.btn_ExitExelApp.Location = new System.Drawing.Point(316, 156);
             this.btn_ExitExelApp.Name = "btn_ExitExelApp";
             this.btn_ExitExelApp.Size = new System.Drawing.Size(148, 30);
             this.btn_ExitExelApp.TabIndex = 20;
@@ -524,7 +525,7 @@
             // 
             // btn_CreateExcelDoc
             // 
-            this.btn_CreateExcelDoc.Location = new System.Drawing.Point(5, 201);
+            this.btn_CreateExcelDoc.Location = new System.Drawing.Point(6, 156);
             this.btn_CreateExcelDoc.Name = "btn_CreateExcelDoc";
             this.btn_CreateExcelDoc.Size = new System.Drawing.Size(148, 30);
             this.btn_CreateExcelDoc.TabIndex = 19;
@@ -563,7 +564,7 @@
             // 
             this.lb_NameRegion.AutoSize = true;
             this.lb_NameRegion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_NameRegion.Location = new System.Drawing.Point(158, 14);
+            this.lb_NameRegion.Location = new System.Drawing.Point(160, 9);
             this.lb_NameRegion.Name = "lb_NameRegion";
             this.lb_NameRegion.Size = new System.Drawing.Size(117, 15);
             this.lb_NameRegion.TabIndex = 13;

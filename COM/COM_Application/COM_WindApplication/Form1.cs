@@ -87,8 +87,10 @@ namespace COM_WindApplication
 
             if (chekb_TurnOffComboboxDictionary.Checked)
             {
-                comExcel.createTable(tb_NameCountry.Text, tb_NameRegion.Text, tb_MonthTemperature.Text, tb_MonthName.Text, res.newDefaultFilePath);
-               
+                //comExcel.createTable(tb_NameCountry.Text, tb_NameRegion.Text, tb_MonthTemperature.Text, tb_MonthName.Text, res.newDefaultFilePath);
+                comExcel.createSimpleTable(tb_NameCountry.Text, tb_NameRegion.Text, tb_MonthTemperature.Text, tb_MonthTemperature2.Text, tb_MonthTemperature3.Text,
+                    tb_MonthName.Text, tb_MonthName2.Text, tb_MonthName3.Text, res.newDefaultFilePath);
+
                 tb_NameCountry.Text = "";
                 tb_NameRegion.Text = "";
                 tb_MonthName.Text = "";
@@ -96,7 +98,9 @@ namespace COM_WindApplication
             }
             else
             {
-                comExcel.createTable(cmb_NameCountry.SelectedItem.ToString(), cmb_NameRegion.SelectedItem.ToString(), tb_MonthTemperature.Text, cmb_MonthName.SelectedItem.ToString(), res.newDefaultFilePath);
+                //comExcel.createTable(cmb_NameCountry.SelectedItem.ToString(), cmb_NameRegion.SelectedItem.ToString(), tb_MonthTemperature.Text, cmb_MonthName.SelectedItem.ToString(), res.newDefaultFilePath);
+                comExcel.createSimpleTable(cmb_NameCountry.SelectedItem.ToString(), cmb_NameRegion.SelectedItem.ToString(), tb_MonthTemperature.Text, tb_MonthTemperature2.Text, tb_MonthTemperature3.Text,
+                    cmb_MonthName.SelectedItem.ToString(), cmb_MonthName2.SelectedItem.ToString(), cmb_MonthName3.SelectedItem.ToString(), res.newDefaultFilePath);
 
                 cmb_NameCountry.Text = "";
                 cmb_NameRegion.Text = "";
