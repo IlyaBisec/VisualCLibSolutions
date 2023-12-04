@@ -27,3 +27,12 @@ D:\4COM_App\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.cs
 D:\4COM_App\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.csproj.CoreCompileInputs.cache
 D:\4COM_App\COM_Application\COM_WindApplication\obj\Debug\COM Application.exe
 D:\4COM_App\COM_Application\COM_WindApplication\obj\Debug\COM Application.pdb
+D:\ForBarSU\Labs\4\EugeneShapovich\Visual\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\bin\Debug\COM Application.exe.config
+D:\ForBarSU\Labs\4\EugeneShapovich\Visual\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\bin\Debug\COM Application.exe
+D:\ForBarSU\Labs\4\EugeneShapovich\Visual\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\bin\Debug\COM Application.pdb
+D:\ForBarSU\Labs\4\EugeneShapovich\Visual\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.csprojAssemblyReference.cache
+D:\ForBarSU\Labs\4\EugeneShapovich\Visual\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.MainForm.resources
+D:\ForBarSU\Labs\4\EugeneShapovich\Visual\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.Properties.Resources.resources
+D:\ForBarSU\Labs\4\EugeneShapovich\Visual\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM_WindApplication.csproj.GenerateResource.cache
+D:\ForBarSU\Labs\4\EugeneShapovich\Visual\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM Application.exe
+D:\ForBarSU\Labs\4\EugeneShapovich\Visual\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\obj\Debug\COM Application.pdb

@@ -14,9 +14,6 @@ namespace COM_WindApplication.com
     // creating a text message, saving a document and exiting Word
     internal class ComWord
     {
-        // Word variables
-        Word.Application m_wordapp;
-
         public ComWord(String recipientName, String projectName, String departmentName,
             String companyName, String senderName,
             String defaultPathDocTemplate,
@@ -37,29 +34,6 @@ namespace COM_WindApplication.com
             {
                 throw new ArgumentException("Update or change template file path in the options", "File not found");
             }
-        }
-        public void openWord()
-        {
-            try
-            {
-                m_wordapp = new Word.Application();
-                m_wordapp.Visible = true;
-            }
-            catch (Exception ex){ MessageBox.Show("Open Word Error", ex.ToString()); }
-        }
-        public void closeWord() 
-        {
-            try
-            {
-                Object saveChanges = Word.WdSaveOptions.wdPromptToSaveChanges;
-                Object originalFormat = Word.WdOriginalFormat.wdWordDocument;
-                Object routeDocument = Type.Missing;
-
-                m_wordapp.Quit(ref saveChanges, ref originalFormat, ref routeDocument);
-                m_wordapp = null;
-            }
-            catch (Exception ex) { MessageBox.Show("Close Word Error", ex.ToString()); }
-
         }
 
         // Implementation of creating a text  message template from sender 
@@ -109,8 +83,6 @@ namespace COM_WindApplication.com
                 // Saving a letter under your own name
                 wordapp.ActiveDocument.SaveAs(m_defaultFilePath + "\\" + m_recipientName);
                 wordapp.ActiveDocument.Close();
-
-               // wordapp.Quit();
 
                 MessageBox.Show("Default file path: " + m_defaultFilePath + m_recipientName, "The email was successfully created!");
 

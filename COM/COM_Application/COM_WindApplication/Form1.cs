@@ -30,12 +30,6 @@ namespace COM_WindApplication
             comWord.createTemplate();
         }
 
-        private void btn_Exit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            System.Windows.Forms.Application.Exit();
-        }
-
         // Demonstration of the document template for the user, how the document will look and which fields we change
         private void pnl_Preview_Paint(object sender, PaintEventArgs e)
         {
@@ -65,6 +59,11 @@ namespace COM_WindApplication
             }
         }
 
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            exitApplication();
+        }
+
         // Excel page
         // Demonstration of the document template for the user, how the document will look and which fields we change
         private void pnl_PreviewExcel_Paint(object sender, PaintEventArgs e)
@@ -80,10 +79,51 @@ namespace COM_WindApplication
             }
         }
 
+        private void btn_CreateExcelDoc_Click(object sender, EventArgs e)
+        {
+            var res = Properties.Settings.Default;
+
+            ComExcel comExcel = new ComExcel();
+
+            if (chekb_TurnOffComboboxDictionary.Checked)
+            {
+                comExcel.createTable(tb_NameCountry.Text, tb_NameRegion.Text, tb_MonthTemperature.Text, tb_MonthName.Text, res.newDefaultFilePath);
+               
+                tb_NameCountry.Text = "";
+                tb_NameRegion.Text = "";
+                tb_MonthName.Text = "";
+                tb_MonthTemperature.Text = "";
+            }
+            else
+            {
+                comExcel.createTable(cmb_NameCountry.SelectedItem.ToString(), cmb_NameRegion.SelectedItem.ToString(), tb_MonthTemperature.Text, cmb_MonthName.SelectedItem.ToString(), res.newDefaultFilePath);
+
+                cmb_NameCountry.Text = "";
+                cmb_NameRegion.Text = "";
+                cmb_MonthName.Text = "";
+                tb_MonthTemperature.Text = "";
+            }
+        }
+
+        private void cmb_NameCountry_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCountry = cmb_NameCountry.SelectedItem.ToString();
+
+            // Getting a list of regions for the selected country from the dictionary
+            List<string> temp_regions = countryRegions[selectedCountry];
+
+            // Filling region combobox regions
+            cmb_NameRegion.Items.Clear();
+            foreach (string region in temp_regions)
+            { cmb_NameRegion.Items.Add(region); }
+
+
+        }
+
         // If manual input is disabled(chekb_TurnOffComboboxDictionary.UnChecked)
         // List of cities and countries to choose from in combobox
         // If the default file is not found, use the template with the default cities
-        public void comboxLoad()
+        public void loadListOfCitiesToCombobox()
         {
             var res = Properties.Settings.Default;
 
@@ -139,8 +179,7 @@ namespace COM_WindApplication
 
         private void btn_ExitExelApp_Click(object sender, EventArgs e)
         {
-            this.Close();
-            System.Windows.Forms.Application.Exit();
+            exitApplication();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -156,7 +195,7 @@ namespace COM_WindApplication
 
             chekb_TurnOffComboboxDictionary.Checked = res.manualInput;
 
-            comboxLoad();
+            loadListOfCitiesToCombobox();
         }
         
        
@@ -319,19 +358,13 @@ namespace COM_WindApplication
             }
         }
 
-        private void cmb_NameCountry_SelectedIndexChanged(object sender, EventArgs e)
+        // True exit from application with to release resources
+        private void exitApplication()
         {
-            string selectedCountry = cmb_NameCountry.SelectedItem.ToString();
-
-            // Getting a list of regions for the selected country from the dictionary
-            List<string> temp_regions = countryRegions[selectedCountry];
-
-            // Filling region combobox regions
-            cmb_NameRegion.Items.Clear();
-            foreach(string region in temp_regions) 
-            { cmb_NameRegion.Items.Add(region); }
-
-
+            previewHandlerHost.UnloadPreviewHandler();
+            previreHandleHostExcel.UnloadPreviewHandler();
+            this.Close();
+            System.Windows.Forms.Application.Exit();
         }
     }
 }
