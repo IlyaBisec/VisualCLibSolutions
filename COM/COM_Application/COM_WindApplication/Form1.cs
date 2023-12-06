@@ -81,32 +81,66 @@ namespace COM_WindApplication
 
         private void btn_CreateExcelDoc_Click(object sender, EventArgs e)
         {
-            var res = Properties.Settings.Default;
-
             ComExcel comExcel = new ComExcel();
 
             if (chekb_TurnOffComboboxDictionary.Checked)
             {
-                //comExcel.createTable(tb_NameCountry.Text, tb_NameRegion.Text, tb_MonthTemperature.Text, tb_MonthName.Text, res.newDefaultFilePath);
-                comExcel.createSimpleTable(tb_NameCountry.Text, tb_NameRegion.Text, tb_MonthTemperature.Text, tb_MonthTemperature2.Text, tb_MonthTemperature3.Text,
-                    tb_MonthName.Text, tb_MonthName2.Text, tb_MonthName3.Text, res.newDefaultFilePath);
+                comExcel.createTable(tb_NameCountry.Text, tb_NameRegion.Text, tb_MonthName.Text, tb_MonthTemperature.Text);
 
                 tb_NameCountry.Text = "";
                 tb_NameRegion.Text = "";
                 tb_MonthName.Text = "";
                 tb_MonthTemperature.Text = "";
+
             }
             else
             {
-                //comExcel.createTable(cmb_NameCountry.SelectedItem.ToString(), cmb_NameRegion.SelectedItem.ToString(), tb_MonthTemperature.Text, cmb_MonthName.SelectedItem.ToString(), res.newDefaultFilePath);
-                comExcel.createSimpleTable(cmb_NameCountry.SelectedItem.ToString(), cmb_NameRegion.SelectedItem.ToString(), tb_MonthTemperature.Text, tb_MonthTemperature2.Text, tb_MonthTemperature3.Text,
-                    cmb_MonthName.SelectedItem.ToString(), cmb_MonthName2.SelectedItem.ToString(), cmb_MonthName3.SelectedItem.ToString(), res.newDefaultFilePath);
+                comExcel.createTable(cmb_NameCountry.SelectedItem.ToString(), cmb_NameRegion.SelectedItem.ToString(), tb_MonthName.Text, cmb_MonthName.SelectedItem.ToString());
 
                 cmb_NameCountry.Text = "";
                 cmb_NameRegion.Text = "";
                 cmb_MonthName.Text = "";
                 tb_MonthTemperature.Text = "";
             }
+            
+        }
+
+        private void btn_AddNote_Click(object sender, EventArgs e)
+        {
+            ComExcel comExcel = new ComExcel();
+
+            if (chekb_TurnOffComboboxDictionary.Checked)
+            {
+                comExcel.addNote(tb_NameCountry.Text, tb_NameRegion.Text, tb_MonthName.Text, tb_MonthTemperature.Text);
+                //comExcel.createTable(tb_NameCountry.Text, tb_NameRegion.Text, tb_MonthTemperature.Text, tb_MonthName.Text, res.newDefaultFilePath);
+                // comExcel.createSimpleTable(tb_NameCountry.Text, tb_NameRegion.Text, tb_MonthTemperature.Text, tb_MonthTemperature2.Text, tb_MonthTemperature3.Text,
+                //     tb_MonthName.Text, tb_MonthName2.Text, tb_MonthName3.Text, res.newDefaultFilePath);
+
+                tb_NameCountry.Text = "";
+                tb_NameRegion.Text = "";
+                tb_MonthName.Text = "";
+                tb_MonthTemperature.Text = "";
+
+            }
+            else
+            {
+                comExcel.addNote(cmb_NameCountry.SelectedItem.ToString(), cmb_NameRegion.SelectedItem.ToString(), tb_MonthName.Text, cmb_MonthName.SelectedItem.ToString());
+                //comExcel.createTable(cmb_NameCountry.SelectedItem.ToString(), cmb_NameRegion.SelectedItem.ToString(), tb_MonthTemperature.Text, cmb_MonthName.SelectedItem.ToString(), res.newDefaultFilePath);
+                //  comExcel.createSimpleTable(cmb_NameCountry.SelectedItem.ToString(), cmb_NameRegion.SelectedItem.ToString(), tb_MonthTemperature.Text, tb_MonthTemperature2.Text, tb_MonthTemperature3.Text,
+                //    cmb_MonthName.SelectedItem.ToString(), cmb_MonthName2.SelectedItem.ToString(), cmb_MonthName3.SelectedItem.ToString(), res.newDefaultFilePath);
+
+                cmb_NameCountry.Text = "";
+                cmb_NameRegion.Text = "";
+                cmb_MonthName.Text = "";
+                tb_MonthTemperature.Text = "";
+            }
+        }
+
+        // Checking the result of a previously created document
+        private void btn_CheckExcelResult_Click(object sender, EventArgs e)
+        {
+            ComExcel comExcel = new ComExcel();
+            comExcel.saveTableAs();
         }
 
         private void cmb_NameCountry_SelectedIndexChanged(object sender, EventArgs e)

@@ -37,7 +37,6 @@
             this.lb_Welcome = new System.Windows.Forms.Label();
             this.tbp_Word = new System.Windows.Forms.TabPage();
             this.pnl_Preview = new System.Windows.Forms.Panel();
-            this.previewHandlerHost = new PreviewHandlers.PreviewHandlerHost();
             this.pnl_Controls = new System.Windows.Forms.Panel();
             this.btn_CheckResult = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
@@ -54,16 +53,7 @@
             this.lb_RecipientName = new System.Windows.Forms.Label();
             this.tbp_Excel = new System.Windows.Forms.TabPage();
             this.pnl_PreviewExcel = new System.Windows.Forms.Panel();
-            this.previreHandleHostExcel = new PreviewHandlers.PreviewHandlerHost();
             this.pnl_ExcelControls = new System.Windows.Forms.Panel();
-            this.tb_MonthTemperature3 = new System.Windows.Forms.TextBox();
-            this.lb_MonthTemperature3 = new System.Windows.Forms.Label();
-            this.tb_MonthTemperature2 = new System.Windows.Forms.TextBox();
-            this.lb_MonthTemperature2 = new System.Windows.Forms.Label();
-            this.lb_MonthName3 = new System.Windows.Forms.Label();
-            this.tb_MonthName3 = new System.Windows.Forms.TextBox();
-            this.lb_MonthName2 = new System.Windows.Forms.Label();
-            this.tb_MonthName2 = new System.Windows.Forms.TextBox();
             this.lb_NameCountry = new System.Windows.Forms.Label();
             this.btn_RandomFill = new System.Windows.Forms.Button();
             this.btn_CheckExcelResult = new System.Windows.Forms.Button();
@@ -79,8 +69,6 @@
             this.cmb_MonthName = new System.Windows.Forms.ComboBox();
             this.tb_NameCountry = new System.Windows.Forms.TextBox();
             this.cmb_NameCountry = new System.Windows.Forms.ComboBox();
-            this.cmb_MonthName2 = new System.Windows.Forms.ComboBox();
-            this.cmb_MonthName3 = new System.Windows.Forms.ComboBox();
             this.tbp_Options = new System.Windows.Forms.TabPage();
             this.btn_PathToTxtCities = new System.Windows.Forms.Button();
             this.tb_PathToTxtCities = new System.Windows.Forms.TextBox();
@@ -103,6 +91,9 @@
             this.tbp_About = new System.Windows.Forms.TabPage();
             this.lb_About = new System.Windows.Forms.Label();
             this.lb_COMApp = new System.Windows.Forms.Label();
+            this.previewHandlerHost = new PreviewHandlers.PreviewHandlerHost();
+            this.previreHandleHostExcel = new PreviewHandlers.PreviewHandlerHost();
+            this.btn_AddNote = new System.Windows.Forms.Button();
             this.tab_COM.SuspendLayout();
             this.tbp_Main.SuspendLayout();
             this.tbp_Word.SuspendLayout();
@@ -126,7 +117,7 @@
             this.tab_COM.Location = new System.Drawing.Point(0, 0);
             this.tab_COM.Name = "tab_COM";
             this.tab_COM.SelectedIndex = 0;
-            this.tab_COM.Size = new System.Drawing.Size(902, 451);
+            this.tab_COM.Size = new System.Drawing.Size(902, 399);
             this.tab_COM.TabIndex = 0;
             // 
             // tbp_Main
@@ -137,7 +128,7 @@
             this.tbp_Main.Controls.Add(this.lb_Welcome);
             this.tbp_Main.Location = new System.Drawing.Point(4, 22);
             this.tbp_Main.Name = "tbp_Main";
-            this.tbp_Main.Size = new System.Drawing.Size(894, 425);
+            this.tbp_Main.Size = new System.Drawing.Size(894, 373);
             this.tbp_Main.TabIndex = 4;
             this.tbp_Main.Text = "Welcome";
             this.tbp_Main.UseVisualStyleBackColor = true;
@@ -192,7 +183,7 @@
             this.tbp_Word.Location = new System.Drawing.Point(4, 22);
             this.tbp_Word.Name = "tbp_Word";
             this.tbp_Word.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_Word.Size = new System.Drawing.Size(894, 425);
+            this.tbp_Word.Size = new System.Drawing.Size(894, 373);
             this.tbp_Word.TabIndex = 0;
             this.tbp_Word.Text = "Word";
             this.tbp_Word.UseVisualStyleBackColor = true;
@@ -203,17 +194,9 @@
             this.pnl_Preview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Preview.Location = new System.Drawing.Point(177, 3);
             this.pnl_Preview.Name = "pnl_Preview";
-            this.pnl_Preview.Size = new System.Drawing.Size(714, 419);
+            this.pnl_Preview.Size = new System.Drawing.Size(714, 367);
             this.pnl_Preview.TabIndex = 1;
             this.pnl_Preview.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Preview_Paint);
-            // 
-            // previewHandlerHost
-            // 
-            this.previewHandlerHost.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.previewHandlerHost.Location = new System.Drawing.Point(0, 0);
-            this.previewHandlerHost.Name = "previewHandlerHost";
-            this.previewHandlerHost.Size = new System.Drawing.Size(714, 419);
-            this.previewHandlerHost.TabIndex = 0;
             // 
             // pnl_Controls
             // 
@@ -233,7 +216,7 @@
             this.pnl_Controls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_Controls.Location = new System.Drawing.Point(3, 3);
             this.pnl_Controls.Name = "pnl_Controls";
-            this.pnl_Controls.Size = new System.Drawing.Size(174, 419);
+            this.pnl_Controls.Size = new System.Drawing.Size(174, 367);
             this.pnl_Controls.TabIndex = 0;
             // 
             // btn_CheckResult
@@ -355,10 +338,11 @@
             // 
             this.tbp_Excel.Controls.Add(this.pnl_PreviewExcel);
             this.tbp_Excel.Controls.Add(this.pnl_ExcelControls);
+            this.tbp_Excel.Controls.Add(this.btn_RandomFill);
             this.tbp_Excel.Location = new System.Drawing.Point(4, 22);
             this.tbp_Excel.Name = "tbp_Excel";
             this.tbp_Excel.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_Excel.Size = new System.Drawing.Size(894, 425);
+            this.tbp_Excel.Size = new System.Drawing.Size(894, 373);
             this.tbp_Excel.TabIndex = 1;
             this.tbp_Excel.Text = "Excel";
             this.tbp_Excel.UseVisualStyleBackColor = true;
@@ -367,32 +351,16 @@
             // 
             this.pnl_PreviewExcel.Controls.Add(this.previreHandleHostExcel);
             this.pnl_PreviewExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_PreviewExcel.Location = new System.Drawing.Point(473, 3);
+            this.pnl_PreviewExcel.Location = new System.Drawing.Point(169, 3);
             this.pnl_PreviewExcel.Name = "pnl_PreviewExcel";
-            this.pnl_PreviewExcel.Size = new System.Drawing.Size(418, 419);
+            this.pnl_PreviewExcel.Size = new System.Drawing.Size(722, 367);
             this.pnl_PreviewExcel.TabIndex = 2;
             this.pnl_PreviewExcel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_PreviewExcel_Paint);
             // 
-            // previreHandleHostExcel
-            // 
-            this.previreHandleHostExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.previreHandleHostExcel.Location = new System.Drawing.Point(0, 0);
-            this.previreHandleHostExcel.Name = "previreHandleHostExcel";
-            this.previreHandleHostExcel.Size = new System.Drawing.Size(418, 419);
-            this.previreHandleHostExcel.TabIndex = 1;
-            // 
             // pnl_ExcelControls
             // 
-            this.pnl_ExcelControls.Controls.Add(this.tb_MonthTemperature3);
-            this.pnl_ExcelControls.Controls.Add(this.lb_MonthTemperature3);
-            this.pnl_ExcelControls.Controls.Add(this.tb_MonthTemperature2);
-            this.pnl_ExcelControls.Controls.Add(this.lb_MonthTemperature2);
-            this.pnl_ExcelControls.Controls.Add(this.lb_MonthName3);
-            this.pnl_ExcelControls.Controls.Add(this.tb_MonthName3);
-            this.pnl_ExcelControls.Controls.Add(this.lb_MonthName2);
-            this.pnl_ExcelControls.Controls.Add(this.tb_MonthName2);
+            this.pnl_ExcelControls.Controls.Add(this.btn_AddNote);
             this.pnl_ExcelControls.Controls.Add(this.lb_NameCountry);
-            this.pnl_ExcelControls.Controls.Add(this.btn_RandomFill);
             this.pnl_ExcelControls.Controls.Add(this.btn_CheckExcelResult);
             this.pnl_ExcelControls.Controls.Add(this.btn_ExitExelApp);
             this.pnl_ExcelControls.Controls.Add(this.btn_CreateExcelDoc);
@@ -406,83 +374,11 @@
             this.pnl_ExcelControls.Controls.Add(this.cmb_MonthName);
             this.pnl_ExcelControls.Controls.Add(this.tb_NameCountry);
             this.pnl_ExcelControls.Controls.Add(this.cmb_NameCountry);
-            this.pnl_ExcelControls.Controls.Add(this.cmb_MonthName2);
-            this.pnl_ExcelControls.Controls.Add(this.cmb_MonthName3);
             this.pnl_ExcelControls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_ExcelControls.Location = new System.Drawing.Point(3, 3);
             this.pnl_ExcelControls.Name = "pnl_ExcelControls";
-            this.pnl_ExcelControls.Size = new System.Drawing.Size(470, 419);
+            this.pnl_ExcelControls.Size = new System.Drawing.Size(166, 367);
             this.pnl_ExcelControls.TabIndex = 0;
-            // 
-            // tb_MonthTemperature3
-            // 
-            this.tb_MonthTemperature3.Location = new System.Drawing.Point(315, 130);
-            this.tb_MonthTemperature3.Name = "tb_MonthTemperature3";
-            this.tb_MonthTemperature3.Size = new System.Drawing.Size(148, 20);
-            this.tb_MonthTemperature3.TabIndex = 38;
-            // 
-            // lb_MonthTemperature3
-            // 
-            this.lb_MonthTemperature3.AutoSize = true;
-            this.lb_MonthTemperature3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_MonthTemperature3.Location = new System.Drawing.Point(312, 112);
-            this.lb_MonthTemperature3.Name = "lb_MonthTemperature3";
-            this.lb_MonthTemperature3.Size = new System.Drawing.Size(143, 15);
-            this.lb_MonthTemperature3.TabIndex = 37;
-            this.lb_MonthTemperature3.Text = "Температура 3 месяца:";
-            // 
-            // tb_MonthTemperature2
-            // 
-            this.tb_MonthTemperature2.Location = new System.Drawing.Point(161, 130);
-            this.tb_MonthTemperature2.Name = "tb_MonthTemperature2";
-            this.tb_MonthTemperature2.Size = new System.Drawing.Size(148, 20);
-            this.tb_MonthTemperature2.TabIndex = 36;
-            // 
-            // lb_MonthTemperature2
-            // 
-            this.lb_MonthTemperature2.AutoSize = true;
-            this.lb_MonthTemperature2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_MonthTemperature2.Location = new System.Drawing.Point(158, 112);
-            this.lb_MonthTemperature2.Name = "lb_MonthTemperature2";
-            this.lb_MonthTemperature2.Size = new System.Drawing.Size(143, 15);
-            this.lb_MonthTemperature2.TabIndex = 35;
-            this.lb_MonthTemperature2.Text = "Температура 2 месяца:";
-            // 
-            // lb_MonthName3
-            // 
-            this.lb_MonthName3.AutoSize = true;
-            this.lb_MonthName3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_MonthName3.Location = new System.Drawing.Point(312, 60);
-            this.lb_MonthName3.Name = "lb_MonthName3";
-            this.lb_MonthName3.Size = new System.Drawing.Size(123, 15);
-            this.lb_MonthName3.TabIndex = 32;
-            this.lb_MonthName3.Text = "Название 3 месяца:";
-            // 
-            // tb_MonthName3
-            // 
-            this.tb_MonthName3.Location = new System.Drawing.Point(315, 78);
-            this.tb_MonthName3.Name = "tb_MonthName3";
-            this.tb_MonthName3.Size = new System.Drawing.Size(148, 20);
-            this.tb_MonthName3.TabIndex = 33;
-            this.tb_MonthName3.Visible = false;
-            // 
-            // lb_MonthName2
-            // 
-            this.lb_MonthName2.AutoSize = true;
-            this.lb_MonthName2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_MonthName2.Location = new System.Drawing.Point(158, 60);
-            this.lb_MonthName2.Name = "lb_MonthName2";
-            this.lb_MonthName2.Size = new System.Drawing.Size(123, 15);
-            this.lb_MonthName2.TabIndex = 29;
-            this.lb_MonthName2.Text = "Название 2 месяца:";
-            // 
-            // tb_MonthName2
-            // 
-            this.tb_MonthName2.Location = new System.Drawing.Point(163, 78);
-            this.tb_MonthName2.Name = "tb_MonthName2";
-            this.tb_MonthName2.Size = new System.Drawing.Size(148, 20);
-            this.tb_MonthName2.TabIndex = 30;
-            this.tb_MonthName2.Visible = false;
             // 
             // lb_NameCountry
             // 
@@ -496,9 +392,9 @@
             // 
             // btn_RandomFill
             // 
-            this.btn_RandomFill.Location = new System.Drawing.Point(5, 256);
+            this.btn_RandomFill.Location = new System.Drawing.Point(6, 347);
             this.btn_RandomFill.Name = "btn_RandomFill";
-            this.btn_RandomFill.Size = new System.Drawing.Size(458, 30);
+            this.btn_RandomFill.Size = new System.Drawing.Size(151, 30);
             this.btn_RandomFill.TabIndex = 25;
             this.btn_RandomFill.Text = "Случайное заполнение";
             this.btn_RandomFill.UseVisualStyleBackColor = true;
@@ -506,18 +402,19 @@
             // 
             // btn_CheckExcelResult
             // 
-            this.btn_CheckExcelResult.Location = new System.Drawing.Point(160, 156);
+            this.btn_CheckExcelResult.Location = new System.Drawing.Point(5, 283);
             this.btn_CheckExcelResult.Name = "btn_CheckExcelResult";
-            this.btn_CheckExcelResult.Size = new System.Drawing.Size(148, 30);
+            this.btn_CheckExcelResult.Size = new System.Drawing.Size(151, 30);
             this.btn_CheckExcelResult.TabIndex = 21;
             this.btn_CheckExcelResult.Text = "Проверить результат";
             this.btn_CheckExcelResult.UseVisualStyleBackColor = true;
+            this.btn_CheckExcelResult.Click += new System.EventHandler(this.btn_CheckExcelResult_Click);
             // 
             // btn_ExitExelApp
             // 
-            this.btn_ExitExelApp.Location = new System.Drawing.Point(316, 156);
+            this.btn_ExitExelApp.Location = new System.Drawing.Point(5, 319);
             this.btn_ExitExelApp.Name = "btn_ExitExelApp";
-            this.btn_ExitExelApp.Size = new System.Drawing.Size(148, 30);
+            this.btn_ExitExelApp.Size = new System.Drawing.Size(151, 30);
             this.btn_ExitExelApp.TabIndex = 20;
             this.btn_ExitExelApp.Text = "Выйти";
             this.btn_ExitExelApp.UseVisualStyleBackColor = true;
@@ -525,9 +422,9 @@
             // 
             // btn_CreateExcelDoc
             // 
-            this.btn_CreateExcelDoc.Location = new System.Drawing.Point(6, 156);
+            this.btn_CreateExcelDoc.Location = new System.Drawing.Point(5, 211);
             this.btn_CreateExcelDoc.Name = "btn_CreateExcelDoc";
-            this.btn_CreateExcelDoc.Size = new System.Drawing.Size(148, 30);
+            this.btn_CreateExcelDoc.Size = new System.Drawing.Size(151, 30);
             this.btn_CreateExcelDoc.TabIndex = 19;
             this.btn_CreateExcelDoc.Text = "Создать документ";
             this.btn_CreateExcelDoc.UseVisualStyleBackColor = true;
@@ -535,16 +432,16 @@
             // 
             // tb_MonthTemperature
             // 
-            this.tb_MonthTemperature.Location = new System.Drawing.Point(3, 130);
+            this.tb_MonthTemperature.Location = new System.Drawing.Point(3, 174);
             this.tb_MonthTemperature.Name = "tb_MonthTemperature";
-            this.tb_MonthTemperature.Size = new System.Drawing.Size(148, 20);
+            this.tb_MonthTemperature.Size = new System.Drawing.Size(153, 20);
             this.tb_MonthTemperature.TabIndex = 18;
             // 
             // lb_MonthTemperature
             // 
             this.lb_MonthTemperature.AutoSize = true;
             this.lb_MonthTemperature.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_MonthTemperature.Location = new System.Drawing.Point(4, 112);
+            this.lb_MonthTemperature.Location = new System.Drawing.Point(4, 156);
             this.lb_MonthTemperature.Name = "lb_MonthTemperature";
             this.lb_MonthTemperature.Size = new System.Drawing.Size(133, 15);
             this.lb_MonthTemperature.TabIndex = 17;
@@ -554,7 +451,7 @@
             // 
             this.lb_MonthName.AutoSize = true;
             this.lb_MonthName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_MonthName.Location = new System.Drawing.Point(2, 60);
+            this.lb_MonthName.Location = new System.Drawing.Point(2, 104);
             this.lb_MonthName.Name = "lb_MonthName";
             this.lb_MonthName.Size = new System.Drawing.Size(113, 15);
             this.lb_MonthName.TabIndex = 15;
@@ -564,7 +461,7 @@
             // 
             this.lb_NameRegion.AutoSize = true;
             this.lb_NameRegion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_NameRegion.Location = new System.Drawing.Point(160, 9);
+            this.lb_NameRegion.Location = new System.Drawing.Point(7, 54);
             this.lb_NameRegion.Name = "lb_NameRegion";
             this.lb_NameRegion.Size = new System.Drawing.Size(117, 15);
             this.lb_NameRegion.TabIndex = 13;
@@ -572,26 +469,26 @@
             // 
             // tb_NameRegion
             // 
-            this.tb_NameRegion.Location = new System.Drawing.Point(161, 32);
+            this.tb_NameRegion.Location = new System.Drawing.Point(5, 81);
             this.tb_NameRegion.Name = "tb_NameRegion";
-            this.tb_NameRegion.Size = new System.Drawing.Size(150, 20);
+            this.tb_NameRegion.Size = new System.Drawing.Size(151, 20);
             this.tb_NameRegion.TabIndex = 14;
             this.tb_NameRegion.Visible = false;
             // 
             // tb_MonthName
             // 
-            this.tb_MonthName.Location = new System.Drawing.Point(5, 78);
+            this.tb_MonthName.Location = new System.Drawing.Point(5, 122);
             this.tb_MonthName.Name = "tb_MonthName";
-            this.tb_MonthName.Size = new System.Drawing.Size(148, 20);
+            this.tb_MonthName.Size = new System.Drawing.Size(151, 20);
             this.tb_MonthName.TabIndex = 16;
             this.tb_MonthName.Visible = false;
             // 
             // cmb_NameRegion
             // 
             this.cmb_NameRegion.FormattingEnabled = true;
-            this.cmb_NameRegion.Location = new System.Drawing.Point(161, 31);
+            this.cmb_NameRegion.Location = new System.Drawing.Point(3, 80);
             this.cmb_NameRegion.Name = "cmb_NameRegion";
-            this.cmb_NameRegion.Size = new System.Drawing.Size(150, 21);
+            this.cmb_NameRegion.Size = new System.Drawing.Size(151, 21);
             this.cmb_NameRegion.TabIndex = 23;
             // 
             // cmb_MonthName
@@ -610,16 +507,16 @@
             "Октябрь",
             "Ноябрь",
             "Декабрь"});
-            this.cmb_MonthName.Location = new System.Drawing.Point(5, 78);
+            this.cmb_MonthName.Location = new System.Drawing.Point(5, 122);
             this.cmb_MonthName.Name = "cmb_MonthName";
-            this.cmb_MonthName.Size = new System.Drawing.Size(148, 21);
+            this.cmb_MonthName.Size = new System.Drawing.Size(151, 21);
             this.cmb_MonthName.TabIndex = 24;
             // 
             // tb_NameCountry
             // 
             this.tb_NameCountry.Location = new System.Drawing.Point(5, 32);
             this.tb_NameCountry.Name = "tb_NameCountry";
-            this.tb_NameCountry.Size = new System.Drawing.Size(150, 20);
+            this.tb_NameCountry.Size = new System.Drawing.Size(151, 20);
             this.tb_NameCountry.TabIndex = 28;
             this.tb_NameCountry.Visible = false;
             // 
@@ -628,51 +525,9 @@
             this.cmb_NameCountry.FormattingEnabled = true;
             this.cmb_NameCountry.Location = new System.Drawing.Point(5, 31);
             this.cmb_NameCountry.Name = "cmb_NameCountry";
-            this.cmb_NameCountry.Size = new System.Drawing.Size(150, 21);
+            this.cmb_NameCountry.Size = new System.Drawing.Size(151, 21);
             this.cmb_NameCountry.TabIndex = 27;
             this.cmb_NameCountry.SelectedIndexChanged += new System.EventHandler(this.cmb_NameCountry_SelectedIndexChanged);
-            // 
-            // cmb_MonthName2
-            // 
-            this.cmb_MonthName2.FormattingEnabled = true;
-            this.cmb_MonthName2.Items.AddRange(new object[] {
-            "Январь",
-            "Февраль",
-            "Март",
-            "Апрель",
-            "Май",
-            "Июнь",
-            "Июль",
-            "Август",
-            "Сентябрь",
-            "Октябрь",
-            "Ноябрь",
-            "Декабрь"});
-            this.cmb_MonthName2.Location = new System.Drawing.Point(163, 78);
-            this.cmb_MonthName2.Name = "cmb_MonthName2";
-            this.cmb_MonthName2.Size = new System.Drawing.Size(148, 21);
-            this.cmb_MonthName2.TabIndex = 31;
-            // 
-            // cmb_MonthName3
-            // 
-            this.cmb_MonthName3.FormattingEnabled = true;
-            this.cmb_MonthName3.Items.AddRange(new object[] {
-            "Январь",
-            "Февраль",
-            "Март",
-            "Апрель",
-            "Май",
-            "Июнь",
-            "Июль",
-            "Август",
-            "Сентябрь",
-            "Октябрь",
-            "Ноябрь",
-            "Декабрь"});
-            this.cmb_MonthName3.Location = new System.Drawing.Point(316, 78);
-            this.cmb_MonthName3.Name = "cmb_MonthName3";
-            this.cmb_MonthName3.Size = new System.Drawing.Size(148, 21);
-            this.cmb_MonthName3.TabIndex = 34;
             // 
             // tbp_Options
             // 
@@ -696,7 +551,7 @@
             this.tbp_Options.Controls.Add(this.btn_TemplateDocPath);
             this.tbp_Options.Location = new System.Drawing.Point(4, 22);
             this.tbp_Options.Name = "tbp_Options";
-            this.tbp_Options.Size = new System.Drawing.Size(894, 425);
+            this.tbp_Options.Size = new System.Drawing.Size(894, 373);
             this.tbp_Options.TabIndex = 3;
             this.tbp_Options.Text = "Настройки";
             this.tbp_Options.UseVisualStyleBackColor = true;
@@ -886,7 +741,7 @@
             this.tbp_About.Controls.Add(this.lb_COMApp);
             this.tbp_About.Location = new System.Drawing.Point(4, 22);
             this.tbp_About.Name = "tbp_About";
-            this.tbp_About.Size = new System.Drawing.Size(894, 425);
+            this.tbp_About.Size = new System.Drawing.Size(894, 373);
             this.tbp_About.TabIndex = 2;
             this.tbp_About.Text = "Контакты";
             this.tbp_About.UseVisualStyleBackColor = true;
@@ -911,11 +766,37 @@
             this.lb_COMApp.TabIndex = 2;
             this.lb_COMApp.Text = "COM Application";
             // 
+            // previewHandlerHost
+            // 
+            this.previewHandlerHost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.previewHandlerHost.Location = new System.Drawing.Point(0, 0);
+            this.previewHandlerHost.Name = "previewHandlerHost";
+            this.previewHandlerHost.Size = new System.Drawing.Size(714, 367);
+            this.previewHandlerHost.TabIndex = 0;
+            // 
+            // previreHandleHostExcel
+            // 
+            this.previreHandleHostExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.previreHandleHostExcel.Location = new System.Drawing.Point(0, 0);
+            this.previreHandleHostExcel.Name = "previreHandleHostExcel";
+            this.previreHandleHostExcel.Size = new System.Drawing.Size(722, 367);
+            this.previreHandleHostExcel.TabIndex = 1;
+            // 
+            // btn_AddNote
+            // 
+            this.btn_AddNote.Location = new System.Drawing.Point(5, 247);
+            this.btn_AddNote.Name = "btn_AddNote";
+            this.btn_AddNote.Size = new System.Drawing.Size(151, 30);
+            this.btn_AddNote.TabIndex = 29;
+            this.btn_AddNote.Text = "Добавить запись";
+            this.btn_AddNote.UseVisualStyleBackColor = true;
+            this.btn_AddNote.Click += new System.EventHandler(this.btn_AddNote_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 451);
+            this.ClientSize = new System.Drawing.Size(902, 399);
             this.Controls.Add(this.tab_COM);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -1006,16 +887,7 @@
         private System.Windows.Forms.TextBox tb_NameCountry;
         private System.Windows.Forms.ComboBox cmb_NameCountry;
         private System.Windows.Forms.Label lb_NameCountry;
-        private System.Windows.Forms.Label lb_MonthName3;
-        private System.Windows.Forms.TextBox tb_MonthName3;
-        private System.Windows.Forms.ComboBox cmb_MonthName2;
-        private System.Windows.Forms.Label lb_MonthName2;
-        private System.Windows.Forms.TextBox tb_MonthName2;
-        private System.Windows.Forms.ComboBox cmb_MonthName3;
-        private System.Windows.Forms.TextBox tb_MonthTemperature3;
-        private System.Windows.Forms.Label lb_MonthTemperature3;
-        private System.Windows.Forms.TextBox tb_MonthTemperature2;
-        private System.Windows.Forms.Label lb_MonthTemperature2;
+        private System.Windows.Forms.Button btn_AddNote;
     }
 }
 
