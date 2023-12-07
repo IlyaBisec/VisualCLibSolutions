@@ -23,5 +23,8 @@
     <Setting Name="defaultCityFilePath" Type="System.String" Scope="User">
       <Value Profile="(Default)">F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\COM\COM_Application\COM_WindApplication\bin\Debug\txt\AllCities.txt</Value>
     </Setting>
+    <Setting Name="clearExcelFields" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
