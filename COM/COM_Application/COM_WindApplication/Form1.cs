@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using COM_WindApplication.com;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -24,11 +25,8 @@ namespace COM_WindApplication
         private Excel.Application excelApp;
         private Excel.Workbook workbook;
         private Excel.Worksheet worksheet;
-        private Excel.Range headersRange;
+    
 
-
-        private int lastRow;
-        private int averageColumn;
         public MainForm()
         {
             InitializeComponent();
@@ -92,27 +90,46 @@ namespace COM_WindApplication
 
                 // Showing privew proccess
                 previreHandleHostExcel.Open(res.demoExcelTemplate);
-
-                // EXCEL COM INIT
-                // Initialization Excel
-                excelApp = new Excel.Application();
-                workbook = excelApp.Workbooks.Add();
-                worksheet = workbook.ActiveSheet;
-
-                // Writing headers in Excel
-                headersRange = worksheet.Range["A1:D1"];
-                headersRange.Value2 = new[] { "Страна", "Город", "", "" };
-                headersRange.Font.Bold = true;
-
-                lastRow = 2;
-                averageColumn = 4;
             }
+        }
+
+        private void btn_CreateExcelTable_Click(object sender, EventArgs e)
+        {
+            var res = Properties.Settings.Default;
+
+            // EXCEL COM INIT
+            // Initialization Excel
+            excelApp = new Excel.Application();
+            workbook = excelApp.Workbooks.Add();
+            worksheet = workbook.ActiveSheet;
+
+            // Writing headers in Excel
+            worksheet.Cells[1, 1] = "Страна";
+            worksheet.Cells[1, 2] = "Город";
+            //int column = 3;
+
+
+            //worksheet.Cells[1, column] = "Месяц";
+            //column++;
+
+
+            // Saving excel table
+            var createdExcelFile = res.newDefaultFilePath + "\\" + "TemperatureDocument" + ".xlsx";
+
+            workbook.SaveAs(createdExcelFile);
+            workbook.Close();
+            excelApp.Quit();
+
+            MessageBox.Show("Default file path: " + res.newDefaultFilePath + "TemperatureDocument", "The table of temperature was successfully created!");
         }
 
         private void btn_AddNote_Click(object sender, EventArgs e)
         {
             String country, city, month;
             double temperature;
+
+            var res = Properties.Settings.Default;
+            var createdLastFile = res.newDefaultFilePath + "\\" + "TemperatureDocument" + ".xlsx";
 
             if (chekb_TurnOffComboboxDictionary.Checked)
             {
@@ -137,84 +154,116 @@ namespace COM_WindApplication
                 month = cmb_MonthName.SelectedItem.ToString();
                 temperature = Convert.ToDouble(tb_MonthTemperature.Text);
 
-                // Search for a column with the name of the month
-                int monthColumn = 0;
-                for (int i = 1; i <= worksheet.Cells[1, averageColumn].End(Excel.XlDirection.xlToLeft).Column; i++)
+                excelApp = new Excel.Application();
+                workbook = excelApp.Workbooks.Open(createdLastFile);
+                worksheet = workbook.ActiveSheet;
+
+                int row = 2;
+                while (worksheet.Cells[row, 1].Value != null)
                 {
-                    if (worksheet.Cells[1, i].Value2 == month)
+                    if (worksheet.Cells[row, 1].Value.ToString() == country)
                     {
-                        monthColumn = i;
+                        worksheet.Cells[row, 2] = city;
                         break;
                     }
+                    row++;
                 }
 
-                // If the column with the month name is not found, create a new one 
-                if (monthColumn == 0)
+                if (worksheet.Cells[row, 1].Value == null)
                 {
-                    monthColumn = worksheet.Cells[1, averageColumn].End(Excel.XlDirection.xlToLeft).Column + 1;
-                    worksheet.Cells[1, monthColumn].Value2 = month;
-                    worksheet.Cells[1, monthColumn].Font.Bold = true;
-                    averageColumn++;
+                    worksheet.Cells[row, 1] = country;
+                    worksheet.Cells[row, 2] = city;
                 }
 
-                // Writing data to Excel
-                worksheet.Cells[lastRow, 1].Value2 = country;
-                worksheet.Cells[lastRow, 2].Value2 = city;
-                worksheet.Cells[lastRow, monthColumn].Value2 = temperature;
+                bool monthExists = false;
+                int column = 3;
+                while (worksheet.Cells[1, column].Value != null)
+                {
+                    if (worksheet.Cells[1, column].Value.ToString() == month)
+                    {
+                        worksheet.Cells[row, column] = temperature;
+                        monthExists = true;
+                        break;
+                    }
+                    column++;
+                }
 
-                lastRow++;
+                if (!monthExists)
+                {
+                    worksheet.Cells[1, column] = month;
+                    worksheet.Cells[row, column] = temperature;
+                }
 
-                //// average temperature add to btn отдельно,
-                //// открыть документ, добавить последний столбец
-                //// с расчетами ср температуры
-                //// Cteate last column - average column
-                //int index_columnAverage = averageColumn;
-                //if(index_columnAverage - 1 < averageColumn)
-                //{
-                //    index_columnAverage++;
-                //    worksheet.Cells[1, index_columnAverage] = "Средняя температура";
-                //}
+                workbook.Save();
+                workbook.Close();
+                excelApp.Quit();
 
-                //// Calculation and recording of the average temperature value
-                //int dataStartRow = 2;
-                //int dataEndRow = worksheet.Cells[lastRow - 1, averageColumn - 1].End(Excel.XlDirection.xlDown).Row;
-                //Excel.Range dataRange = worksheet.Range[$"C{dataStartRow}:C{dataEndRow}"];
-                //Excel.Range averageCell = worksheet.Cells[lastRow - 1, averageColumn];
-                //averageCell.Value2 = $"=AVERAGE({dataRange.Address})";
-                //averageCell.Font.Bold = true;
+                Marshal.ReleaseComObject(worksheet);
+                Marshal.ReleaseComObject(workbook);
+                Marshal.ReleaseComObject(excelApp);
+
+                Marshal.FinalReleaseComObject(worksheet);
+                Marshal.FinalReleaseComObject(workbook);
+                Marshal.FinalReleaseComObject(excelApp);
+
+
+                MessageBox.Show("An entry has been added!");
             }
 
             clearFields();
         }
 
+        // Opens the saved file, creates a column with "average temperature", reads 
+        // the temperature values by month and writes them to its column
+        private void btn_TemperatureAverage_Click(object sender, EventArgs e)
+        {
+            var res = Properties.Settings.Default;
+            var createdLastFile = res.newDefaultFilePath + "\\" + "TemperatureDocument" + ".xlsx";
+
+            excelApp = new Excel.Application();
+            workbook = excelApp.Workbooks.Open(createdLastFile);
+            worksheet = workbook.ActiveSheet;
+
+            int lastColumnIndex = worksheet.Cells[1, worksheet.Columns.Count].End[Excel.XlDirection.xlToLeft].Column;
+            string averageColumnHeader = "среднее значение температур";
+            worksheet.Cells[1, lastColumnIndex + 1] = averageColumnHeader;
+
+            int lastRowIndex = worksheet.Cells[worksheet.Rows.Count, 1].End[Excel.XlDirection.xlUp].Row;
+            for (int row = 2; row <= lastRowIndex; row++)
+            {
+                double sum = 0;
+                int count = 0;
+
+                for (int column = 3; column <= lastColumnIndex; column++)
+                {
+                    if (worksheet.Cells[row, column].Value != null)
+                    {
+                        sum += double.Parse(worksheet.Cells[row, column].Value.ToString());
+                        count++;
+                    }
+                }
+
+                double average = count > 0 ? sum / count : 0;
+                worksheet.Cells[row, lastColumnIndex + 1] = average;
+            }
+
+            workbook.SaveAs(createdLastFile);
+            workbook.Close();
+            excelApp.Quit();
+
+
+            releaseExcelObject(worksheet);
+            releaseExcelObject(workbook);
+            releaseExcelObject(excelApp);
+
+            MessageBox.Show("The average temperature values are calculated!");
+        }
+
         // Checking the result of a previously created document
         private void btn_CheckExcelResult_Click(object sender, EventArgs e)
         {
-            // creating a histogram based on a table
-
-
             var res = Properties.Settings.Default;
-            String defaultNewFilePath = res.newDefaultFilePath;
-
-            var createdLastFile = defaultNewFilePath + "\\" + "TemperatureDocument" + ".xlsx";
-
-            // Saving excel table
-            //DateTime todayDate = DateTime.Today;
-
-            //workbook.SaveAs(defaultNewFilePath + "\\" + todayDate.ToString("yyyy-MM-dd.hh.mm") + ".xlsx");
-            workbook.SaveAs(createdLastFile);
-
-            workbook.Close(false);
-            excelApp.Quit();
-
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
-
-            MessageBox.Show("Default file path: " + defaultNewFilePath + "TemperatureDocument", "The table of temperature was successfully created!");
-
-            // And checking the result
-
+            var createdLastFile = res.newDefaultFilePath + "\\" + "TemperatureDocument" + ".xlsx";
 
             if (tab_COM.SelectedTab == tab_COM.TabPages["tbp_Excel"])
             {
@@ -297,11 +346,53 @@ namespace COM_WindApplication
             { MessageBox.Show(ex.Message.ToString(), "Cities dictionary not availeble, using manual input please", MessageBoxButtons.OK); }
         }
 
+        // Cleans the application fields (except for the month), the temperature field 
+        // is always cleaned after making entries in the Excel spreadsheet.
+        private void clearFields()
+        {
+            tb_MonthTemperature.Text = "";
+
+            if (chekb_ClearExcelFiledsAfterAddNote.Checked)
+            {
+                if (chekb_TurnOffComboboxDictionary.Checked)
+                {
+                    tb_NameCountry.Text = "";
+                    tb_NameRegion.Text = "";
+                    tb_MonthName.Text = "";
+                }
+                else
+                {
+                    cmb_NameCountry.Text = "";
+                    cmb_NameRegion.Text = "";
+                    //cmb_MonthName.Text = "";
+                }
+            }
+        }
+
+        // Frees up resources used to create an Excel spreadsheet
+        private void releaseExcelObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch
+            {
+                obj = null;
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
         private void btn_ExitExelApp_Click(object sender, EventArgs e)
         {
             exitApplication();
         }
 
+        // Main form load
         private void MainForm_Load(object sender, EventArgs e)
         {
             // Gets paths from resources
@@ -501,28 +592,6 @@ namespace COM_WindApplication
             previreHandleHostExcel.UnloadPreviewHandler();
             this.Close();
             System.Windows.Forms.Application.Exit();
-        }
-
-        // Clear Excel fields after add note
-        void clearFields()
-        {
-            tb_MonthTemperature.Text = "";
-
-            if (chekb_ClearExcelFiledsAfterAddNote.Checked)
-            {
-                if (chekb_TurnOffComboboxDictionary.Checked)
-                {
-                    tb_NameCountry.Text = "";
-                    tb_NameRegion.Text = "";
-                    tb_MonthName.Text = "";
-                }
-                else
-                {
-                    cmb_NameCountry.Text = "";
-                    cmb_NameRegion.Text = "";
-                    //cmb_MonthName.Text = "";
-                }
-            }
         }
     }
 }

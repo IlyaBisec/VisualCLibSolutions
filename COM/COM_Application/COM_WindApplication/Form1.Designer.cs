@@ -69,8 +69,9 @@
             this.tb_NameCountry = new System.Windows.Forms.TextBox();
             this.cmb_NameCountry = new System.Windows.Forms.ComboBox();
             this.btn_TemperatureAverage = new System.Windows.Forms.Button();
-            this.btn_RandomFill = new System.Windows.Forms.Button();
+            this.btn_CreateExcelTable = new System.Windows.Forms.Button();
             this.tbp_Options = new System.Windows.Forms.TabPage();
+            this.chekb_ClearExcelFiledsAfterAddNote = new System.Windows.Forms.CheckBox();
             this.btn_PathToTxtCities = new System.Windows.Forms.Button();
             this.tb_PathToTxtCities = new System.Windows.Forms.TextBox();
             this.lb_PathToTxtCities = new System.Windows.Forms.Label();
@@ -92,7 +93,6 @@
             this.tbp_About = new System.Windows.Forms.TabPage();
             this.lb_About = new System.Windows.Forms.Label();
             this.lb_COMApp = new System.Windows.Forms.Label();
-            this.chekb_ClearExcelFiledsAfterAddNote = new System.Windows.Forms.CheckBox();
             this.previewHandlerHost = new PreviewHandlers.PreviewHandlerHost();
             this.previreHandleHostExcel = new PreviewHandlers.PreviewHandlerHost();
             this.tab_COM.SuspendLayout();
@@ -118,7 +118,7 @@
             this.tab_COM.Location = new System.Drawing.Point(0, 0);
             this.tab_COM.Name = "tab_COM";
             this.tab_COM.SelectedIndex = 0;
-            this.tab_COM.Size = new System.Drawing.Size(902, 397);
+            this.tab_COM.Size = new System.Drawing.Size(902, 424);
             this.tab_COM.TabIndex = 0;
             // 
             // tbp_Main
@@ -129,7 +129,7 @@
             this.tbp_Main.Controls.Add(this.lb_Welcome);
             this.tbp_Main.Location = new System.Drawing.Point(4, 22);
             this.tbp_Main.Name = "tbp_Main";
-            this.tbp_Main.Size = new System.Drawing.Size(894, 364);
+            this.tbp_Main.Size = new System.Drawing.Size(894, 398);
             this.tbp_Main.TabIndex = 4;
             this.tbp_Main.Text = "Welcome";
             this.tbp_Main.UseVisualStyleBackColor = true;
@@ -184,7 +184,7 @@
             this.tbp_Word.Location = new System.Drawing.Point(4, 22);
             this.tbp_Word.Name = "tbp_Word";
             this.tbp_Word.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_Word.Size = new System.Drawing.Size(894, 371);
+            this.tbp_Word.Size = new System.Drawing.Size(894, 398);
             this.tbp_Word.TabIndex = 0;
             this.tbp_Word.Text = "Word";
             this.tbp_Word.UseVisualStyleBackColor = true;
@@ -195,7 +195,7 @@
             this.pnl_Preview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Preview.Location = new System.Drawing.Point(177, 3);
             this.pnl_Preview.Name = "pnl_Preview";
-            this.pnl_Preview.Size = new System.Drawing.Size(714, 365);
+            this.pnl_Preview.Size = new System.Drawing.Size(714, 392);
             this.pnl_Preview.TabIndex = 1;
             this.pnl_Preview.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Preview_Paint);
             // 
@@ -217,7 +217,7 @@
             this.pnl_Controls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_Controls.Location = new System.Drawing.Point(3, 3);
             this.pnl_Controls.Name = "pnl_Controls";
-            this.pnl_Controls.Size = new System.Drawing.Size(174, 365);
+            this.pnl_Controls.Size = new System.Drawing.Size(174, 392);
             this.pnl_Controls.TabIndex = 0;
             // 
             // btn_CheckResult
@@ -339,11 +339,10 @@
             // 
             this.tbp_Excel.Controls.Add(this.pnl_PreviewExcel);
             this.tbp_Excel.Controls.Add(this.pnl_ExcelControls);
-            this.tbp_Excel.Controls.Add(this.btn_RandomFill);
             this.tbp_Excel.Location = new System.Drawing.Point(4, 22);
             this.tbp_Excel.Name = "tbp_Excel";
             this.tbp_Excel.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_Excel.Size = new System.Drawing.Size(894, 371);
+            this.tbp_Excel.Size = new System.Drawing.Size(894, 398);
             this.tbp_Excel.TabIndex = 1;
             this.tbp_Excel.Text = "Excel";
             this.tbp_Excel.UseVisualStyleBackColor = true;
@@ -352,9 +351,9 @@
             // 
             this.pnl_PreviewExcel.Controls.Add(this.previreHandleHostExcel);
             this.pnl_PreviewExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_PreviewExcel.Location = new System.Drawing.Point(169, 3);
+            this.pnl_PreviewExcel.Location = new System.Drawing.Point(172, 3);
             this.pnl_PreviewExcel.Name = "pnl_PreviewExcel";
-            this.pnl_PreviewExcel.Size = new System.Drawing.Size(722, 365);
+            this.pnl_PreviewExcel.Size = new System.Drawing.Size(719, 392);
             this.pnl_PreviewExcel.TabIndex = 2;
             this.pnl_PreviewExcel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_PreviewExcel_Paint);
             // 
@@ -362,6 +361,7 @@
             // 
             this.pnl_ExcelControls.Controls.Add(this.btn_AddNote);
             this.pnl_ExcelControls.Controls.Add(this.lb_NameCountry);
+            this.pnl_ExcelControls.Controls.Add(this.btn_CreateExcelTable);
             this.pnl_ExcelControls.Controls.Add(this.btn_CheckExcelResult);
             this.pnl_ExcelControls.Controls.Add(this.btn_ExitExelApp);
             this.pnl_ExcelControls.Controls.Add(this.tb_MonthTemperature);
@@ -378,12 +378,12 @@
             this.pnl_ExcelControls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_ExcelControls.Location = new System.Drawing.Point(3, 3);
             this.pnl_ExcelControls.Name = "pnl_ExcelControls";
-            this.pnl_ExcelControls.Size = new System.Drawing.Size(166, 365);
+            this.pnl_ExcelControls.Size = new System.Drawing.Size(169, 392);
             this.pnl_ExcelControls.TabIndex = 0;
             // 
             // btn_AddNote
             // 
-            this.btn_AddNote.Location = new System.Drawing.Point(3, 200);
+            this.btn_AddNote.Location = new System.Drawing.Point(3, 235);
             this.btn_AddNote.Name = "btn_AddNote";
             this.btn_AddNote.Size = new System.Drawing.Size(151, 30);
             this.btn_AddNote.TabIndex = 29;
@@ -403,7 +403,7 @@
             // 
             // btn_CheckExcelResult
             // 
-            this.btn_CheckExcelResult.Location = new System.Drawing.Point(3, 241);
+            this.btn_CheckExcelResult.Location = new System.Drawing.Point(3, 276);
             this.btn_CheckExcelResult.Name = "btn_CheckExcelResult";
             this.btn_CheckExcelResult.Size = new System.Drawing.Size(151, 30);
             this.btn_CheckExcelResult.TabIndex = 21;
@@ -413,7 +413,7 @@
             // 
             // btn_ExitExelApp
             // 
-            this.btn_ExitExelApp.Location = new System.Drawing.Point(3, 322);
+            this.btn_ExitExelApp.Location = new System.Drawing.Point(3, 357);
             this.btn_ExitExelApp.Name = "btn_ExitExelApp";
             this.btn_ExitExelApp.Size = new System.Drawing.Size(151, 30);
             this.btn_ExitExelApp.TabIndex = 20;
@@ -522,23 +522,23 @@
             // 
             // btn_TemperatureAverage
             // 
-            this.btn_TemperatureAverage.Location = new System.Drawing.Point(3, 282);
+            this.btn_TemperatureAverage.Location = new System.Drawing.Point(3, 317);
             this.btn_TemperatureAverage.Name = "btn_TemperatureAverage";
             this.btn_TemperatureAverage.Size = new System.Drawing.Size(151, 30);
             this.btn_TemperatureAverage.TabIndex = 19;
             this.btn_TemperatureAverage.Text = "Средняя температура";
             this.btn_TemperatureAverage.UseVisualStyleBackColor = true;
-            this.btn_TemperatureAverage.Visible = false;
+            this.btn_TemperatureAverage.Click += new System.EventHandler(this.btn_TemperatureAverage_Click);
             // 
-            // btn_RandomFill
+            // btn_CreateExcelTable
             // 
-            this.btn_RandomFill.Location = new System.Drawing.Point(6, 347);
-            this.btn_RandomFill.Name = "btn_RandomFill";
-            this.btn_RandomFill.Size = new System.Drawing.Size(151, 30);
-            this.btn_RandomFill.TabIndex = 25;
-            this.btn_RandomFill.Text = "Случайное заполнение";
-            this.btn_RandomFill.UseVisualStyleBackColor = true;
-            this.btn_RandomFill.Visible = false;
+            this.btn_CreateExcelTable.Location = new System.Drawing.Point(3, 199);
+            this.btn_CreateExcelTable.Name = "btn_CreateExcelTable";
+            this.btn_CreateExcelTable.Size = new System.Drawing.Size(151, 30);
+            this.btn_CreateExcelTable.TabIndex = 25;
+            this.btn_CreateExcelTable.Text = "Создать таблицу";
+            this.btn_CreateExcelTable.UseVisualStyleBackColor = true;
+            this.btn_CreateExcelTable.Click += new System.EventHandler(this.btn_CreateExcelTable_Click);
             // 
             // tbp_Options
             // 
@@ -563,10 +563,25 @@
             this.tbp_Options.Controls.Add(this.btn_TemplateDocPath);
             this.tbp_Options.Location = new System.Drawing.Point(4, 22);
             this.tbp_Options.Name = "tbp_Options";
-            this.tbp_Options.Size = new System.Drawing.Size(894, 364);
+            this.tbp_Options.Size = new System.Drawing.Size(894, 398);
             this.tbp_Options.TabIndex = 3;
             this.tbp_Options.Text = "Настройки";
             this.tbp_Options.UseVisualStyleBackColor = true;
+            // 
+            // chekb_ClearExcelFiledsAfterAddNote
+            // 
+            this.chekb_ClearExcelFiledsAfterAddNote.AutoSize = true;
+            this.chekb_ClearExcelFiledsAfterAddNote.Checked = true;
+            this.chekb_ClearExcelFiledsAfterAddNote.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chekb_ClearExcelFiledsAfterAddNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chekb_ClearExcelFiledsAfterAddNote.Location = new System.Drawing.Point(633, 122);
+            this.chekb_ClearExcelFiledsAfterAddNote.Name = "chekb_ClearExcelFiledsAfterAddNote";
+            this.chekb_ClearExcelFiledsAfterAddNote.Size = new System.Drawing.Size(206, 38);
+            this.chekb_ClearExcelFiledsAfterAddNote.TabIndex = 18;
+            this.chekb_ClearExcelFiledsAfterAddNote.Text = "Очистить поля Excel после\r\nдобавления";
+            this.chekb_ClearExcelFiledsAfterAddNote.UseVisualStyleBackColor = true;
+            this.chekb_ClearExcelFiledsAfterAddNote.Visible = false;
+            this.chekb_ClearExcelFiledsAfterAddNote.CheckedChanged += new System.EventHandler(this.chekb_ClearExcelFiledsAfterAddNote_CheckedChanged);
             // 
             // btn_PathToTxtCities
             // 
@@ -753,7 +768,7 @@
             this.tbp_About.Controls.Add(this.lb_COMApp);
             this.tbp_About.Location = new System.Drawing.Point(4, 22);
             this.tbp_About.Name = "tbp_About";
-            this.tbp_About.Size = new System.Drawing.Size(894, 364);
+            this.tbp_About.Size = new System.Drawing.Size(894, 398);
             this.tbp_About.TabIndex = 2;
             this.tbp_About.Text = "Контакты";
             this.tbp_About.UseVisualStyleBackColor = true;
@@ -778,27 +793,12 @@
             this.lb_COMApp.TabIndex = 2;
             this.lb_COMApp.Text = "COM Application";
             // 
-            // chekb_ClearExcelFiledsAfterAddNote
-            // 
-            this.chekb_ClearExcelFiledsAfterAddNote.AutoSize = true;
-            this.chekb_ClearExcelFiledsAfterAddNote.Checked = true;
-            this.chekb_ClearExcelFiledsAfterAddNote.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chekb_ClearExcelFiledsAfterAddNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chekb_ClearExcelFiledsAfterAddNote.Location = new System.Drawing.Point(633, 122);
-            this.chekb_ClearExcelFiledsAfterAddNote.Name = "chekb_ClearExcelFiledsAfterAddNote";
-            this.chekb_ClearExcelFiledsAfterAddNote.Size = new System.Drawing.Size(206, 38);
-            this.chekb_ClearExcelFiledsAfterAddNote.TabIndex = 18;
-            this.chekb_ClearExcelFiledsAfterAddNote.Text = "Очистить поля Excel после\r\nдобавления";
-            this.chekb_ClearExcelFiledsAfterAddNote.UseVisualStyleBackColor = true;
-            this.chekb_ClearExcelFiledsAfterAddNote.Visible = false;
-            this.chekb_ClearExcelFiledsAfterAddNote.CheckedChanged += new System.EventHandler(this.chekb_ClearExcelFiledsAfterAddNote_CheckedChanged);
-            // 
             // previewHandlerHost
             // 
             this.previewHandlerHost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.previewHandlerHost.Location = new System.Drawing.Point(0, 0);
             this.previewHandlerHost.Name = "previewHandlerHost";
-            this.previewHandlerHost.Size = new System.Drawing.Size(714, 365);
+            this.previewHandlerHost.Size = new System.Drawing.Size(714, 392);
             this.previewHandlerHost.TabIndex = 0;
             // 
             // previreHandleHostExcel
@@ -806,14 +806,14 @@
             this.previreHandleHostExcel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.previreHandleHostExcel.Location = new System.Drawing.Point(0, 0);
             this.previreHandleHostExcel.Name = "previreHandleHostExcel";
-            this.previreHandleHostExcel.Size = new System.Drawing.Size(722, 365);
+            this.previreHandleHostExcel.Size = new System.Drawing.Size(719, 392);
             this.previreHandleHostExcel.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 397);
+            this.ClientSize = new System.Drawing.Size(902, 424);
             this.Controls.Add(this.tab_COM);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -891,7 +891,7 @@
         private System.Windows.Forms.Label lb_NameRegion;
         private System.Windows.Forms.ComboBox cmb_MonthName;
         private System.Windows.Forms.ComboBox cmb_NameRegion;
-        private System.Windows.Forms.Button btn_RandomFill;
+        private System.Windows.Forms.Button btn_CreateExcelTable;
         private System.Windows.Forms.Button btn_DemoExcelTemplate;
         private System.Windows.Forms.TextBox tb_DemoExcelTemplate;
         private System.Windows.Forms.Label lb_DemoExcelTemplate;
