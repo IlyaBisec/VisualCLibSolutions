@@ -91,9 +91,9 @@
             this.tbp_About = new System.Windows.Forms.TabPage();
             this.lb_About = new System.Windows.Forms.Label();
             this.lb_COMApp = new System.Windows.Forms.Label();
+            this.btn_AddNote = new System.Windows.Forms.Button();
             this.previewHandlerHost = new PreviewHandlers.PreviewHandlerHost();
             this.previreHandleHostExcel = new PreviewHandlers.PreviewHandlerHost();
-            this.btn_AddNote = new System.Windows.Forms.Button();
             this.tab_COM.SuspendLayout();
             this.tbp_Main.SuspendLayout();
             this.tbp_Word.SuspendLayout();
@@ -117,7 +117,7 @@
             this.tab_COM.Location = new System.Drawing.Point(0, 0);
             this.tab_COM.Name = "tab_COM";
             this.tab_COM.SelectedIndex = 0;
-            this.tab_COM.Size = new System.Drawing.Size(902, 399);
+            this.tab_COM.Size = new System.Drawing.Size(902, 408);
             this.tab_COM.TabIndex = 0;
             // 
             // tbp_Main
@@ -128,7 +128,7 @@
             this.tbp_Main.Controls.Add(this.lb_Welcome);
             this.tbp_Main.Location = new System.Drawing.Point(4, 22);
             this.tbp_Main.Name = "tbp_Main";
-            this.tbp_Main.Size = new System.Drawing.Size(894, 373);
+            this.tbp_Main.Size = new System.Drawing.Size(894, 379);
             this.tbp_Main.TabIndex = 4;
             this.tbp_Main.Text = "Welcome";
             this.tbp_Main.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@
             this.tbp_Word.Location = new System.Drawing.Point(4, 22);
             this.tbp_Word.Name = "tbp_Word";
             this.tbp_Word.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_Word.Size = new System.Drawing.Size(894, 373);
+            this.tbp_Word.Size = new System.Drawing.Size(894, 379);
             this.tbp_Word.TabIndex = 0;
             this.tbp_Word.Text = "Word";
             this.tbp_Word.UseVisualStyleBackColor = true;
@@ -194,7 +194,7 @@
             this.pnl_Preview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Preview.Location = new System.Drawing.Point(177, 3);
             this.pnl_Preview.Name = "pnl_Preview";
-            this.pnl_Preview.Size = new System.Drawing.Size(714, 367);
+            this.pnl_Preview.Size = new System.Drawing.Size(714, 373);
             this.pnl_Preview.TabIndex = 1;
             this.pnl_Preview.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Preview_Paint);
             // 
@@ -216,7 +216,7 @@
             this.pnl_Controls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_Controls.Location = new System.Drawing.Point(3, 3);
             this.pnl_Controls.Name = "pnl_Controls";
-            this.pnl_Controls.Size = new System.Drawing.Size(174, 367);
+            this.pnl_Controls.Size = new System.Drawing.Size(174, 373);
             this.pnl_Controls.TabIndex = 0;
             // 
             // btn_CheckResult
@@ -342,7 +342,7 @@
             this.tbp_Excel.Location = new System.Drawing.Point(4, 22);
             this.tbp_Excel.Name = "tbp_Excel";
             this.tbp_Excel.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_Excel.Size = new System.Drawing.Size(894, 373);
+            this.tbp_Excel.Size = new System.Drawing.Size(894, 382);
             this.tbp_Excel.TabIndex = 1;
             this.tbp_Excel.Text = "Excel";
             this.tbp_Excel.UseVisualStyleBackColor = true;
@@ -353,7 +353,7 @@
             this.pnl_PreviewExcel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_PreviewExcel.Location = new System.Drawing.Point(169, 3);
             this.pnl_PreviewExcel.Name = "pnl_PreviewExcel";
-            this.pnl_PreviewExcel.Size = new System.Drawing.Size(722, 367);
+            this.pnl_PreviewExcel.Size = new System.Drawing.Size(722, 376);
             this.pnl_PreviewExcel.TabIndex = 2;
             this.pnl_PreviewExcel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_PreviewExcel_Paint);
             // 
@@ -363,7 +363,6 @@
             this.pnl_ExcelControls.Controls.Add(this.lb_NameCountry);
             this.pnl_ExcelControls.Controls.Add(this.btn_CheckExcelResult);
             this.pnl_ExcelControls.Controls.Add(this.btn_ExitExelApp);
-            this.pnl_ExcelControls.Controls.Add(this.btn_CreateExcelDoc);
             this.pnl_ExcelControls.Controls.Add(this.tb_MonthTemperature);
             this.pnl_ExcelControls.Controls.Add(this.lb_MonthTemperature);
             this.pnl_ExcelControls.Controls.Add(this.lb_MonthName);
@@ -374,10 +373,11 @@
             this.pnl_ExcelControls.Controls.Add(this.cmb_MonthName);
             this.pnl_ExcelControls.Controls.Add(this.tb_NameCountry);
             this.pnl_ExcelControls.Controls.Add(this.cmb_NameCountry);
+            this.pnl_ExcelControls.Controls.Add(this.btn_CreateExcelDoc);
             this.pnl_ExcelControls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_ExcelControls.Location = new System.Drawing.Point(3, 3);
             this.pnl_ExcelControls.Name = "pnl_ExcelControls";
-            this.pnl_ExcelControls.Size = new System.Drawing.Size(166, 367);
+            this.pnl_ExcelControls.Size = new System.Drawing.Size(166, 376);
             this.pnl_ExcelControls.TabIndex = 0;
             // 
             // lb_NameCountry
@@ -402,7 +402,7 @@
             // 
             // btn_CheckExcelResult
             // 
-            this.btn_CheckExcelResult.Location = new System.Drawing.Point(5, 283);
+            this.btn_CheckExcelResult.Location = new System.Drawing.Point(3, 289);
             this.btn_CheckExcelResult.Name = "btn_CheckExcelResult";
             this.btn_CheckExcelResult.Size = new System.Drawing.Size(151, 30);
             this.btn_CheckExcelResult.TabIndex = 21;
@@ -412,7 +412,7 @@
             // 
             // btn_ExitExelApp
             // 
-            this.btn_ExitExelApp.Location = new System.Drawing.Point(5, 319);
+            this.btn_ExitExelApp.Location = new System.Drawing.Point(3, 330);
             this.btn_ExitExelApp.Name = "btn_ExitExelApp";
             this.btn_ExitExelApp.Size = new System.Drawing.Size(151, 30);
             this.btn_ExitExelApp.TabIndex = 20;
@@ -422,7 +422,7 @@
             // 
             // btn_CreateExcelDoc
             // 
-            this.btn_CreateExcelDoc.Location = new System.Drawing.Point(5, 211);
+            this.btn_CreateExcelDoc.Location = new System.Drawing.Point(5, 206);
             this.btn_CreateExcelDoc.Name = "btn_CreateExcelDoc";
             this.btn_CreateExcelDoc.Size = new System.Drawing.Size(151, 30);
             this.btn_CreateExcelDoc.TabIndex = 19;
@@ -551,7 +551,7 @@
             this.tbp_Options.Controls.Add(this.btn_TemplateDocPath);
             this.tbp_Options.Location = new System.Drawing.Point(4, 22);
             this.tbp_Options.Name = "tbp_Options";
-            this.tbp_Options.Size = new System.Drawing.Size(894, 373);
+            this.tbp_Options.Size = new System.Drawing.Size(894, 379);
             this.tbp_Options.TabIndex = 3;
             this.tbp_Options.Text = "Настройки";
             this.tbp_Options.UseVisualStyleBackColor = true;
@@ -741,7 +741,7 @@
             this.tbp_About.Controls.Add(this.lb_COMApp);
             this.tbp_About.Location = new System.Drawing.Point(4, 22);
             this.tbp_About.Name = "tbp_About";
-            this.tbp_About.Size = new System.Drawing.Size(894, 373);
+            this.tbp_About.Size = new System.Drawing.Size(894, 379);
             this.tbp_About.TabIndex = 2;
             this.tbp_About.Text = "Контакты";
             this.tbp_About.UseVisualStyleBackColor = true;
@@ -766,25 +766,9 @@
             this.lb_COMApp.TabIndex = 2;
             this.lb_COMApp.Text = "COM Application";
             // 
-            // previewHandlerHost
-            // 
-            this.previewHandlerHost.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.previewHandlerHost.Location = new System.Drawing.Point(0, 0);
-            this.previewHandlerHost.Name = "previewHandlerHost";
-            this.previewHandlerHost.Size = new System.Drawing.Size(714, 367);
-            this.previewHandlerHost.TabIndex = 0;
-            // 
-            // previreHandleHostExcel
-            // 
-            this.previreHandleHostExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.previreHandleHostExcel.Location = new System.Drawing.Point(0, 0);
-            this.previreHandleHostExcel.Name = "previreHandleHostExcel";
-            this.previreHandleHostExcel.Size = new System.Drawing.Size(722, 367);
-            this.previreHandleHostExcel.TabIndex = 1;
-            // 
             // btn_AddNote
             // 
-            this.btn_AddNote.Location = new System.Drawing.Point(5, 247);
+            this.btn_AddNote.Location = new System.Drawing.Point(3, 248);
             this.btn_AddNote.Name = "btn_AddNote";
             this.btn_AddNote.Size = new System.Drawing.Size(151, 30);
             this.btn_AddNote.TabIndex = 29;
@@ -792,11 +776,27 @@
             this.btn_AddNote.UseVisualStyleBackColor = true;
             this.btn_AddNote.Click += new System.EventHandler(this.btn_AddNote_Click);
             // 
+            // previewHandlerHost
+            // 
+            this.previewHandlerHost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.previewHandlerHost.Location = new System.Drawing.Point(0, 0);
+            this.previewHandlerHost.Name = "previewHandlerHost";
+            this.previewHandlerHost.Size = new System.Drawing.Size(714, 373);
+            this.previewHandlerHost.TabIndex = 0;
+            // 
+            // previreHandleHostExcel
+            // 
+            this.previreHandleHostExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.previreHandleHostExcel.Location = new System.Drawing.Point(0, 0);
+            this.previreHandleHostExcel.Name = "previreHandleHostExcel";
+            this.previreHandleHostExcel.Size = new System.Drawing.Size(722, 376);
+            this.previreHandleHostExcel.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 399);
+            this.ClientSize = new System.Drawing.Size(902, 408);
             this.Controls.Add(this.tab_COM);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
