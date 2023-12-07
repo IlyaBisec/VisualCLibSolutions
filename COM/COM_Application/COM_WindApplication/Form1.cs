@@ -16,7 +16,7 @@ namespace COM_WindApplication
     {
         private String thisName = "COM Application";
 
-        private Dictionary<string, List<string>> countryRegions =  new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> countryRegions = new Dictionary<string, List<string>>();
         private Dictionary<string, List<string>> defaultCountryRegions;
 
 
@@ -86,21 +86,12 @@ namespace COM_WindApplication
         {
             var res = Properties.Settings.Default;
 
-
             if (tab_COM.SelectedTab == tab_COM.TabPages["tbp_Excel"])
             {
                 showProccessInfo("Excel");
 
                 // Showing privew proccess
                 previreHandleHostExcel.Open(res.demoExcelTemplate);
-            }
-        }
-
-        private void btn_CreateExcelDoc_Click(object sender, EventArgs e)
-        {
-            if (chekb_TurnOffComboboxDictionary.Checked)
-            {
-                // comExcel.createTable(tb_MonthName.Text);
 
                 // EXCEL COM INIT
                 // Initialization Excel
@@ -110,40 +101,11 @@ namespace COM_WindApplication
 
                 // Writing headers in Excel
                 headersRange = worksheet.Range["A1:D1"];
-                headersRange.Value2 = new[] { "Страна", "Город", tb_MonthName.Text, "Среднее значение температур" };
+                headersRange.Value2 = new[] { "Страна", "Город", "", "" };
                 headersRange.Font.Bold = true;
 
                 lastRow = 2;
                 averageColumn = 4;
-
-                tb_NameCountry.Text = "";
-                tb_NameRegion.Text = "";
-                //tb_MonthName.Text = "";
-                tb_MonthTemperature.Text = "";
-
-            }
-            else
-            {
-                // comExcel.createTable(cmb_MonthName.SelectedItem.ToString());
-
-                // EXCEL COM INIT
-                // Initialization Excel
-                excelApp = new Excel.Application();
-                workbook = excelApp.Workbooks.Add();
-                worksheet = workbook.ActiveSheet;
-
-                // Writing headers in Excel
-                headersRange = worksheet.Range["A1:D1"];
-                headersRange.Value2 = new[] { "Страна", "Город", cmb_MonthName.SelectedItem.ToString(), "Среднее значение температур" };
-                headersRange.Font.Bold = true;
-
-                lastRow = 2;
-                averageColumn = 4;
-
-                cmb_NameCountry.Text = "";
-                cmb_NameRegion.Text = "";
-                //cmb_MonthName.Text = "";
-                tb_MonthTemperature.Text = "";
             }
         }
 
@@ -154,54 +116,15 @@ namespace COM_WindApplication
 
             if (chekb_TurnOffComboboxDictionary.Checked)
             {
-                country = tb_NameCountry.Text;
-                city = tb_NameRegion.Text;
-                month = tb_MonthName.Text;
-                temperature = Convert.ToDouble(tb_MonthTemperature.Text);
+                //country = tb_NameCountry.Text;
+                //city = tb_NameRegion.Text;
+                //month = tb_MonthName.Text;
+                //temperature = Convert.ToDouble(tb_MonthTemperature.Text);
 
-                //comExcel.addNote(tb_NameCountry.Text, tb_NameRegion.Text, tb_MonthName.Text, tb_MonthTemperature.Text,
-                //    worksheet);
+                ////comExcel.addNote(tb_NameCountry.Text, tb_NameRegion.Text, tb_MonthName.Text, tb_MonthTemperature.Text,
+                ////    worksheet);
 
-                // Search for a column with the name of the month
-                int monthColumn = 0;
-                for (int i = 1; i <= worksheet.Cells[1, averageColumn].End(Excel.XlDirection.xlToLeft).Column; i++)
-                {
-                    if (worksheet.Cells[1, i].Value2 == month)
-                    {
-                        monthColumn = i;
-                        break;
-                    }
-                }
-
-                // If the column with the month name is not found, create a new one 
-                if (monthColumn == 0)
-                {
-                    monthColumn = worksheet.Cells[1, averageColumn].End(Excel.XlDirection.xlToLeft).Column + 1;
-                    worksheet.Cells[1, monthColumn].Value2 = month;
-                    worksheet.Cells[1, monthColumn].Font.Bold = true;
-                    averageColumn++;
-                }
-
-                // Writing data to Excel
-                worksheet.Cells[lastRow, 1].Value2 = country;
-                worksheet.Cells[lastRow, 2].Value2 = city;
-                worksheet.Cells[lastRow, monthColumn].Value2 = temperature;
-
-                lastRow++;
-
-                // Calculation and recording of the average temperature value
-                int dataStartRow = 2;
-                int dataEndRow = worksheet.Cells[lastRow - 1, averageColumn - 1].End(Excel.XlDirection.xlDown).Row;
-                Excel.Range dataRange = worksheet.Range[$"C{dataStartRow}:C{dataEndRow}"];
-                Excel.Range averageCell = worksheet.Cells[lastRow, averageColumn];
-                averageCell.Value2 = $"=AVERAGE({dataRange.Address})";
-                averageCell.Font.Bold = true;
-
-                tb_NameCountry.Text = "";
-                tb_NameRegion.Text = "";
-                tb_MonthName.Text = "";
-                tb_MonthTemperature.Text = "";
-
+                
             }
             else
             {
@@ -241,19 +164,27 @@ namespace COM_WindApplication
 
                 lastRow++;
 
-                // Calculation and recording of the average temperature value
-                int dataStartRow = 2;
-                int dataEndRow = worksheet.Cells[lastRow - 1, averageColumn - 1].End(Excel.XlDirection.xlDown).Row;
-                Excel.Range dataRange = worksheet.Range[$"C{dataStartRow}:C{dataEndRow}"];
-                Excel.Range averageCell = worksheet.Cells[lastRow, averageColumn];
-                averageCell.Value2 = $"=AVERAGE({dataRange.Address})";
-                averageCell.Font.Bold = true;
+                //// average temperature add to btn отдельно,
+                //// открыть документ, добавить последний столбец
+                //// с расчетами ср температуры
+                //// Cteate last column - average column
+                //int index_columnAverage = averageColumn;
+                //if(index_columnAverage - 1 < averageColumn)
+                //{
+                //    index_columnAverage++;
+                //    worksheet.Cells[1, index_columnAverage] = "Средняя температура";
+                //}
 
-                cmb_NameCountry.Text = "";
-                cmb_NameRegion.Text = "";
-                cmb_MonthName.Text = "";
-                tb_MonthTemperature.Text = "";
+                //// Calculation and recording of the average temperature value
+                //int dataStartRow = 2;
+                //int dataEndRow = worksheet.Cells[lastRow - 1, averageColumn - 1].End(Excel.XlDirection.xlDown).Row;
+                //Excel.Range dataRange = worksheet.Range[$"C{dataStartRow}:C{dataEndRow}"];
+                //Excel.Range averageCell = worksheet.Cells[lastRow - 1, averageColumn];
+                //averageCell.Value2 = $"=AVERAGE({dataRange.Address})";
+                //averageCell.Font.Bold = true;
             }
+
+            clearFields();
         }
 
         // Checking the result of a previously created document
@@ -263,15 +194,16 @@ namespace COM_WindApplication
 
 
             var res = Properties.Settings.Default;
-
             String defaultNewFilePath = res.newDefaultFilePath;
+
+            var createdLastFile = defaultNewFilePath + "\\" + "TemperatureDocument" + ".xlsx";
 
             // Saving excel table
             //DateTime todayDate = DateTime.Today;
 
             //workbook.SaveAs(defaultNewFilePath + "\\" + todayDate.ToString("yyyy-MM-dd.hh.mm") + ".xlsx");
-            workbook.SaveAs(defaultNewFilePath + "\\" + "TemperatureDocument" + ".xlsx");
-            
+            workbook.SaveAs(createdLastFile);
+
             workbook.Close(false);
             excelApp.Quit();
 
@@ -282,14 +214,14 @@ namespace COM_WindApplication
             MessageBox.Show("Default file path: " + defaultNewFilePath + "TemperatureDocument", "The table of temperature was successfully created!");
 
             // And checking the result
-            var createdLastFile = defaultNewFilePath + "\\" + "TemperatureDocument" + ".xlsx";
+
 
             if (tab_COM.SelectedTab == tab_COM.TabPages["tbp_Excel"])
             {
                 showProccessInfo("Excel");
 
                 // Showing privew proccess
-                previewHandlerHost.Open(createdLastFile);
+                previreHandleHostExcel.Open(createdLastFile);
             }
         }
 
@@ -351,7 +283,7 @@ namespace COM_WindApplication
                         {"Беларусь", new List<string>{ "Минск", "Борисов", "Солигорск", "Молодечно", "Жодино", "Слуцк"}},
                         {"Польша", new List<string>{ "Варшава", "Краков", "Люблин", "Белосток", "Торун", "Рыбник"}},
                         {"Сербия", new List<string>{ "Белград", "Вог", "Кикинда", "Крагувац", "Лесковац", "Лозница"}},
-                        
+
                     };
 
                     countryRegions = defaultCountryRegions;
@@ -361,7 +293,7 @@ namespace COM_WindApplication
                         cmb_NameCountry.Items.Add(countryName);
                 }
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             { MessageBox.Show(ex.Message.ToString(), "Cities dictionary not availeble, using manual input please", MessageBoxButtons.OK); }
         }
 
@@ -382,11 +314,12 @@ namespace COM_WindApplication
             tb_PathToTxtCities.Text = res.defaultCityFilePath;
 
             chekb_TurnOffComboboxDictionary.Checked = res.manualInput;
+            chekb_ClearExcelFiledsAfterAddNote.Checked = res.clearExcelFields;
 
             loadListOfCitiesToCombobox();
         }
-        
-       
+
+
         // Settings page
 
         // If Checked, opening advanced settings
@@ -408,6 +341,8 @@ namespace COM_WindApplication
                 tb_PathToTxtCities.Visible = true;
                 btn_PathToTxtCities.Visible = true;
 
+                chekb_ClearExcelFiledsAfterAddNote.Visible = true;
+
                 res.advanceSettings = true;
             }
             else
@@ -423,6 +358,8 @@ namespace COM_WindApplication
                 lb_PathToTxtCities.Visible = false;
                 tb_PathToTxtCities.Visible = false;
                 btn_PathToTxtCities.Visible = false;
+
+                chekb_ClearExcelFiledsAfterAddNote.Visible = false;
 
                 res.advanceSettings = false;
             }
@@ -457,6 +394,17 @@ namespace COM_WindApplication
 
                 res.manualInput = false;
             }
+        }
+
+        //  If checked, cleaning excel fields after add note
+        private void chekb_ClearExcelFiledsAfterAddNote_CheckedChanged(object sender, EventArgs e)
+        {
+            var res = Properties.Settings.Default;
+
+            if (chekb_ClearExcelFiledsAfterAddNote.Checked)
+                res.clearExcelFields = true;
+            else
+                res.clearExcelFields = false;
         }
 
         // Sets new default resources path
@@ -553,6 +501,28 @@ namespace COM_WindApplication
             previreHandleHostExcel.UnloadPreviewHandler();
             this.Close();
             System.Windows.Forms.Application.Exit();
+        }
+
+        // Clear Excel fields after add note
+        void clearFields()
+        {
+            tb_MonthTemperature.Text = "";
+
+            if (chekb_ClearExcelFiledsAfterAddNote.Checked)
+            {
+                if (chekb_TurnOffComboboxDictionary.Checked)
+                {
+                    tb_NameCountry.Text = "";
+                    tb_NameRegion.Text = "";
+                    tb_MonthName.Text = "";
+                }
+                else
+                {
+                    cmb_NameCountry.Text = "";
+                    cmb_NameRegion.Text = "";
+                    //cmb_MonthName.Text = "";
+                }
+            }
         }
     }
 }
