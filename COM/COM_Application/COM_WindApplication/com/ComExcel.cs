@@ -24,7 +24,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 // COM Excel
 // Ilya Bisec - 07.12.23
 
-namespace COM_WindApplication.com
+namespace COM_WindApplication.com.excel
 {
     // A class that implements opening an Excel application,
     // creating a table with the weather in countries and their regions with
