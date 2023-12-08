@@ -1,30 +1,13 @@
-﻿using Microsoft.Office.Interop.Excel;
-using System;
+﻿using System;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
-// Unfortunately, COM objects cannot be passed by reference, 
-// which leads to the error "the reference to the object does not point to an instance 
-// of the object" - which also leads to a violation of the following principles:
-//
-// DRY(Don’t Repeat Yourself), KISS(Keep It Simple, Stupid) and 
-// SOLID(Single-responsibility principle only)
-//
-// Therefore, all the functionality of this class has been moved to the main class. 
-// Even the constructor will not help here, since its presence in the class directly 
-// contradicts the condition of the task:
-//
-// Opening a new Excel instance, creating a table, adding a table, making a histogram 
-// based on data from the table, saving and closing
-//
-//
-// In any other case, I didn't have enough time and knowledge to figure out how to fix
-// the error with references to an instance of a COM object
-//
+
 // COM Excel
 // Ilya Bisec - 07.12.23
 
-namespace COM_WindApplication.com.excel
+namespace COM_WindApplication.com
 {
     // A class that implements opening an Excel application,
     // creating a table with the weather in countries and their regions with
@@ -33,22 +16,35 @@ namespace COM_WindApplication.com.excel
     internal class ComExcel
     {
         // Creating a table in Excel or initializing, adding headers
-        public void createTable(String monthName = "Месяц")
+        public void createTable()
         {
             try
             {
+                var res = Properties.Settings.Default;
+
                 // Initialization Excel
                 m_excelApp = new Excel.Application();
-                m_workbook = m_excelApp.Workbooks.Add();
-                m_worksheet = m_workbook.ActiveSheet;
+                m_excelWorkbook = m_excelApp.Workbooks.Add();
+                m_excelWorksheet = m_excelWorkbook.ActiveSheet;
 
                 // Writing headers in Excel
-                m_headersRange = m_worksheet.Range["A1:D1"];
-                m_headersRange.Value2 = new[] { "Страна", "Город", monthName, "Среднее значение температур" };
-                m_headersRange.Font.Bold = true;
+                m_excelWorksheet.Cells[1, 1] = "Страна";
+                m_excelWorksheet.Cells[1, 2] = "Город";
+                //int column = 3;
 
-                m_lastRow = 2;
-                m_averageColumn = 4;
+
+                //worksheet.Cells[1, column] = "Месяц";
+                //column++;
+
+
+                // Saving excel table
+                var createdExcelFile = res.newDefaultFilePath + "\\" + "TemperatureDocument" + ".xlsx";
+
+                m_excelWorkbook.SaveAs(createdExcelFile);
+                m_excelWorkbook.Close();
+                m_excelApp.Quit();
+
+                MessageBox.Show("Default file path: " + res.newDefaultFilePath + "TemperatureDocument", "The table of temperature was successfully created!");
 
             }
             catch (System.Runtime.InteropServices.COMException ex) { MessageBox.Show(ex.ToString(), "Create excel table error"); }
@@ -59,77 +55,116 @@ namespace COM_WindApplication.com.excel
         // the average value
         public void addNote(String country, String city, String month, String temperature)
         {
+            var res = Properties.Settings.Default;
+            var createdLastFile = res.newDefaultFilePath + "\\" + "TemperatureDocument" + ".xlsx";
+
             double temp_temperature = Convert.ToDouble(temperature);
+
             try
             {
-                // Search for a column with the name of the month
-                int monthColumn = 0;
-                for (int i = 1; i <= m_worksheet.Cells[1, m_averageColumn].End(XlDirection.xlToLeft).Column; i++)
+                m_excelApp = new Excel.Application();
+                m_excelWorkbook = m_excelApp.Workbooks.Open(createdLastFile);
+                m_excelWorksheet = m_excelWorkbook.ActiveSheet;
+
+                int row = 2;
+                while (m_excelWorksheet.Cells[row, 1].Value != null)
                 {
-                    if (m_worksheet.Cells[1, i].Value2 == month)
+                    if (m_excelWorksheet.Cells[row, 1].Value.ToString() == country)
                     {
-                        monthColumn = i;
+                        m_excelWorksheet.Cells[row, 2] = city;
                         break;
                     }
+                    row++;
                 }
 
-                // If the column with the month name is not found, create a new one 
-                if(monthColumn == 0)
+                if (m_excelWorksheet.Cells[row, 1].Value == null)
                 {
-                    monthColumn = m_worksheet.Cells[1, m_averageColumn].End(XlDirection.xlToLeft).Column + 1;
-                    m_worksheet.Cells[1, monthColumn].Value2 = month;
-                    m_worksheet.Cells[1, monthColumn].Font.Bold = true;
-                    m_averageColumn++;
+                    m_excelWorksheet.Cells[row, 1] = country;
+                    m_excelWorksheet.Cells[row, 2] = city;
                 }
 
-                // Writing data to Excel
-                m_worksheet.Cells[m_lastRow, 1].Value2 = country;
-                m_worksheet.Cells[m_lastRow, 2].Value2 = city;
-                m_worksheet.Cells[m_lastRow, monthColumn].Value2 = temp_temperature;
+                bool monthExists = false;
+                int column = 3;
+                while (m_excelWorksheet.Cells[1, column].Value != null)
+                {
+                    if (m_excelWorksheet.Cells[1, column].Value.ToString() == month)
+                    {
+                        m_excelWorksheet.Cells[row, column] = temp_temperature;
+                        monthExists = true;
+                        break;
+                    }
+                    column++;
+                }
 
-                m_lastRow++;
+                if (!monthExists)
+                {
+                    m_excelWorksheet.Cells[1, column] = month;
+                    m_excelWorksheet.Cells[row, column] = temp_temperature;
+                }
 
-                // Calculation and recording of the average temperature value
-                int dataStartRow = 2;
-                int dataEndRow = m_worksheet.Cells[m_lastRow - 1, m_averageColumn - 1].End(XlDirection.xlDown).Row;
-                Range dataRange = m_worksheet.Range[$"C{dataStartRow}:C{dataEndRow}"];
-                Range averageCell = m_worksheet.Cells[m_lastRow, m_averageColumn];
-                averageCell.Value2 = $"=AVERAGE({dataRange.Address})";
-                averageCell.Font.Bold = true;
+                m_excelWorkbook.Save();
+                m_excelWorkbook.Close();
+                m_excelApp.Quit();
+
+                Marshal.ReleaseComObject(m_excelWorksheet);
+                Marshal.ReleaseComObject(m_excelWorkbook);
+                Marshal.ReleaseComObject(m_excelApp);
+
+                Marshal.FinalReleaseComObject(m_excelWorksheet);
+                Marshal.FinalReleaseComObject(m_excelWorkbook);
+                Marshal.FinalReleaseComObject(m_excelApp);
+
+
+                MessageBox.Show("An entry has been added!");
             }
             catch (System.Runtime.InteropServices.COMException ex) { MessageBox.Show(ex.ToString(), "add the new note to the excel table error"); }
         }
 
-        public void saveTableAs()
+        // Opens the saved file, creates a column with "average temperature", reads 
+        // the temperature values by month and writes them to its column
+        public void calculateAverageTemperature()
         {
             var res = Properties.Settings.Default;
+            var createdLastFile = res.newDefaultFilePath + "\\" + "TemperatureDocument" + ".xlsx";
 
-            String defaultNewFilePath = res.newDefaultFilePath;
-            try
+            m_excelApp = new Excel.Application();
+            m_excelWorkbook = m_excelApp.Workbooks.Open(createdLastFile);
+            m_excelWorksheet = m_excelWorkbook.ActiveSheet;
+
+            int lastColumnIndex = m_excelWorksheet.Cells[1, m_excelWorksheet.Columns.Count].End[Excel.XlDirection.xlToLeft].Column;
+            string averageColumnHeader = "среднее значение температур";
+            m_excelWorksheet.Cells[1, lastColumnIndex + 1] = averageColumnHeader;
+
+            int lastRowIndex = m_excelWorksheet.Cells[m_excelWorksheet.Rows.Count, 1].End[Excel.XlDirection.xlUp].Row;
+            for (int row = 2; row <= lastRowIndex; row++)
             {
-                // Getting an active instance of the Excel application
-                //Excel.Application excel_app = (Excel.Application)Marshal.GetActiveObject("Excel.Application"); ;
-                //Excel.Workbook excel_workbook = excel_app.ActiveWorkbook;
-                //Excel.Worksheet excel_worksheet = excel_workbook.ActiveSheet;
+                double sum = 0;
+                int count = 0;
 
-                // Saving excel table
-                DateTime todayDate = DateTime.Today;
+                for (int column = 3; column <= lastColumnIndex; column++)
+                {
+                    if (m_excelWorksheet.Cells[row, column].Value != null)
+                    {
+                        sum += double.Parse(m_excelWorksheet.Cells[row, column].Value.ToString());
+                        count++;
+                    }
+                }
 
-                m_workbook.SaveAs(defaultNewFilePath + "\\" + todayDate.ToString("yyyy-MM-dd.hh.mm.ss") + ".xlsx");
-                m_workbook.Close(false);
-                m_excelApp.Quit();
-
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(m_worksheet);
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(m_workbook);
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(m_excelApp);
-
-                MessageBox.Show("Default file path: " + defaultNewFilePath + todayDate.ToString("yyyy-MM-dd.hh.mm.ss"), "The table of temperature was successfully created!");
-                
+                double average = count > 0 ? sum / count : 0;
+                m_excelWorksheet.Cells[row, lastColumnIndex + 1] = average;
             }
-            catch (System.Runtime.InteropServices.COMException ex) { MessageBox.Show(ex.ToString(), "Create excel file error"); }
 
+            m_excelWorkbook.SaveAs(createdLastFile);
+            m_excelWorkbook.Close();
+            m_excelApp.Quit();
+
+
+            releaseExcelObject(m_excelWorksheet);
+            releaseExcelObject(m_excelWorkbook);
+            releaseExcelObject(m_excelApp);
+
+            MessageBox.Show("The average temperature values are calculated!");
         }
-        
 
         // Implementation of creating a histogram based on a table
         public void createHistogram()
@@ -137,14 +172,29 @@ namespace COM_WindApplication.com.excel
 
         }
 
+        // Frees up resources used to create an Excel spreadsheet
+        private void releaseExcelObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch
+            {
+                obj = null;
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+       
+        
         // Excel variables
         private Excel.Application m_excelApp;
-        private Excel.Workbook m_workbook;
-        private Excel.Worksheet m_worksheet;
-        private Excel.Range m_headersRange;
-
-        private int m_lastRow;
-        private int m_averageColumn;
+        private Excel.Workbook m_excelWorkbook;
+        private Excel.Worksheet m_excelWorksheet;
     }
 }
 
