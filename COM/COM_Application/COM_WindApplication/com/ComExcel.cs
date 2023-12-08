@@ -126,50 +126,97 @@ namespace COM_WindApplication.com
         {
             var res = Properties.Settings.Default;
             var createdLastFile = res.newDefaultFilePath + "\\" + "TemperatureDocument" + ".xlsx";
-
-            m_excelApp = new Excel.Application();
-            m_excelWorkbook = m_excelApp.Workbooks.Open(createdLastFile);
-            m_excelWorksheet = m_excelWorkbook.ActiveSheet;
-
-            int lastColumnIndex = m_excelWorksheet.Cells[1, m_excelWorksheet.Columns.Count].End[Excel.XlDirection.xlToLeft].Column;
-            string averageColumnHeader = "среднее значение температур";
-            m_excelWorksheet.Cells[1, lastColumnIndex + 1] = averageColumnHeader;
-
-            int lastRowIndex = m_excelWorksheet.Cells[m_excelWorksheet.Rows.Count, 1].End[Excel.XlDirection.xlUp].Row;
-            for (int row = 2; row <= lastRowIndex; row++)
+            try
             {
-                double sum = 0;
-                int count = 0;
+                m_excelApp = new Excel.Application();
+                m_excelWorkbook = m_excelApp.Workbooks.Open(createdLastFile);
+                m_excelWorksheet = m_excelWorkbook.ActiveSheet;
 
-                for (int column = 3; column <= lastColumnIndex; column++)
+                int lastColumnIndex = m_excelWorksheet.Cells[1, m_excelWorksheet.Columns.Count].End[Excel.XlDirection.xlToLeft].Column;
+                string averageColumnHeader = "Cреднее значение температур";
+                m_excelWorksheet.Cells[1, lastColumnIndex + 1] = averageColumnHeader;
+
+                int lastRowIndex = m_excelWorksheet.Cells[m_excelWorksheet.Rows.Count, 1].End[Excel.XlDirection.xlUp].Row;
+                for (int row = 2; row <= lastRowIndex; row++)
                 {
-                    if (m_excelWorksheet.Cells[row, column].Value != null)
+                    double sum = 0;
+                    int count = 0;
+
+                    for (int column = 3; column <= lastColumnIndex; column++)
                     {
-                        sum += double.Parse(m_excelWorksheet.Cells[row, column].Value.ToString());
-                        count++;
+                        if (m_excelWorksheet.Cells[row, column].Value != null)
+                        {
+                            sum += double.Parse(m_excelWorksheet.Cells[row, column].Value.ToString());
+                            count++;
+                        }
                     }
+
+                    double average = count > 0 ? sum / count : 0;
+                    m_excelWorksheet.Cells[row, lastColumnIndex + 1] = average;
                 }
 
-                double average = count > 0 ? sum / count : 0;
-                m_excelWorksheet.Cells[row, lastColumnIndex + 1] = average;
+                m_excelWorkbook.SaveAs(createdLastFile);
+                m_excelWorkbook.Close();
+                m_excelApp.Quit();
+
+
+                releaseExcelObject(m_excelWorksheet);
+                releaseExcelObject(m_excelWorkbook);
+                releaseExcelObject(m_excelApp);
+
+                MessageBox.Show("The average temperature values are calculated!");
             }
+            catch (System.Runtime.InteropServices.COMException ex) { MessageBox.Show(ex.ToString(), "Error in creating the average temperature value"); }
 
-            m_excelWorkbook.SaveAs(createdLastFile);
-            m_excelWorkbook.Close();
-            m_excelApp.Quit();
-
-
-            releaseExcelObject(m_excelWorksheet);
-            releaseExcelObject(m_excelWorkbook);
-            releaseExcelObject(m_excelApp);
-
-            MessageBox.Show("The average temperature values are calculated!");
         }
 
         // Implementation of creating a histogram based on a table
         public void createHistogram()
         {
+            var res = Properties.Settings.Default;
+            var createdLastFile = res.newDefaultFilePath + "\\" + "TemperatureDocument" + ".xlsx";
 
+            try
+            {
+                m_excelApp = new Excel.Application();
+                m_excelWorkbook = m_excelApp.Workbooks.Open(createdLastFile);
+                m_excelWorksheet = m_excelWorkbook.ActiveSheet;
+
+                // Reading data from an Excel spreadsheet
+                Excel.Range range = m_excelWorksheet.UsedRange;
+                int rowCount = range.Rows.Count;
+                int colCount = range.Columns.Count;
+
+                object[,] data = new object[rowCount, colCount];
+                for (int i = 1; i <= rowCount; i++)
+                {
+                    for (int j = 1; j <= colCount; j++)
+                    {
+                        data[i - 1, j - 1] = range.Cells[i, j].Value2;
+                    }
+                }
+
+                m_excelWorkbook.Close();
+                m_excelApp.Quit();
+
+                // Building a histogram
+                Excel.Chart chart = new Excel.Chart();
+                chart.ChartType = Excel.XlChartType.xlColumnClustered;
+                chart.SetSourceData(m_excelWorksheet.Range["A1", $"A{rowCount}"]);
+                chart.HasTitle = true;
+                chart.ChartTitle.Text = "Гистограмма";
+                chart.Location(Excel.XlChartLocation.xlLocationAsObject, m_excelWorksheet.Name);
+
+                // Save file
+                m_excelWorkbook.SaveAs(createdLastFile);
+
+                MessageBox.Show("The histogram is saved in a file!");
+
+                releaseExcelObject(m_excelWorksheet);
+                releaseExcelObject(m_excelWorkbook);
+                releaseExcelObject(m_excelApp);
+            }
+            catch (System.Runtime.InteropServices.COMException ex) { MessageBox.Show(ex.ToString(), "It was not possible to create a histogram"); }
         }
 
         // Frees up resources used to create an Excel spreadsheet
