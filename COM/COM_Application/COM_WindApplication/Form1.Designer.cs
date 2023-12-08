@@ -37,6 +37,7 @@
             this.lb_Welcome = new System.Windows.Forms.Label();
             this.tbp_Word = new System.Windows.Forms.TabPage();
             this.pnl_Preview = new System.Windows.Forms.Panel();
+            this.previewHandlerHost = new PreviewHandlers.PreviewHandlerHost();
             this.pnl_Controls = new System.Windows.Forms.Panel();
             this.btn_CheckResult = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
@@ -53,9 +54,11 @@
             this.lb_RecipientName = new System.Windows.Forms.Label();
             this.tbp_Excel = new System.Windows.Forms.TabPage();
             this.pnl_PreviewExcel = new System.Windows.Forms.Panel();
+            this.previreHandleHostExcel = new PreviewHandlers.PreviewHandlerHost();
             this.pnl_ExcelControls = new System.Windows.Forms.Panel();
             this.btn_AddNote = new System.Windows.Forms.Button();
             this.lb_NameCountry = new System.Windows.Forms.Label();
+            this.btn_CreateExcelTable = new System.Windows.Forms.Button();
             this.btn_CheckExcelResult = new System.Windows.Forms.Button();
             this.btn_ExitExelApp = new System.Windows.Forms.Button();
             this.tb_MonthTemperature = new System.Windows.Forms.TextBox();
@@ -69,7 +72,6 @@
             this.tb_NameCountry = new System.Windows.Forms.TextBox();
             this.cmb_NameCountry = new System.Windows.Forms.ComboBox();
             this.btn_TemperatureAverage = new System.Windows.Forms.Button();
-            this.btn_CreateExcelTable = new System.Windows.Forms.Button();
             this.tbp_Options = new System.Windows.Forms.TabPage();
             this.chekb_ClearExcelFiledsAfterAddNote = new System.Windows.Forms.CheckBox();
             this.btn_PathToTxtCities = new System.Windows.Forms.Button();
@@ -93,8 +95,7 @@
             this.tbp_About = new System.Windows.Forms.TabPage();
             this.lb_About = new System.Windows.Forms.Label();
             this.lb_COMApp = new System.Windows.Forms.Label();
-            this.previewHandlerHost = new PreviewHandlers.PreviewHandlerHost();
-            this.previreHandleHostExcel = new PreviewHandlers.PreviewHandlerHost();
+            this.btn_CreateHistogram = new System.Windows.Forms.Button();
             this.tab_COM.SuspendLayout();
             this.tbp_Main.SuspendLayout();
             this.tbp_Word.SuspendLayout();
@@ -118,7 +119,7 @@
             this.tab_COM.Location = new System.Drawing.Point(0, 0);
             this.tab_COM.Name = "tab_COM";
             this.tab_COM.SelectedIndex = 0;
-            this.tab_COM.Size = new System.Drawing.Size(902, 424);
+            this.tab_COM.Size = new System.Drawing.Size(902, 461);
             this.tab_COM.TabIndex = 0;
             // 
             // tbp_Main
@@ -198,6 +199,14 @@
             this.pnl_Preview.Size = new System.Drawing.Size(714, 392);
             this.pnl_Preview.TabIndex = 1;
             this.pnl_Preview.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Preview_Paint);
+            // 
+            // previewHandlerHost
+            // 
+            this.previewHandlerHost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.previewHandlerHost.Location = new System.Drawing.Point(0, 0);
+            this.previewHandlerHost.Name = "previewHandlerHost";
+            this.previewHandlerHost.Size = new System.Drawing.Size(714, 392);
+            this.previewHandlerHost.TabIndex = 0;
             // 
             // pnl_Controls
             // 
@@ -342,7 +351,7 @@
             this.tbp_Excel.Location = new System.Drawing.Point(4, 22);
             this.tbp_Excel.Name = "tbp_Excel";
             this.tbp_Excel.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_Excel.Size = new System.Drawing.Size(894, 398);
+            this.tbp_Excel.Size = new System.Drawing.Size(894, 435);
             this.tbp_Excel.TabIndex = 1;
             this.tbp_Excel.Text = "Excel";
             this.tbp_Excel.UseVisualStyleBackColor = true;
@@ -353,12 +362,21 @@
             this.pnl_PreviewExcel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_PreviewExcel.Location = new System.Drawing.Point(172, 3);
             this.pnl_PreviewExcel.Name = "pnl_PreviewExcel";
-            this.pnl_PreviewExcel.Size = new System.Drawing.Size(719, 392);
+            this.pnl_PreviewExcel.Size = new System.Drawing.Size(719, 429);
             this.pnl_PreviewExcel.TabIndex = 2;
             this.pnl_PreviewExcel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_PreviewExcel_Paint);
             // 
+            // previreHandleHostExcel
+            // 
+            this.previreHandleHostExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.previreHandleHostExcel.Location = new System.Drawing.Point(0, 0);
+            this.previreHandleHostExcel.Name = "previreHandleHostExcel";
+            this.previreHandleHostExcel.Size = new System.Drawing.Size(719, 429);
+            this.previreHandleHostExcel.TabIndex = 1;
+            // 
             // pnl_ExcelControls
             // 
+            this.pnl_ExcelControls.Controls.Add(this.btn_CreateHistogram);
             this.pnl_ExcelControls.Controls.Add(this.btn_AddNote);
             this.pnl_ExcelControls.Controls.Add(this.lb_NameCountry);
             this.pnl_ExcelControls.Controls.Add(this.btn_CreateExcelTable);
@@ -378,7 +396,7 @@
             this.pnl_ExcelControls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_ExcelControls.Location = new System.Drawing.Point(3, 3);
             this.pnl_ExcelControls.Name = "pnl_ExcelControls";
-            this.pnl_ExcelControls.Size = new System.Drawing.Size(169, 392);
+            this.pnl_ExcelControls.Size = new System.Drawing.Size(169, 429);
             this.pnl_ExcelControls.TabIndex = 0;
             // 
             // btn_AddNote
@@ -401,9 +419,19 @@
             this.lb_NameCountry.TabIndex = 26;
             this.lb_NameCountry.Text = "Название страны:";
             // 
+            // btn_CreateExcelTable
+            // 
+            this.btn_CreateExcelTable.Location = new System.Drawing.Point(3, 199);
+            this.btn_CreateExcelTable.Name = "btn_CreateExcelTable";
+            this.btn_CreateExcelTable.Size = new System.Drawing.Size(151, 30);
+            this.btn_CreateExcelTable.TabIndex = 25;
+            this.btn_CreateExcelTable.Text = "Создать таблицу";
+            this.btn_CreateExcelTable.UseVisualStyleBackColor = true;
+            this.btn_CreateExcelTable.Click += new System.EventHandler(this.btn_CreateExcelTable_Click);
+            // 
             // btn_CheckExcelResult
             // 
-            this.btn_CheckExcelResult.Location = new System.Drawing.Point(3, 276);
+            this.btn_CheckExcelResult.Location = new System.Drawing.Point(3, 348);
             this.btn_CheckExcelResult.Name = "btn_CheckExcelResult";
             this.btn_CheckExcelResult.Size = new System.Drawing.Size(151, 30);
             this.btn_CheckExcelResult.TabIndex = 21;
@@ -413,7 +441,7 @@
             // 
             // btn_ExitExelApp
             // 
-            this.btn_ExitExelApp.Location = new System.Drawing.Point(3, 357);
+            this.btn_ExitExelApp.Location = new System.Drawing.Point(3, 384);
             this.btn_ExitExelApp.Name = "btn_ExitExelApp";
             this.btn_ExitExelApp.Size = new System.Drawing.Size(151, 30);
             this.btn_ExitExelApp.TabIndex = 20;
@@ -522,23 +550,13 @@
             // 
             // btn_TemperatureAverage
             // 
-            this.btn_TemperatureAverage.Location = new System.Drawing.Point(3, 317);
+            this.btn_TemperatureAverage.Location = new System.Drawing.Point(3, 271);
             this.btn_TemperatureAverage.Name = "btn_TemperatureAverage";
             this.btn_TemperatureAverage.Size = new System.Drawing.Size(151, 30);
             this.btn_TemperatureAverage.TabIndex = 19;
             this.btn_TemperatureAverage.Text = "Средняя температура";
             this.btn_TemperatureAverage.UseVisualStyleBackColor = true;
             this.btn_TemperatureAverage.Click += new System.EventHandler(this.btn_TemperatureAverage_Click);
-            // 
-            // btn_CreateExcelTable
-            // 
-            this.btn_CreateExcelTable.Location = new System.Drawing.Point(3, 199);
-            this.btn_CreateExcelTable.Name = "btn_CreateExcelTable";
-            this.btn_CreateExcelTable.Size = new System.Drawing.Size(151, 30);
-            this.btn_CreateExcelTable.TabIndex = 25;
-            this.btn_CreateExcelTable.Text = "Создать таблицу";
-            this.btn_CreateExcelTable.UseVisualStyleBackColor = true;
-            this.btn_CreateExcelTable.Click += new System.EventHandler(this.btn_CreateExcelTable_Click);
             // 
             // tbp_Options
             // 
@@ -793,27 +811,21 @@
             this.lb_COMApp.TabIndex = 2;
             this.lb_COMApp.Text = "COM Application";
             // 
-            // previewHandlerHost
+            // btn_CreateHistogram
             // 
-            this.previewHandlerHost.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.previewHandlerHost.Location = new System.Drawing.Point(0, 0);
-            this.previewHandlerHost.Name = "previewHandlerHost";
-            this.previewHandlerHost.Size = new System.Drawing.Size(714, 392);
-            this.previewHandlerHost.TabIndex = 0;
-            // 
-            // previreHandleHostExcel
-            // 
-            this.previreHandleHostExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.previreHandleHostExcel.Location = new System.Drawing.Point(0, 0);
-            this.previreHandleHostExcel.Name = "previreHandleHostExcel";
-            this.previreHandleHostExcel.Size = new System.Drawing.Size(719, 392);
-            this.previreHandleHostExcel.TabIndex = 1;
+            this.btn_CreateHistogram.Location = new System.Drawing.Point(3, 307);
+            this.btn_CreateHistogram.Name = "btn_CreateHistogram";
+            this.btn_CreateHistogram.Size = new System.Drawing.Size(151, 30);
+            this.btn_CreateHistogram.TabIndex = 30;
+            this.btn_CreateHistogram.Text = "Построить диаграмму";
+            this.btn_CreateHistogram.UseVisualStyleBackColor = true;
+            this.btn_CreateHistogram.Click += new System.EventHandler(this.btn_CreateHistogram_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 424);
+            this.ClientSize = new System.Drawing.Size(902, 461);
             this.Controls.Add(this.tab_COM);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -906,6 +918,7 @@
         private System.Windows.Forms.Label lb_NameCountry;
         private System.Windows.Forms.Button btn_AddNote;
         private System.Windows.Forms.CheckBox chekb_ClearExcelFiledsAfterAddNote;
+        private System.Windows.Forms.Button btn_CreateHistogram;
     }
 }
 
