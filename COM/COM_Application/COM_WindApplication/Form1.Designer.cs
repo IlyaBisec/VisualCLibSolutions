@@ -56,6 +56,7 @@
             this.pnl_PreviewExcel = new System.Windows.Forms.Panel();
             this.previreHandleHostExcel = new PreviewHandlers.PreviewHandlerHost();
             this.pnl_ExcelControls = new System.Windows.Forms.Panel();
+            this.btn_CreateHistogram = new System.Windows.Forms.Button();
             this.btn_AddNote = new System.Windows.Forms.Button();
             this.lb_NameCountry = new System.Windows.Forms.Label();
             this.btn_CreateExcelTable = new System.Windows.Forms.Button();
@@ -95,7 +96,6 @@
             this.tbp_About = new System.Windows.Forms.TabPage();
             this.lb_About = new System.Windows.Forms.Label();
             this.lb_COMApp = new System.Windows.Forms.Label();
-            this.btn_CreateHistogram = new System.Windows.Forms.Button();
             this.tab_COM.SuspendLayout();
             this.tbp_Main.SuspendLayout();
             this.tbp_Word.SuspendLayout();
@@ -130,7 +130,7 @@
             this.tbp_Main.Controls.Add(this.lb_Welcome);
             this.tbp_Main.Location = new System.Drawing.Point(4, 22);
             this.tbp_Main.Name = "tbp_Main";
-            this.tbp_Main.Size = new System.Drawing.Size(894, 398);
+            this.tbp_Main.Size = new System.Drawing.Size(894, 435);
             this.tbp_Main.TabIndex = 4;
             this.tbp_Main.Text = "Welcome";
             this.tbp_Main.UseVisualStyleBackColor = true;
@@ -185,7 +185,7 @@
             this.tbp_Word.Location = new System.Drawing.Point(4, 22);
             this.tbp_Word.Name = "tbp_Word";
             this.tbp_Word.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_Word.Size = new System.Drawing.Size(894, 398);
+            this.tbp_Word.Size = new System.Drawing.Size(894, 435);
             this.tbp_Word.TabIndex = 0;
             this.tbp_Word.Text = "Word";
             this.tbp_Word.UseVisualStyleBackColor = true;
@@ -196,7 +196,7 @@
             this.pnl_Preview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Preview.Location = new System.Drawing.Point(177, 3);
             this.pnl_Preview.Name = "pnl_Preview";
-            this.pnl_Preview.Size = new System.Drawing.Size(714, 392);
+            this.pnl_Preview.Size = new System.Drawing.Size(714, 429);
             this.pnl_Preview.TabIndex = 1;
             this.pnl_Preview.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Preview_Paint);
             // 
@@ -205,7 +205,7 @@
             this.previewHandlerHost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.previewHandlerHost.Location = new System.Drawing.Point(0, 0);
             this.previewHandlerHost.Name = "previewHandlerHost";
-            this.previewHandlerHost.Size = new System.Drawing.Size(714, 392);
+            this.previewHandlerHost.Size = new System.Drawing.Size(714, 429);
             this.previewHandlerHost.TabIndex = 0;
             // 
             // pnl_Controls
@@ -226,7 +226,7 @@
             this.pnl_Controls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_Controls.Location = new System.Drawing.Point(3, 3);
             this.pnl_Controls.Name = "pnl_Controls";
-            this.pnl_Controls.Size = new System.Drawing.Size(174, 392);
+            this.pnl_Controls.Size = new System.Drawing.Size(174, 429);
             this.pnl_Controls.TabIndex = 0;
             // 
             // btn_CheckResult
@@ -398,6 +398,16 @@
             this.pnl_ExcelControls.Name = "pnl_ExcelControls";
             this.pnl_ExcelControls.Size = new System.Drawing.Size(169, 429);
             this.pnl_ExcelControls.TabIndex = 0;
+            // 
+            // btn_CreateHistogram
+            // 
+            this.btn_CreateHistogram.Location = new System.Drawing.Point(3, 307);
+            this.btn_CreateHistogram.Name = "btn_CreateHistogram";
+            this.btn_CreateHistogram.Size = new System.Drawing.Size(151, 30);
+            this.btn_CreateHistogram.TabIndex = 30;
+            this.btn_CreateHistogram.Text = "Построить диаграмму";
+            this.btn_CreateHistogram.UseVisualStyleBackColor = true;
+            this.btn_CreateHistogram.Click += new System.EventHandler(this.btn_CreateHistogram_Click);
             // 
             // btn_AddNote
             // 
@@ -581,7 +591,7 @@
             this.tbp_Options.Controls.Add(this.btn_TemplateDocPath);
             this.tbp_Options.Location = new System.Drawing.Point(4, 22);
             this.tbp_Options.Name = "tbp_Options";
-            this.tbp_Options.Size = new System.Drawing.Size(894, 398);
+            this.tbp_Options.Size = new System.Drawing.Size(894, 435);
             this.tbp_Options.TabIndex = 3;
             this.tbp_Options.Text = "Настройки";
             this.tbp_Options.UseVisualStyleBackColor = true;
@@ -786,7 +796,7 @@
             this.tbp_About.Controls.Add(this.lb_COMApp);
             this.tbp_About.Location = new System.Drawing.Point(4, 22);
             this.tbp_About.Name = "tbp_About";
-            this.tbp_About.Size = new System.Drawing.Size(894, 398);
+            this.tbp_About.Size = new System.Drawing.Size(894, 435);
             this.tbp_About.TabIndex = 2;
             this.tbp_About.Text = "Контакты";
             this.tbp_About.UseVisualStyleBackColor = true;
@@ -797,7 +807,7 @@
             this.lb_About.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lb_About.Location = new System.Drawing.Point(8, 46);
             this.lb_About.Name = "lb_About";
-            this.lb_About.Size = new System.Drawing.Size(863, 153);
+            this.lb_About.Size = new System.Drawing.Size(863, 170);
             this.lb_About.TabIndex = 3;
             this.lb_About.Text = resources.GetString("lb_About.Text");
             // 
@@ -810,16 +820,6 @@
             this.lb_COMApp.Size = new System.Drawing.Size(152, 24);
             this.lb_COMApp.TabIndex = 2;
             this.lb_COMApp.Text = "COM Application";
-            // 
-            // btn_CreateHistogram
-            // 
-            this.btn_CreateHistogram.Location = new System.Drawing.Point(3, 307);
-            this.btn_CreateHistogram.Name = "btn_CreateHistogram";
-            this.btn_CreateHistogram.Size = new System.Drawing.Size(151, 30);
-            this.btn_CreateHistogram.TabIndex = 30;
-            this.btn_CreateHistogram.Text = "Построить диаграмму";
-            this.btn_CreateHistogram.UseVisualStyleBackColor = true;
-            this.btn_CreateHistogram.Click += new System.EventHandler(this.btn_CreateHistogram_Click);
             // 
             // MainForm
             // 
