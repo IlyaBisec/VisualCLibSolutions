@@ -116,6 +116,11 @@ namespace COM_WindApplication
             comExcel.calculateAverageTemperature();
         }
 
+        private void btn_CreateHistogram_Click(object sender, EventArgs e)
+        {
+            comExcel.createHistogram();
+        }
+
         // Checking the result of a previously created document
         private void btn_CheckExcelResult_Click(object sender, EventArgs e)
         {
