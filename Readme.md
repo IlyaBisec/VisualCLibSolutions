@@ -47,13 +47,13 @@
 <a>Продвинутые настройки - открывает/скрывает доступ к остальным настройкам</a><br>
 <a>Ручной ввод г. и мес - отключает ввод данных через список combobox</a><br>
 <a>Очистить поля Excel после добавления - очищает поля с ранее введенными данными(на форме приложения)</a><br>
-<a>Сохранить изменения - сохраняет изменения настроек</a><br>
+<a>Сохранить изменения - сохраняет изменения настроек</a>
 
 <h1>Technical description / Техническое описание</h1>
 <a>The following was used for the work: / Для работы использовалось следующее:</a><br>
-<p>Net FrameWork Version=v4.7.2</p><br>
-<p>Microsoft.Office.Interop.Excel.dll</p><br>
-<p>Microsoft.Office.Interop.Word.dll</p><br>
+<p>Net FrameWork Version=v4.7.2</p>
+<p>Microsoft.Office.Interop.Excel.dll</p>
+<p>Microsoft.Office.Interop.Word.dll</p>
 
 <a>Если нужен перевод на другой язык(English/Russian) или вы по другим вопросам, пишите:</a><br>
 <a>If you need a translation into another language (English/Russian) or you have other questions, write</a><br>
