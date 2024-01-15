@@ -51,9 +51,9 @@
 
 <h1>Technical description / Техническое описание</h1>
 <a>The following was used for the work: / Для работы использовалось следующее:</a><br>
-<p>Net FrameWork Version=v4.7.2</p>
-<p>Microsoft.Office.Interop.Excel.dll</p>
-<p>Microsoft.Office.Interop.Word.dll</p>
+<a>Net FrameWork Version=v4.7.2</a><br>
+<a>Microsoft.Office.Interop.Excel.dll</a><br>
+<a>Microsoft.Office.Interop.Word.dll</a><br>
 
 <a>Если нужен перевод на другой язык(English/Russian) или вы по другим вопросам, пишите:</a><br>
 <a>If you need a translation into another language (English/Russian) or you have other questions, write</a><br>
