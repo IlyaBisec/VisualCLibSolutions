@@ -1,2 +1,7 @@
 # Visual Cpp and C# Lib Solutions
-Visual solutions with help cpp or c# and graph libs
+This repository combines a set of programs and libraries for solving various tasks written using C++ & C#
+
+COM Application - An application that allows you to automate the writing of business letters.
+Serialization app - An application that allows you to save data about train routes (destination, train number, departure time) in XML and binary format
+DLL - The dynamic library contains a dialog box, functions for receiving and displaying information about the file selected by the user (size, creation date, weight, etc.)
+GDI - a number of programs that demonstrate working with the GDI+ GUI
