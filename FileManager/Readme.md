@@ -3,8 +3,8 @@
 <a><b>FileManager</b> - программа получает информацию о файле и работает с текстовыми документами</a><br>
 <a><b>FileManager</b> - the program receives information about the file and works with text documents</a><br>
 <p>Info about file / Инфо о файле</p><img src="https://github.com/Sadochok-BISEC/VisualCLibSolutions/blob/main/img_desc/fm_1.PNG"/><br>
-<p>Save changes to text file / Сохранение изменений в текстовый файл</p><img src="https://github.com/Sadochok-BISEC/VisualCLibSolutions/blob/main/img_desc/date_2.PNG"/><br>
-<p>The result / Результат</p><img src="https://github.com/Sadochok-BISEC/VisualCLibSolutions/blob/main/img_desc/date_3.PNG"/><br>
+<p>Save changes to text file / Сохранение изменений в текстовый файл</p><img src="https://github.com/Sadochok-BISEC/VisualCLibSolutions/blob/main/img_desc/fm_2.PNG"/><br>
+<p>The result / Результат</p><img src="https://github.com/Sadochok-BISEC/VisualCLibSolutions/blob/main/img_desc/fm_3.PNG"/><br>
 
 <a>Technical description / Техническое описание</a><br>
 <a>C#</a><br>
