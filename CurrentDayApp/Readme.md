@@ -1,7 +1,7 @@
 <h1>User's Guide / Руководство пользователя</h1>
 
-<h2><b>CurrentDayApp</b> - программа отображает текущую дату (день, год, месяц)</h2><br><br>
-<h2><b>CurrentDayApp</b> - the program displays the current date(day, year, month)</h2><br><br>
+<a><b>CurrentDayApp</b> - программа отображает текущую дату (день, год, месяц)</a><br><br>
+<a><b>CurrentDayApp</b> - the program displays the current date(day, year, month)</a><br><br>
 <p></p><img src="https://github.com/Sadochok-BISEC/VisualCLibSolutions/blob/main/img_desc/date_1.PNG"/><br>
 
 <br><a>Technical description / Техническое описание</a><br>
