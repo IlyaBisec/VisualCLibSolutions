@@ -18,3 +18,13 @@ D:\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.csproj.GenerateResource.cache
 D:\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.csproj.CoreCompileInputs.cache
 D:\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.exe
 D:\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.pdb
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\DrawLineApp\DrawLineApp\bin\Debug\DrawLineApp.exe.config
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\DrawLineApp\DrawLineApp\bin\Debug\DrawLineApp.exe
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\DrawLineApp\DrawLineApp\bin\Debug\DrawLineApp.pdb
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.csproj.AssemblyReference.cache
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.MainForm.resources
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.Properties.Resources.resources
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.csproj.GenerateResource.cache
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.csproj.CoreCompileInputs.cache
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.exe
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\DrawLineApp\DrawLineApp\obj\Debug\DrawLineApp.pdb

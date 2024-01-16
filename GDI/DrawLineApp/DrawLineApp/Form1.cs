@@ -26,7 +26,7 @@ namespace DrawLineApp
         private void MainForm_Paint(object sender, PaintEventArgs e)
         {
             var graphics = e.Graphics;
-            graphics.DrawString("Борисов И. А. ИСТ-41, 4 вариант", new Font("Arial", 14), Brushes.Blue, new Point(10, 10));
+            graphics.DrawString("Borisov Ilya", new Font("Arial", 14), Brushes.Blue, new Point(10, 10));
             graphics.DrawLine(new Pen(Brushes.Green, 4), point1, point2);
 
         }
@@ -62,43 +62,40 @@ namespace DrawLineApp
 
             switch (e.KeyCode)
             {
-                case Keys.T: // Up
+                case Keys.W: // Up
                     {
                         this.point1.Y -= 2;
                         this.point2.Y -= 2;
 
                         break;
                     }
-                case Keys.F:
+                case Keys.S:
                     {
                         this.point1.Y += 2;
                         this.point2.Y += 2;
                         break;
                     }
-                case Keys.G: // Left
+                case Keys.A: // Left
+                    {
+                        this.point1.X -= 2;
+                        this.point2.X -= 2;
+                        break;
+                    }
+                case Keys.D:
+                    {
+                       
+                        this.point1.X += 2;
+                        this.point2.X += 2;
+                        break;
+                    }
+                case Keys.X: // Clear
                     {
                         if (e.Shift)
                         {
-                            this.point1.X -= 2;
-                            this.point2.X -= 2;
+                            this.point1 = new Point(0, 0);
+                            this.point2 = new Point(0, 0);
                         }
-                        break;
-                    }
-                case Keys.H:
-                    {
-                        if (e.Shift)
-                        {
-                            this.point1.X += 2;
-                            this.point2.X += 2;
-                        }
-                        break;
-                    }
-                case Keys.X:
-                    {
-                        this.point1 = new Point(0, 0);
-                        this.point2 = new Point(0, 0);
-
-                        break;
+                    break;
                     }
             }
             Invalidate();
