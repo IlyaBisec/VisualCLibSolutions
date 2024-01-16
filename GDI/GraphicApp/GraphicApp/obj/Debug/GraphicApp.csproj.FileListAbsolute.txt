@@ -23,3 +23,29 @@ D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\Solutions\1\Graph
 D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\Solutions\1\GraphicApp\GraphicApp\obj\Debug\GraphicApp.csproj.CopyComplete
 D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\Solutions\1\GraphicApp\GraphicApp\obj\Debug\GraphicApp.exe
 D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\Solutions\1\GraphicApp\GraphicApp\obj\Debug\GraphicApp.pdb
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\GraphicApp.exe.config
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\GraphicApp.exe
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\GraphicApp.pdb
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\ZedGraph.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\ZedGraph.xml
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\de\ZedGraph.resources.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\es\ZedGraph.resources.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\fr\ZedGraph.resources.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\hu\ZedGraph.resources.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\it\ZedGraph.resources.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\ja\ZedGraph.resources.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\pt\ZedGraph.resources.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\ru\ZedGraph.resources.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\sk\ZedGraph.resources.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\sv\ZedGraph.resources.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\tr\ZedGraph.resources.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\zh-cn\ZedGraph.resources.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\bin\Debug\zh-tw\ZedGraph.resources.dll
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\obj\Debug\GraphicApp.csproj.AssemblyReference.cache
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\obj\Debug\GraphicApp.MainForm.resources
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\obj\Debug\GraphicApp.Properties.Resources.resources
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\obj\Debug\GraphicApp.csproj.GenerateResource.cache
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\obj\Debug\GraphicApp.csproj.CoreCompileInputs.cache
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\obj\Debug\GraphicApp.csproj.CopyComplete
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\obj\Debug\GraphicApp.exe
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\GraphicApp\GraphicApp\obj\Debug\GraphicApp.pdb

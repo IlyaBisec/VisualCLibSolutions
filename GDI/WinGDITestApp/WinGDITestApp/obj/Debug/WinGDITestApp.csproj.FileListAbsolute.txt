@@ -17,3 +17,13 @@ D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\1\WinGDITestApp\W
 D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\1\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.csproj.GenerateResource.cache
 D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\1\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.exe
 D:\Для Баргу\ЛАБЫ\4\ВизуалСредПрогр\1\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.pdb
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\WinGDITestApp\WinGDITestApp\bin\Debug\WinGDITestApp.exe.config
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\WinGDITestApp\WinGDITestApp\bin\Debug\WinGDITestApp.exe
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\WinGDITestApp\WinGDITestApp\bin\Debug\WinGDITestApp.pdb
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.csproj.AssemblyReference.cache
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.MainForm.resources
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.Properties.Resources.resources
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.csproj.GenerateResource.cache
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.csproj.CoreCompileInputs.cache
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.exe
+F:\Games\ILYAsFolder\BarSU\LABS\4_course\EugineShapovich\VisualKa\VisualCLibSolutions\GDI\WinGDITestApp\WinGDITestApp\obj\Debug\WinGDITestApp.pdb

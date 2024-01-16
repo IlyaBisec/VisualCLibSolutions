@@ -39,10 +39,6 @@ namespace WinGDITestApp
             drawCustom.drawDashLine(g);
             drawCustom.drawFlipFrame(g);
             drawCustom.drawDottedLine(g);
-            
-
-            //g.DrawLine()
-            // g.DrawPolygon(m_Pen, m_PointsFrame);
         }
 
 
