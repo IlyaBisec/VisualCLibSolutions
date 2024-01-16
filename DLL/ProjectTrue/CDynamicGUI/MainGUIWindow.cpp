@@ -56,38 +56,14 @@ HRESULT CALLBACK  MainWindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LP
 		DWORD errorCode = GetLastError();
 
 		MessageBox(NULL, L"Error loading the DLL, please check for DLL5", L"DLL Error", MB_OK | MB_ICONERROR);
-
 		ExitProcess(errorCode);
 	}
-
 	switch (message)
 	{
 	case WM_COMMAND:
 		if (LOWORD(wParam) == OnBtSelectFileClicked)
 		{
 			MainGuiSelectFileClicked(hDLL, hwnd, message, wParam, lParam, textboxMemo);
-
-
-			//if (hDLL != NULL)
-			//{
-			//	// Getting the address of the exported function
-			//	CreateInformatorClass createFunc = (CreateInformatorClass)GetProcAddress(hDLL, "CreateInformatorClass");
-			//	DeleteInformatorClass deleteFunc = (DeleteInformatorClass)GetProcAddress(hDLL, "DeleteInformatorClass");
-
-			//	if (createFunc != NULL && deleteFunc != NULL)
-			//	{
-			//		// Creating an instance of the class
-			//		Informator *info = createFunc();
-			//		if (info != NULL)
-			//		{
-			//			// Call 
-			//			info->getInfo(hwnd, message, wParam, lParam);
-
-			//			deleteFunc(info);
-			//		}
-			//	}
-			//	FreeLibrary(hDLL);
-			//}
 		}
 		break;
 	case OnBtExitClicked:
@@ -138,10 +114,8 @@ void MainGuiSelectFileClicked(HINSTANCE hDLL, HWND hwnd, UINT msg, WPARAM wParam
 	if (getInfoFunc == NULL)
 	{
 		MessageBox(hwnd, L"Load function addres error", L"Error", MB_OK);
-		//return 1;
 	}
 
 	int result = getInfoFunc(hwnd, msg, wParam, lParam, memo);
-
 	FreeLibrary(hDLL);
 }

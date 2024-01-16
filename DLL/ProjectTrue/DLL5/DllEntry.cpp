@@ -87,8 +87,7 @@ extern "C" __declspec(dllexport) int getInfo(HWND hwnd, UINT msg, WPARAM wParam,
             
             // Get file attributes
             DWORD fileAttributes = GetFileAttributes(openFile.lpstrFile);
-            //hFile = CreateFile(openFile.lpstrFile, GENERIC_READ, FILE_SHARE_READ, NULL,
-              //  OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+
             if (fileAttributes != INVALID_FILE_ATTRIBUTES)
             {
                 wstr_fileAttInfo = L"File attributes: ";
@@ -99,7 +98,6 @@ extern "C" __declspec(dllexport) int getInfo(HWND hwnd, UINT msg, WPARAM wParam,
                 if (fileAttributes & FILE_ATTRIBUTE_DIRECTORY)
                 {
                     wstr_attDirectory = L"Directory";
-                    //MessageBox(hwnd, L"The selected file is a directory", L"Error", MB_OK | MB_ICONERROR);
                 }
                 if (fileAttributes & FILE_ATTRIBUTE_ARCHIVE)
                     wstr_attArchive = L"Archive";
@@ -113,30 +111,6 @@ extern "C" __declspec(dllexport) int getInfo(HWND hwnd, UINT msg, WPARAM wParam,
 
                 // Get file extension               
                 std::wstring wstr_extension = wstr_fileName.substr(wstr_fileName.find_last_of(L".") + 1);
-               
-
-               /* std::wstring wstr = openFile.lpstrFile;
-                std::string fileExtension;
-
-                if (!wstr.empty())
-                {
-                    int buffer_size = WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1,
-                        NULL, 0, NULL, NULL);
-                    std::string stringBuffer(buffer_size, 0);
-
-                    WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, &stringBuffer[0],
-                        buffer_size, NULL, NULL);
-                    fileExtension = stringBuffer;
-
-
-                    size_t doIndex = fileExtension.find_last_of('.');
-                    if (doIndex != std::string::npos)
-                    {
-                        fileExtension = fileExtension.substr(doIndex + 1);
-                        std::cout << "File extension: " << fileExtension << std::endl;
-                    }
-                }*/
-
 
                 // WIN32_FIND_DATA findFileData;
                 HANDLE fileHandle = CreateFile(openFile.lpstrFile, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
@@ -159,15 +133,7 @@ extern "C" __declspec(dllexport) int getInfo(HWND hwnd, UINT msg, WPARAM wParam,
                    FileTimeToSystemTime(&ft_write, &syst_lastWrite);
                    GetDateFormatA(LOCALE_USER_DEFAULT, 0, &syst_lastWrite, "yyyy-MM-dd", str_lastWrite, 100);
                    GetTimeFormatA(LOCALE_USER_DEFAULT, 0, &syst_lastWrite, "HH:mm:ss", str_lastWrite + 10, 100 - 10);
-
-                   //// Char to wstring
-                   //wstr_fileChanged = str2wstr(str_lastWrite);
-
-                   // Char to wstring
-                   //wstr_fileCreated = str2wstr(str_creationTime);
-                   // wstr_fileCreated = syst_create.wYear + '-' + syst_create.wMonth + '-' + syst_create.wDay;
-
-
+     
                    // Get file size 
                    GetFileSizeEx(fileHandle, &fileSize);
 
@@ -245,9 +211,7 @@ extern "C" __declspec(dllexport) int getInfo(HWND hwnd, UINT msg, WPARAM wParam,
                 L"Error", MB_OK | MB_ICONERROR);
         }
 
-        return 0;
-   
-    
+        return 0;   
 }
 
 
